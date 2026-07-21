@@ -388,7 +388,8 @@ button:focus:not(:focus-visible) { outline: none; }
 .tramite-item.open .tramite-header { border-bottom: 1px solid #f0ede8; }
 .tramite-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
 .tramite-item.open .tramite-body { max-height: 2000px; }
-.tramite-content { padding: 24px 26px 28px; }
+.tramite-content { padding: 24px 26px 28px; font-family: 'DM Sans', sans-serif; font-size: 15.5px; color: #444; line-height: 1.85; }
+.tramite-content div, .tramite-content p { font-family: 'DM Sans', sans-serif; }
 .tramite-content ul {
   font-family: 'DM Sans';
   font-size: 16px;
@@ -948,6 +949,10 @@ footer { background: #1a1a1a; margin-top: 60px; }
 .com-block { border-top:3px solid var(--dorado-oscuro); box-shadow:0 1px 2px rgba(0,0,0,0.03); transition:box-shadow .2s, transform .2s; }
 .com-block:hover { box-shadow:0 10px 26px rgba(0,0,0,0.07); transform:translateY(-2px); }
 .consulado-block.com-official { justify-content:space-between; }
+/* ── Conoce en detalle: hero banner por destino ── */
+.conoce-hero { margin:0 0 20px; border-radius:14px; overflow:hidden; box-shadow:0 10px 28px rgba(0,0,0,0.10); aspect-ratio:16 / 6; }
+.conoce-hero img { width:100%; height:100%; object-fit:cover; display:block; }
+@media (max-width:720px){ .conoce-hero { aspect-ratio:16 / 9; } }
 
 /* ── GLOSARIO (FAQ) ── */
 .glosario-wrap { margin-top: 40px; max-width: 800px; }
@@ -1693,6 +1698,278 @@ footer { background: #1a1a1a; margin-top: 60px; }
       </div>
     </div>
 
+  </div>
+
+  <!-- ===== Conoce en detalle (dos países, tres islas) ===== -->
+  <div class="conoce-detalle" style="margin-top:34px">
+    <div class="com-kicker">Dos países · tres islas · una historia</div>
+    <p class="page-desc" style="margin-bottom:8px">
+      España y Venezuela comparten siglos de historia, cultura, tradiciones y vínculos humanos.
+      Le invitamos a conocer mejor nuestros territorios: descubrir <strong>España</strong>, recorrer
+      <strong>Venezuela</strong> y acercarse a las tres islas que forman el estado Nueva Esparta —
+      <strong>Margarita, Coche y Cubagua</strong>. No es solo una guía turística: es un espacio
+      cercano para conocer lo que forma parte de nuestra identidad.
+    </p>
+
+    <!-- ESPAÑA -->
+    <div class="com-kicker" style="margin-top:34px">Conoce España</div>
+    <p class="page-desc">
+      Historia, diversidad y una forma especial de vivir. En un mismo recorrido conviven grandes
+      ciudades y pequeños pueblos, costas mediterráneas, montañas, islas, espacios naturales y
+      monumentos que conservan la memoria de distintas civilizaciones. Sus paisajes van de volcanes
+      y desiertos a cumbres nevadas, verdes valles y extensas costas.
+    </p>
+    <figure class="conoce-hero"><picture><source srcset="images/conoce-espana.webp" type="image/webp"><img src="images/conoce-espana.jpg" alt="Plaza Mayor de Madrid, España" loading="lazy" decoding="async"></picture></figure>
+    <div class="tramite-list">
+      <div class="tramite-item" id="tramite-conoce-esp-cul">
+        <div class="tramite-header" onclick="toggleTramite('conoce-esp-cul')">
+          <div class="tramite-left"><div class="tramite-badge">CUL</div><div>
+            <div class="tramite-title">Un país de culturas</div>
+            <div class="tramite-subtitle">Diecisiete comunidades, una identidad común</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div>Cada comunidad autónoma tiene personalidad propia, con tradiciones, paisajes, fiestas y expresiones culturales que enriquecen la identidad común de España. De Galicia a Andalucía, pasando por Madrid, Cataluña, el País Vasco, Castilla, Valencia, Canarias y Baleares, cada territorio ofrece una experiencia distinta.</div>
+          <div class="tramite-note">España reúne una extensa riqueza monumental, artística y cultural reconocida internacionalmente: quince ciudades cuyos conjuntos históricos o monumentos son Patrimonio Mundial.</div>
+        </div></div>
+      </div>
+      <div class="tramite-item" id="tramite-conoce-esp-sab">
+        <div class="tramite-header" onclick="toggleTramite('conoce-esp-sab')">
+          <div class="tramite-left"><div class="tramite-badge">SAB</div><div>
+            <div class="tramite-title">Sabores de España</div>
+            <div class="tramite-subtitle">La gastronomía como lugar de encuentro</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div>Cada región conserva recetas, ingredientes y formas de cocinar ligadas a su territorio: la paella valenciana, el pulpo a la gallega, la tortilla española, el gazpacho andaluz, la fabada asturiana, los pintxos, los quesos, los vinos y el aceite de oliva. La cocina cambia entre las zonas costeras, el interior, el norte y las huertas del sur.</div>
+        </div></div>
+      </div>
+      <div class="tramite-item" id="tramite-conoce-esp-art">
+        <div class="tramite-header" onclick="toggleTramite('conoce-esp-art')">
+          <div class="tramite-left"><div class="tramite-badge">ART</div><div>
+            <div class="tramite-title">Arte, patrimonio y tradiciones</div>
+            <div class="tramite-subtitle">De lo romano a lo contemporáneo</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div>En sus ciudades y pueblos conviven edificios romanos, castillos medievales, catedrales, arquitectura islámica y obras contemporáneas. Es el país de artistas universales como Velázquez, Goya, Gaudí, Picasso, Miró y Dalí. Las Fallas, el flamenco, los castells y otras celebraciones muestran una cultura viva que se transmite entre generaciones.</div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- VENEZUELA -->
+    <div class="com-kicker" style="margin-top:34px">Conoce Venezuela</div>
+    <p class="page-desc">
+      Un país caribeño lleno de colores, música, sabores y contrastes naturales: playas, islas,
+      montañas, llanuras, selvas, desiertos y grandes ríos. Conocer Venezuela es también acercarse
+      a su gente, abierta, familiar y orgullosa de sus costumbres. Naturaleza, tradición y hospitalidad.
+    </p>
+    <figure class="conoce-hero"><picture><source srcset="images/conoce-venezuela.webp" type="image/webp"><img src="images/conoce-venezuela.jpg" alt="Parque Nacional Canaima, Venezuela" loading="lazy" decoding="async"></picture></figure>
+    <div class="tramite-list">
+      <div class="tramite-item" id="tramite-conoce-ven-nat">
+        <div class="tramite-header" onclick="toggleTramite('conoce-ven-nat')">
+          <div class="tramite-left"><div class="tramite-badge">NAT</div><div>
+            <div class="tramite-title">Naturaleza sin límites</div>
+            <div class="tramite-subtitle">Del Caribe a los Andes</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div>Del Caribe a las montañas andinas, grandes sabanas, selvas tropicales e islas de aguas transparentes. Entre sus destinos más representativos:</div>
+          <ul>
+            <li>Canaima y el Salto Ángel.</li>
+            <li>Los Roques.</li>
+            <li>La Gran Sabana.</li>
+            <li>Mérida y los Andes.</li>
+            <li>Los Llanos.</li>
+            <li>El delta del Orinoco.</li>
+            <li>La península de Paraguaná.</li>
+            <li>La Isla de Margarita.</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="tramite-item" id="tramite-conoce-ven-cul">
+        <div class="tramite-header" onclick="toggleTramite('conoce-ven-cul')">
+          <div class="tramite-left"><div class="tramite-badge">CUL</div><div>
+            <div class="tramite-title">Cultura y tradiciones</div>
+            <div class="tramite-subtitle">Una identidad diversa por regiones</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div>El joropo, la gaita zuliana, los tambores, los bailes tradicionales, las fiestas religiosas y las celebraciones populares forman un patrimonio cultural diverso. La cultura venezolana también está en su forma de hablar, su humor, la cercanía de sus familias y su hospitalidad.</div>
+        </div></div>
+      </div>
+      <div class="tramite-item" id="tramite-conoce-ven-sab">
+        <div class="tramite-header" onclick="toggleTramite('conoce-ven-sab')">
+          <div class="tramite-left"><div class="tramite-badge">SAB</div><div>
+            <div class="tramite-title">Sabores de Venezuela</div>
+            <div class="tramite-subtitle">Herencia indígena, europea, africana y caribeña</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div>La <strong>arepa</strong> es uno de los alimentos más emblemáticos y se consume en casi todo el país. También destacan el pabellón criollo, las cachapas, las hallacas, las empanadas, el asado negro, los hervidos, el queso de mano y los dulces criollos: recetas familiares y productos locales transmitidos entre generaciones.</div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- MARGARITA, COCHE Y CUBAGUA -->
+    <div class="com-kicker" style="margin-top:34px">Margarita, Coche y Cubagua</div>
+    <p class="page-desc">
+      El estado Nueva Esparta está formado por tres islas con paisajes, historias y personalidades
+      diferentes. <strong>Margarita</strong> es el principal centro poblado y turístico;
+      <strong>Coche</strong> destaca por sus playas tranquilas y los deportes de viento;
+      <strong>Cubagua</strong> conserva un extraordinario valor histórico y arqueológico ligado a la
+      explotación de perlas y al antiguo asentamiento de Nueva Cádiz. Tres islas unidas por el mar,
+      la historia y la identidad neoespartana.
+    </p>
+
+    <h3 style="font-family:'Libre Baskerville',Georgia,serif;font-size:22px;color:var(--texto);margin:26px 0 4px">Isla de Margarita — La Perla del Caribe</h3>
+    <p class="page-desc">
+      Playas, historia, tradiciones religiosas, pueblos marineros y encuentros familiares. Su
+      paisaje cambia entre el cerro El Copey, las lagunas y manglares de La Restinga, las costas de
+      Macanao y las playas del norte y del sur. Conviven el turismo, la pesca artesanal, el comercio
+      y una cultura profundamente vinculada con el mar.
+    </p>
+    <figure class="conoce-hero"><picture><source srcset="images/conoce-nuevaesparta.webp" type="image/webp"><img src="images/conoce-nuevaesparta.jpg" alt="Playa El Agua, Isla de Margarita" loading="lazy" decoding="async"></picture></figure>
+    <div class="tramite-list">
+      <div class="tramite-item" id="tramite-conoce-mar-pla">
+        <div class="tramite-header" onclick="toggleTramite('conoce-mar-pla')">
+          <div class="tramite-left"><div class="tramite-badge">PLA</div><div>
+            <div class="tramite-title">Playas para cada experiencia</div>
+            <div class="tramite-subtitle">Descanso, familia y deportes acuáticos</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div>Playa El Agua · Parguito · El Yaque · Guacuco · Manzanillo · Zaragoza · Puerto Cruz · Punta Arenas · La Caracola.</div>
+        </div></div>
+      </div>
+      <div class="tramite-item" id="tramite-conoce-mar-his">
+        <div class="tramite-header" onclick="toggleTramite('conoce-mar-his')">
+          <div class="tramite-left"><div class="tramite-badge">HIS</div><div>
+            <div class="tramite-title">Historia, fe y patrimonio</div>
+            <div class="tramite-subtitle">La Virgen del Valle y los castillos coloniales</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <ul>
+            <li>Basílica Menor de Nuestra Señora del Valle.</li>
+            <li>Castillo San Carlos de Borromeo.</li>
+            <li>Castillo Santa Rosa de La Asunción.</li>
+            <li>Fortín de La Galera.</li>
+            <li>Catedral de Nuestra Señora de La Asunción.</li>
+            <li>Centros históricos de Pampatar y La Asunción.</li>
+          </ul>
+          <div class="tramite-note">La Virgen del Valle ocupa un lugar central en la identidad espiritual y cultural de Margarita y en la vida de pescadores, navegantes y familias de toda la región.</div>
+        </div></div>
+      </div>
+      <div class="tramite-item" id="tramite-conoce-mar-nat">
+        <div class="tramite-header" onclick="toggleTramite('conoce-mar-nat')">
+          <div class="tramite-left"><div class="tramite-badge">NAT</div><div>
+            <div class="tramite-title">Naturaleza margariteña</div>
+            <div class="tramite-subtitle">Manglares, montañas y costa</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div>La Laguna de La Restinga, el cerro El Copey, la península de Macanao y los paisajes costeros muestran la diversidad ambiental de la isla: entre manglares, montañas y playas se encuentra su verdadera esencia natural.</div>
+        </div></div>
+      </div>
+      <div class="tramite-item" id="tramite-conoce-mar-gas">
+        <div class="tramite-header" onclick="toggleTramite('conoce-mar-gas')">
+          <div class="tramite-left"><div class="tramite-badge">GAS</div><div>
+            <div class="tramite-title">Gastronomía margariteña</div>
+            <div class="tramite-subtitle">El sabor nace del mar</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div>Pastel de chucho · empanadas de cazón · pescado frito · fosforera · sancocho de pescado · mejillones y otros productos del mar · dulces de frutas locales. Cocina estrechamente vinculada con el mar y con las tradiciones familiares.</div>
+        </div></div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Libre Baskerville',Georgia,serif;font-size:22px;color:var(--texto);margin:30px 0 4px">Isla de Coche — Tranquilidad, viento y mar</h3>
+    <p class="page-desc">
+      Paisajes abiertos, aguas tranquilas y extensas playas. Un ambiente para descansar, caminar
+      junto al mar y disfrutar de la naturaleza, conocido también por las condiciones que ofrecen
+      algunos sectores para el kitesurf y el windsurf. Calma, horizonte y libertad.
+    </p>
+    <figure class="conoce-hero"><picture><source srcset="images/conoce-coche.webp" type="image/webp"><img src="images/conoce-coche.jpg" alt="Playa de aguas turquesas en la Isla de Coche" loading="lazy" decoding="async"></picture></figure>
+    <div class="tramite-list">
+      <div class="tramite-item" id="tramite-conoce-coche-que">
+        <div class="tramite-header" onclick="toggleTramite('conoce-coche-que')">
+          <div class="tramite-left"><div class="tramite-badge">VER</div><div>
+            <div class="tramite-title">Qué descubrir</div>
+            <div class="tramite-subtitle">Playa, viento y comunidades pesqueras</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <ul>
+            <li>Playa La Punta.</li>
+            <li>San Pedro de Coche.</li>
+            <li>Pequeñas comunidades pesqueras.</li>
+            <li>Deportes de viento (kitesurf, windsurf).</li>
+            <li>Paseos en embarcación y atardeceres.</li>
+            <li>Pescados y mariscos frescos.</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="tramite-item" id="tramite-conoce-coche-cul">
+        <div class="tramite-header" onclick="toggleTramite('conoce-coche-cul')">
+          <div class="tramite-left"><div class="tramite-badge">CUL</div><div>
+            <div class="tramite-title">Cultura y vida local</div>
+            <div class="tramite-subtitle">Pesca, navegación y tradición familiar</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div>La vida cotidiana de Coche está muy vinculada con la pesca, la navegación y las tradiciones familiares. Visitarla es conocer una comunidad insular trabajadora, cercana y orgullosa de su identidad.</div>
+        </div></div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Libre Baskerville',Georgia,serif;font-size:22px;color:var(--texto);margin:30px 0 4px">Isla de Cubagua — Donde comenzó una parte de nuestra historia</h3>
+    <p class="page-desc">
+      La más pequeña y menos poblada de las tres islas, con un enorme valor histórico. Sus costas
+      estuvieron vinculadas desde el siglo XVI con la explotación de perlas y con el establecimiento
+      de Nueva Cádiz, uno de los primeros centros urbanos españoles de la región. Memoria, mar y patrimonio.
+    </p>
+    <figure class="conoce-hero"><picture><source srcset="images/conoce-cubagua.webp" type="image/webp"><img src="images/conoce-cubagua.jpg" alt="Ruinas de Nueva Cádiz, Isla de Cubagua" loading="lazy" decoding="async"></picture></figure>
+    <div class="tramite-list">
+      <div class="tramite-item" id="tramite-conoce-cub-his">
+        <div class="tramite-header" onclick="toggleTramite('conoce-cub-his')">
+          <div class="tramite-left"><div class="tramite-badge">HIS</div><div>
+            <div class="tramite-title">Nueva Cádiz y la historia de las perlas</div>
+            <div class="tramite-subtitle">Primeros capítulos de la presencia española</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div>En Cubagua se desarrolló una intensa actividad perlífera durante los primeros años del período colonial. Alrededor de ella surgió <strong>Nueva Cádiz</strong>, cuyos vestigios son uno de los principales referentes históricos y arqueológicos de la isla.</div>
+          <div class="tramite-note">Esta historia se presenta con una mirada responsable, reconociendo las duras condiciones y la explotación sufrida por las poblaciones indígenas vinculadas a la extracción de perlas.</div>
+        </div></div>
+      </div>
+      <div class="tramite-item" id="tramite-conoce-cub-exp">
+        <div class="tramite-header" onclick="toggleTramite('conoce-cub-exp')">
+          <div class="tramite-left"><div class="tramite-badge">EXP</div><div>
+            <div class="tramite-title">Una experiencia natural y cultural</div>
+            <div class="tramite-subtitle">Visita responsable</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div>Además de su importancia histórica, Cubagua ofrece paisajes abiertos, aguas transparentes y una tranquilidad difícil de encontrar. En una visita responsable pueden realizarse:</div>
+          <ul>
+            <li>Recorridos históricos y visitas guiadas a los vestigios arqueológicos.</li>
+            <li>Navegación.</li>
+            <li>Snorkel y buceo recreativo.</li>
+            <li>Observación de fauna marina.</li>
+            <li>Fotografía de paisajes.</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="tramite-note" style="margin-top:26px">
+      El Viceconsulado Honorario de España en Nueva Esparta promueve el conocimiento, el respeto y
+      la cercanía entre España y Venezuela. A través de esta ventana compartimos la riqueza cultural
+      de ambos países y damos a conocer Margarita, Coche y Cubagua, territorio que nos recibe, nos
+      inspira y fortalece día a día los vínculos entre nuestras comunidades.
+    </div>
   </div>
 
   <!-- Equipo -->
