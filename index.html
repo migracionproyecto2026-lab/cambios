@@ -1145,6 +1145,7 @@ footer { background: #1a1a1a; margin-top: 60px; }
           <button class="nav-btn" data-section="consejeria">Consejería Laboral</button>
         </div>
       </div>
+      <button class="nav-btn" data-section="salud">Salud</button>
       <button class="nav-btn" data-section="faq">FAQ</button>
       <button class="nav-btn" onclick="document.getElementById('emergencia-anchor').scrollIntoView({behavior:'smooth'});closeMenu()">Contacto de emergencia</button>
     </div>
@@ -1763,6 +1764,60 @@ footer { background: #1a1a1a; margin-top: 60px; }
       <a href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank">Web oficial del Consulado ↗</a>
     </div>
   </div>
+
+  <!-- Organización institucional (información complementaria) -->
+  <div style="margin-top:46px">
+    <div class="com-kicker">Información complementaria</div>
+    <h2 style="font-family:'Libre Baskerville',Georgia,serif;font-size:26px;color:var(--texto);margin:0 0 8px">Organización institucional de España en Venezuela</h2>
+    <p class="page-desc" style="margin-bottom:26px">El Viceconsulado Honorario de España en Nueva Esparta forma parte de la Red Consular de España en Venezuela y desarrolla sus funciones bajo la dirección y supervisión del Consulado General de España en Caracas.</p>
+
+    <div style="max-width:660px;margin:0 auto 36px">
+      <div class="com-block" style="text-align:center;border-top-color:var(--rojo)">
+        <div class="info-block-title" style="color:var(--rojo)">Embajada de España en Venezuela</div>
+        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Álvaro Enrique Albacete Perea</div>
+        <div style="font-size:13px;color:#888">Embajador de España · máxima representación diplomática del Reino de España, dirige la acción exterior del Estado en el país.</div>
+      </div>
+      <div style="text-align:center;color:var(--dorado-oscuro);font-size:24px;line-height:1;margin:10px 0">↓</div>
+      <div class="com-block" style="text-align:center;border-top-color:var(--rojo)">
+        <div class="info-block-title" style="color:var(--rojo)">Consulado General de España en Caracas</div>
+        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Ramón Molina Lladó</div>
+        <div style="font-size:13px;color:#888">Cónsul General · principal oficina consular; presta los servicios consulares, protege los intereses de los ciudadanos españoles y dirige, coordina y supervisa la Red de Viceconsulados Honorarios.</div>
+      </div>
+      <div style="text-align:center;color:var(--dorado-oscuro);font-size:24px;line-height:1;margin:10px 0">↓</div>
+      <div class="com-block" style="text-align:center;border-top-color:var(--dorado-oscuro)">
+        <div class="info-block-title">Viceconsulado Honorario de España en Nueva Esparta</div>
+        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Manuel Leiros Pampinella</div>
+        <div style="font-size:13px;color:#888">Vicecónsul Honorario · enlace directo entre la comunidad española de la circunscripción y el Consulado General, facilitando la atención ciudadana, la orientación consular y la canalización de los trámites autorizados.</div>
+      </div>
+    </div>
+
+    <div class="com-kicker">Dependencias e instituciones españolas en Venezuela</div>
+    <div class="com-grid">
+      <div class="com-block">
+        <div class="info-block-title">Embajada de España en Venezuela</div>
+        <div>Máxima representación diplomática del Reino de España.</div>
+      </div>
+      <div class="com-block">
+        <div class="info-block-title">Consulado General de España en Caracas</div>
+        <div>Oficina consular de carrera responsable de la coordinación de todos los Viceconsulados Honorarios de España en Venezuela.</div>
+      </div>
+      <div class="com-block">
+        <div class="info-block-title">Consejería de Trabajo, Migraciones y Seguridad Social</div>
+        <div>Atención en empleo, pensiones, Seguridad Social, ayudas asistenciales y programas para los españoles residentes en Venezuela.</div>
+        <div style="margin-top:8px"><a href="#" onclick="showSection('consejeria');return false;">Ver Consejería →</a></div>
+      </div>
+      <div class="com-block">
+        <div class="info-block-title">Consejo de Residentes Españoles (CRE)</div>
+        <div>Órgano consultivo y representativo de la comunidad española residente, que colabora con el Consulado General para trasladar sus necesidades e inquietudes.</div>
+        <div style="margin-top:8px"><a href="#" onclick="showSection('cre');return false;">Ver CRE →</a></div>
+      </div>
+      <div class="com-block">
+        <div class="info-block-title">Cámara Venezolano-Española de Industria y Comercio (CAVESPA)</div>
+        <div>Promueve las relaciones económicas, empresariales y comerciales entre España y Venezuela, fortaleciendo la cooperación entre empresas e instituciones de ambos países.</div>
+        <div style="margin-top:8px"><a href="#" onclick="showSection('cavespa');return false;">Ver CAVESPA →</a></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ==================== CRE ==================== -->
@@ -1771,37 +1826,73 @@ footer { background: #1a1a1a; margin-top: 60px; }
   <div class="com-kicker">Comunidad · Representación de residentes</div>
   <h1 class="page-title com-title">Consejo de Residentes Españoles (CRE)</h1>
   <p class="com-intro">
-    El Consejo de Residentes Españoles es el órgano consultivo y asesor que representa a la
-    comunidad española ante el Consulado General de España en Caracas. Es la voz de los
-    españoles residentes en Venezuela —incluidos los de Nueva Esparta— ante la Administración,
-    y el cauce de comunicación entre la comunidad y la red consular.
+    El Consejo de Residentes Españoles (CRE) es el órgano oficial de representación, consulta y
+    participación de los ciudadanos españoles residentes en el exterior. Está adscrito al Consulado
+    General de España en Caracas y actúa como interlocutor entre la comunidad española residente en
+    Venezuela y la Administración General del Estado. Ejerce funciones consultivas y asesoras, sin
+    sustituir las competencias del Cónsul General ni de la Oficina Consular.
   </p>
 
   <div class="com-grid">
     <div class="com-block">
-      <div class="info-block-title">Qué hace</div>
-      <ul>
-        <li>Cauce de comunicación entre la comunidad española y el Consulado.</li>
-        <li>Asesora en derechos civiles y laborales, educación, cultura y acción social.</li>
-        <li>Fomenta la participación política de los residentes.</li>
-        <li>Difunde medidas administrativas y participa en los procesos electorales.</li>
-      </ul>
+      <div class="info-block-title">Qué es</div>
+      <div>Órgano de representación, consulta y participación de los españoles residentes en el exterior. Conoce las necesidades de la colectividad, formula propuestas de mejora y colabora con las autoridades consulares.</div>
     </div>
     <div class="com-block">
       <div class="info-block-title">Composición</div>
-      <div><strong>15 consejeros</strong> elegidos por sufragio universal, libre, directo y secreto.</div>
-      <div style="margin-top:8px">Mandato de <strong>4 años</strong>.</div>
-      <div style="margin-top:8px">Marco legal: Real Decreto 1960/2009 y Orden AEC/2172/2010.</div>
+      <div><strong>15 consejeros</strong> elegidos por sufragio universal, libre, directo y secreto entre los inscritos en el Censo Electoral de Residentes Ausentes (CERA).</div>
+      <div style="margin-top:8px">Mandato de <strong>4 años</strong>. Últimas elecciones: mayo de 2026.</div>
     </div>
     <div class="com-block">
-      <div class="info-block-title">Contacto</div>
-      <div>Correo: <a href="mailto:info@credevenezuela.com">info@credevenezuela.com</a></div>
-      <div style="margin-top:8px">Instagram: <a href="https://www.instagram.com/credevenezuela" target="_blank" rel="noopener">@CreDeVenezuela</a></div>
+      <div class="info-block-title">Junta Directiva</div>
+      <div>Presidenta: <strong>Isabel Jara Noda</strong>.</div>
+      <div style="margin-top:8px">Secretaria: <strong>Ana María Navarro Rodríguez</strong>.</div>
     </div>
     <div class="com-block">
-      <div class="info-block-title">Para qué le sirve a usted</div>
-      <div>Si reside en Nueva Esparta, el CRE traslada sus inquietudes a la Administración española y le mantiene informado de las medidas que afectan a la comunidad.</div>
+      <div class="info-block-title">Marco jurídico</div>
+      <div>Real Decreto 1960/2009, de 18 de diciembre.</div>
+      <div style="margin-top:8px">Orden AEC/2172/2010, de 13 de julio.</div>
     </div>
+  </div>
+
+  <div class="com-block" style="margin-bottom:18px">
+    <div class="info-block-title">Principales funciones</div>
+    <ul>
+      <li><strong>Representación</strong> de los intereses de los españoles residentes ante el Consulado y la Administración española.</li>
+      <li><strong>Comunicación</strong>: canal permanente entre la comunidad y el Consulado General de España en Caracas.</li>
+      <li><strong>Asesoramiento</strong> al Consulado sobre los asuntos que afectan a los residentes.</li>
+      <li><strong>Propuestas de mejora</strong> de los servicios consulares y la atención ciudadana.</li>
+      <li><strong>Acción social</strong>: personas mayores, situaciones de vulnerabilidad e integración de nuevos residentes.</li>
+      <li><strong>Cultura y educación</strong>: actividades que mantienen los vínculos con España.</li>
+      <li><strong>Participación democrática</strong>: fomento del voto y de la representación institucional.</li>
+    </ul>
+  </div>
+
+  <div class="com-grid">
+    <div class="com-block">
+      <div class="info-block-title">Cuándo acudir al CRE</div>
+      <ul>
+        <li>Presentar propuestas para mejorar los servicios a la colectividad.</li>
+        <li>Exponer necesidades o problemáticas que afecten a un grupo de ciudadanos.</li>
+        <li>Orientación sobre iniciativas comunitarias, culturales o de acción social.</li>
+        <li>Canalizar inquietudes de mayores, jóvenes, familias o colectivos vulnerables.</li>
+      </ul>
+    </div>
+    <div class="com-block">
+      <div class="info-block-title">Cuándo acudir al Consulado General</div>
+      <ul>
+        <li>Pasaporte, DNI, salvoconductos y certificados consulares.</li>
+        <li>Registro Civil: nacimientos, matrimonios, defunciones, nacionalidad, fe de vida.</li>
+        <li>Registro de matrícula consular (alta/baja, cambio de datos).</li>
+        <li>Censo CERA y voto exterior; asistencia consular; notaría y legalizaciones.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="com-block" style="margin-bottom:18px">
+    <div class="info-block-title">Contacto</div>
+    <div>Correo: <a href="mailto:info@credevenezuela.com">info@credevenezuela.com</a></div>
+    <div style="margin-top:8px">Instagram: <a href="https://www.instagram.com/credevenezuela" target="_blank" rel="noopener">@CreDeVenezuela</a> · X: <a href="https://x.com/creVenezuela" target="_blank" rel="noopener">@creVenezuela</a> · Facebook: CRE de Venezuela</div>
   </div>
 
   <div class="consulado-block com-official">
@@ -1821,33 +1912,73 @@ footer { background: #1a1a1a; margin-top: 60px; }
   <div class="com-kicker">Comunidad · Comercio e industria</div>
   <h1 class="page-title com-title">CAVESPA</h1>
   <p class="com-intro">
-    La Cámara Venezolano-Española de Industria y Comercio (CAVESPA) es una organización
-    binacional sin fines de lucro que fomenta las relaciones comerciales e industriales entre
-    Venezuela y España y apoya a las empresas españolas establecidas en territorio venezolano.
-    Cuenta con delegación en el Estado Nueva Esparta.
+    La Cámara Venezolano-Española de Industria y Comercio (CAVESPA) es una institución empresarial
+    binacional cuya misión es fortalecer las relaciones económicas y comerciales entre España y
+    Venezuela. No presta servicios consulares ni administrativos, pero representa un aliado
+    estratégico para ciudadanos, empresas, emprendedores y profesionales vinculados a España.
   </p>
 
   <div class="com-grid">
     <div class="com-block">
       <div class="info-block-title">Qué es</div>
-      <div>Cámara de comercio binacional que conecta el tejido empresarial español y venezolano y promueve la inversión y el intercambio comercial entre ambos países.</div>
+      <div>Cámara de comercio binacional que conecta el tejido empresarial español y venezolano y promueve la inversión, la formación y la cooperación entre ambos países.</div>
     </div>
     <div class="com-block">
-      <div class="info-block-title">Para qué sirve a la comunidad</div>
-      <ul>
-        <li>Apoyo a empresas y emprendedores españoles y venezolanos.</li>
-        <li>Networking institucional y empresarial.</li>
-        <li>Promoción de inversión y oportunidades de negocio bilaterales.</li>
-      </ul>
-    </div>
-    <div class="com-block">
-      <div class="info-block-title">Presencia en Nueva Esparta</div>
-      <div>CAVESPA mantiene delegación en el Estado Nueva Esparta, acercando sus servicios a la comunidad empresarial de Margarita.</div>
+      <div class="info-block-title">Sede</div>
+      <div>Av. Francisco de Miranda, Edif. Parque Cristal, Torre Este, Piso 9, Of. TOP 9-9, Los Palos Grandes, Caracas 1060.</div>
+      <div style="margin-top:8px">Horario: lunes a viernes, 8:00 a. m. – 4:00 p. m.</div>
     </div>
     <div class="com-block">
       <div class="info-block-title">Contacto</div>
-      <div>Web: <a href="https://cavespa.org" target="_blank" rel="noopener">cavespa.org</a></div>
-      <div style="margin-top:8px">Instagram: <a href="https://www.instagram.com/cavespa.ve" target="_blank" rel="noopener">@cavespa.ve</a></div>
+      <div>Tel.: (+58 212) 285-5231 · (+58 212) 286-3703 · (+58 414) 231-5070</div>
+      <div style="margin-top:8px">Correo: <a href="mailto:somoscavespa@cavespa.org">somoscavespa@cavespa.org</a></div>
+      <div style="margin-top:8px">Web: <a href="https://cavespa.org" target="_blank" rel="noopener">cavespa.org</a></div>
+    </div>
+    <div class="com-block">
+      <div class="info-block-title">Redes sociales</div>
+      <div>Instagram: <a href="https://www.instagram.com/cavespa.ve" target="_blank" rel="noopener">@cavespa.ve</a></div>
+      <div style="margin-top:8px">X: @cavespa · Facebook: CAVESPA – Cámara Venezolano-Española de Industria y Comercio</div>
+    </div>
+  </div>
+
+  <div class="com-grid">
+    <div class="com-block">
+      <div class="info-block-title">Junta Directiva (2025–2027)</div>
+      <div>Presidenta: <strong>Felicitas Sánchez</strong>.</div>
+      <div style="margin-top:6px">1.er Vicepresidente: Fernando Alonso Turiño.</div>
+      <div style="margin-top:6px">2.º Vicepresidente: José Luis Rodríguez.</div>
+      <div style="margin-top:6px">Tesorero: Rodrigo Nogueroles.</div>
+    </div>
+    <div class="com-block">
+      <div class="info-block-title">Equipo ejecutivo</div>
+      <div>Director Ejecutivo: <strong>Robert Concepción Camacho</strong>.</div>
+      <div style="margin-top:6px">Asistente de Dirección: José Manuel Valiña.</div>
+      <div style="margin-top:6px">Administración: Francia Magallanes.</div>
+      <div style="margin-top:6px">Comunicación y Diseño: Keisy Jordan.</div>
+      <div style="margin-top:6px">Servicios Generales: Adalsi Coromoto Castillo.</div>
+    </div>
+  </div>
+
+  <div class="com-block" style="margin-bottom:18px">
+    <div class="info-block-title">Directores</div>
+    <div>Jesús María Vicuña · Luis García Sánchez · Liliana Nión Bello · Roberto Rodríguez de León · José Gabriel De Martin · Julio Hernández · Juan Carlos González · Darwin Ferrera · Félix Hidalgo · Enrique Bercowski · Maricarmen Paz Miranda · Diego Gibelli.</div>
+  </div>
+
+  <div class="com-grid">
+    <div class="com-block">
+      <div class="info-block-title">Cuándo acudir a CAVESPA</div>
+      <ul>
+        <li>Emprender en Venezuela: orientación e información del entorno de negocios.</li>
+        <li>Relaciones comerciales: ruedas de negocios, alianzas y promoción.</li>
+        <li>Networking profesional: foros, desayunos y encuentros empresariales.</li>
+        <li>Formación: seminarios, cursos y talleres especializados.</li>
+        <li>Responsabilidad social empresarial y cooperación institucional.</li>
+      </ul>
+    </div>
+    <div class="com-block">
+      <div class="info-block-title">Cuándo acudir al Consulado / Viceconsulado</div>
+      <div>Trámites de pasaporte, nacionalidad, Registro Civil, inscripción consular, fe de vida, visados, asistencia y protección de ciudadanos españoles.</div>
+      <div style="margin-top:8px">CAVESPA no sustituye las funciones de las autoridades consulares ni interviene en procedimientos administrativos del Estado español.</div>
     </div>
   </div>
 
@@ -1868,44 +1999,431 @@ footer { background: #1a1a1a; margin-top: 60px; }
   <div class="com-kicker">Comunidad · Organismo de la Embajada</div>
   <h1 class="page-title com-title">Consejería de Trabajo, Migraciones y Seguridad Social</h1>
   <p class="com-intro">
-    La Consejería de Trabajo, Migraciones y Seguridad Social es el órgano técnico especializado
-    de la Misión Diplomática de España en Venezuela. Desarrolla actividades de información y
-    asistencia a los ciudadanos españoles en materia laboral, de Seguridad Social y de migración.
+    La Consejería de Trabajo, Migraciones y Seguridad Social de la Embajada de España en Venezuela
+    es la unidad administrativa especializada del Gobierno de España encargada de las políticas de
+    trabajo, migraciones, Seguridad Social y protección social, y de la atención a la ciudadanía
+    española residente en el exterior. Depende del Ministerio de Inclusión, Seguridad Social y
+    Migraciones.
   </p>
 
   <div class="com-grid">
     <div class="com-block">
-      <div class="info-block-title">Qué hace</div>
-      <ul>
-        <li>Asistencia para la integración laboral y social de los españoles.</li>
-        <li>Gestión de pensiones asistenciales y programas de ayuda en el exterior.</li>
-        <li>Tramitación de prestaciones de la Seguridad Social española.</li>
-        <li>Orientación sobre el retorno a España.</li>
-        <li>Promoción del asociacionismo español.</li>
-      </ul>
+      <div class="info-block-title">Qué es</div>
+      <div>Órgano técnico de la Embajada de España, orientado a la asistencia, información y protección de los españoles residentes en el exterior en materia de prestaciones, pensiones y trámites administrativos.</div>
     </div>
     <div class="com-block">
-      <div class="info-block-title">Jurisdicción</div>
-      <div>Venezuela, con acreditación también en Colombia y República Dominicana.</div>
-    </div>
-    <div class="com-block">
-      <div class="info-block-title">Contacto</div>
-      <div>Tel.: +58 212 319 4230</div>
-      <div style="margin-top:8px">Correo: <a href="mailto:venezuela@mites.gob.es">venezuela@mites.gob.es</a></div>
+      <div class="info-block-title">Ámbito de actuación</div>
+      <div>Venezuela, con acreditación también en Colombia y República Dominicana. Presta sus servicios desde su sede en Caracas.</div>
     </div>
     <div class="com-block">
       <div class="info-block-title">Dirección</div>
-      <div>Av. Principal Eugenio Mendoza con Primera Transversal, Edif. Banco Lara, Piso 1, Urb. La Castellana, Caracas.</div>
+      <div>Av. Mohedano, entre Primera y Segunda Transversal, Quinta La Castellana, Urb. La Castellana, Municipio Chacao, Caracas.</div>
+    </div>
+    <div class="com-block">
+      <div class="info-block-title">Contacto</div>
+      <div>Correo: <a href="mailto:venezuela@mites.gob.es">venezuela@mites.gob.es</a></div>
+      <div style="margin-top:8px">Web: <a href="https://consejeria.mites.gob.es/venezuela" target="_blank" rel="noopener">consejeria.mites.gob.es/venezuela</a></div>
+    </div>
+  </div>
+
+  <div class="com-grid">
+    <div class="com-block">
+      <div class="info-block-title">Representación</div>
+      <div>Consejero: <strong>Don Julio Cruz Hernández</strong>, Consejero de Trabajo, Migraciones y Seguridad Social de la Embajada de España en Venezuela.</div>
+    </div>
+    <div class="com-block">
+      <div class="info-block-title">Oficinas Itinerantes</div>
+      <div>Atención descentralizada en distintas regiones del país, que acerca los servicios a la ciudadanía y reduce las dificultades de desplazamiento.</div>
+    </div>
+  </div>
+
+  <div class="com-block" style="margin-bottom:18px">
+    <div class="info-block-title">Principales funciones</div>
+    <ul>
+      <li>Representar al Gobierno de España en trabajo, migraciones, Seguridad Social y protección social.</li>
+      <li>Informar y orientar sobre derechos y obligaciones en materia de Seguridad Social y asistencia social.</li>
+      <li>Gestionar y coordinar programas de protección social para españoles en el exterior.</li>
+      <li>Tramitar las Prestaciones por Razón de Necesidad (PRN) y otras ayudas asistenciales.</li>
+      <li>Informar sobre pensiones y convenios internacionales de Seguridad Social.</li>
+      <li>Apoyar a pensionistas, personas mayores y ciudadanos en situación de vulnerabilidad.</li>
+      <li>Jornadas informativas y Oficinas Itinerantes por el territorio.</li>
+    </ul>
+  </div>
+
+  <div class="com-grid">
+    <div class="com-block">
+      <div class="info-block-title">En qué le puede ayudar</div>
+      <ul>
+        <li>Pensiones y prestaciones de la Seguridad Social española.</li>
+        <li>Prestaciones por Razón de Necesidad (PRN) y ayudas extraordinarias.</li>
+        <li>Actualización de la fe de vida para beneficiarios de prestaciones.</li>
+        <li>Orientación administrativa y asistencia en trámites vinculados con España.</li>
+      </ul>
+    </div>
+    <div class="com-block">
+      <div class="info-block-title">Coordinación institucional</div>
+      <div>Embajada de España · Consulado General en Caracas · Viceconsulados Honorarios · Consejo de Residentes Españoles (CRE) · Fundación España Salud · centros y asociaciones españolas.</div>
     </div>
   </div>
 
   <div class="consulado-block com-official">
     <div>
       <div style="font-family:'DM Sans';font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dorado);margin-bottom:8px">Información oficial</div>
-      <div>Consejería en el portal del Ministerio de Trabajo y Economía Social.</div>
+      <div>Consejería en el portal oficial del Ministerio.</div>
     </div>
     <div>
-      <a href="https://www.mites.gob.es/es/mundo/consejerias/venezuela/index.htm" target="_blank" rel="noopener">Ver web de la Consejería ↗</a>
+      <a href="https://consejeria.mites.gob.es/venezuela" target="_blank" rel="noopener">Ver web de la Consejería ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SALUD ==================== -->
+<div id="sec-salud" class="section">
+  <button class="back-btn" onclick="showSection('inicio')">← Volver al inicio</button>
+  <h1 class="page-title">Convenios de Salud</h1>
+  <p class="page-desc">Cuidamos de nuestra comunidad, también en materia de salud. Un programa permanente de convenios con instituciones médicas de reconocido prestigio, con condiciones preferenciales para los ciudadanos españoles residentes en Nueva Esparta. Seleccione un plan o servicio para ver el detalle.</p>
+
+  <div class="tramite-note" style="margin-bottom:26px">
+    El Viceconsulado actúa como <strong>facilitador institucional</strong>: orienta y acompaña a la comunidad. <strong>No vende seguros</strong> — la contratación y prestación de los servicios corresponden a las instituciones participantes.<br><br>
+    <strong>Objetivos del programa:</strong> facilitar el acceso a salud privada de calidad, promover la medicina preventiva, reducir el impacto económico ante una emergencia, ofrecer alternativas para distintos presupuestos y fortalecer el bienestar de la comunidad española en Nueva Esparta.
+  </div>
+
+  <div class="com-kicker" style="margin-top:34px">Convenio 1 · Medicina prepagada</div>
+  <h2 style="font-family:'Libre Baskerville',Georgia,serif;font-size:26px;color:var(--texto);margin:0 0 6px">Vida y Salud Medicina Prepagada</h2>
+  <p class="com-intro" style="margin-bottom:22px">
+    Primer convenio sanitario promovido por el Viceconsulado. Un completo portafolio de medicina
+    prepagada respaldado por la infraestructura médica del <strong>Hospital Clínicas del Este</strong>,
+    con opciones que van desde la cobertura de urgencias hasta la protección integral de alta cobertura.
+  </p>
+
+  <div class="tramite-list">
+
+    <div class="tramite-item" id="tramite-salud-urg">
+      <div class="tramite-header" onclick="toggleTramite('salud-urg')">
+        <div class="tramite-left">
+          <div class="tramite-badge">URG</div>
+          <div>
+            <div class="tramite-title">Dr. Salud · Urgencias</div>
+            <div class="tramite-subtitle">Protección inmediata ante imprevistos</div>
+            <div class="tramite-tags"><span class="t-tag t-tag-cita">Cobertura USD 2.500</span><span class="t-tag t-tag-tasa">USD 14,99 / mes</span></div>
+          </div>
+        </div>
+        <span class="tramite-arrow">▼</span>
+      </div>
+      <div class="tramite-body"><div class="tramite-content">
+        <p class="subsection-label">Incluye</p>
+        <ul>
+          <li>Telemedicina 24 horas.</li>
+          <li>Consultas médicas.</li>
+          <li>Laboratorio e imagenología.</li>
+          <li>Atención de urgencias.</li>
+          <li>Medicamentos de las primeras 24 horas.</li>
+          <li>Atención médica domiciliaria.</li>
+          <li>Traslado en ambulancia.</li>
+        </ul>
+        <div class="tramite-note"><strong>Ideal para:</strong> jóvenes · personas sanas · quienes buscan una protección inicial de bajo costo.</div>
+      </div></div>
+    </div>
+
+    <div class="tramite-item" id="tramite-salud-vit">
+      <div class="tramite-header" onclick="toggleTramite('salud-vit')">
+        <div class="tramite-left">
+          <div class="tramite-badge">VIT</div>
+          <div>
+            <div class="tramite-title">Dr. Salud · Vital</div>
+            <div class="tramite-subtitle">Protección integral para el día a día</div>
+            <div class="tramite-tags"><span class="t-tag t-tag-cita">Cobertura USD 5.000</span><span class="t-tag t-tag-tasa">USD 29,99 / mes</span></div>
+          </div>
+        </div>
+        <span class="tramite-arrow">▼</span>
+      </div>
+      <div class="tramite-body"><div class="tramite-content">
+        <p class="subsection-label">Además de Urgencias, incorpora</p>
+        <ul>
+          <li>Consultas especializadas.</li>
+          <li>Hospitalización.</li>
+          <li>Cirugía.</li>
+          <li>Mayor cobertura médica.</li>
+          <li>Maternidad opcional.</li>
+        </ul>
+        <div class="tramite-note"><strong>Ideal para:</strong> personas adultas · parejas · trabajadores independientes · quienes desean respaldo hospitalario.</div>
+      </div></div>
+    </div>
+
+    <div class="tramite-item" id="tramite-salud-bie">
+      <div class="tramite-header" onclick="toggleTramite('salud-bie')">
+        <div class="tramite-left">
+          <div class="tramite-badge">BIE</div>
+          <div>
+            <div class="tramite-title">Dr. Salud · Bienestar</div>
+            <div class="tramite-subtitle">Más cobertura, mayor tranquilidad</div>
+            <div class="tramite-tags"><span class="t-tag t-tag-cita">Cobertura USD 10.000</span><span class="t-tag t-tag-tasa">USD 39,99 / mes</span></div>
+          </div>
+        </div>
+        <span class="tramite-arrow">▼</span>
+      </div>
+      <div class="tramite-body"><div class="tramite-content">
+        <p class="subsection-label">Incluye además</p>
+        <ul>
+          <li>Amplio acceso a especialidades.</li>
+          <li>Laboratorios especializados.</li>
+          <li>Estudios diagnósticos de alta complejidad.</li>
+          <li>Hospitalización y cirugía.</li>
+          <li>Mayor protección en maternidad.</li>
+        </ul>
+        <div class="tramite-note"><strong>Ideal para:</strong> familias · adultos mayores activos · personas con controles médicos frecuentes.</div>
+      </div></div>
+    </div>
+
+    <div class="tramite-item" id="tramite-salud-seg">
+      <div class="tramite-header" onclick="toggleTramite('salud-seg')">
+        <div class="tramite-left">
+          <div class="tramite-badge">SEG</div>
+          <div>
+            <div class="tramite-title">Dr. Salud · Seguridad</div>
+            <div class="tramite-subtitle">La máxima protección disponible</div>
+            <div class="tramite-tags"><span class="t-tag t-tag-caracas">Máxima · USD 50.000</span><span class="t-tag t-tag-tasa">USD 74,99 / mes</span></div>
+          </div>
+        </div>
+        <span class="tramite-arrow">▼</span>
+      </div>
+      <div class="tramite-body"><div class="tramite-content">
+        <p class="subsection-label">Incluye</p>
+        <ul>
+          <li>Todos los beneficios anteriores.</li>
+          <li>Unidad de Cuidados Intensivos (UCI).</li>
+          <li>Hospitalización ampliada.</li>
+          <li>Alta cobertura para intervenciones complejas.</li>
+          <li>Mayor cobertura de maternidad.</li>
+        </ul>
+        <div class="tramite-note"><strong>Ideal para:</strong> familias que buscan máxima tranquilidad · personas con enfermedades preexistentes (según condiciones del plan) · empresarios · jubilados.</div>
+      </div></div>
+    </div>
+
+  </div>
+
+  <div class="com-kicker" style="margin-top:30px">Comparador de planes</div>
+  <div style="overflow-x:auto;margin-bottom:28px">
+    <table class="glosario-table">
+      <thead>
+        <tr>
+          <th scope="col">Plan</th>
+          <th scope="col">Cobertura</th>
+          <th scope="col">Hospitalización</th>
+          <th scope="col">Especialistas</th>
+          <th scope="col">UCI</th>
+          <th scope="col">Prima mensual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Urgencias</th><td>USD 2.500</td><td>—</td><td>—</td><td>—</td><td>USD 14,99</td></tr>
+        <tr><th scope="row">Vital</th><td>USD 5.000</td><td>✓</td><td>✓</td><td>—</td><td>USD 29,99</td></tr>
+        <tr><th scope="row">Bienestar</th><td>USD 10.000</td><td>✓</td><td>✓</td><td>—</td><td>USD 39,99</td></tr>
+        <tr><th scope="row">Seguridad</th><td>USD 50.000</td><td>✓</td><td>✓</td><td>✓</td><td>USD 74,99</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="com-grid">
+    <div class="com-block">
+      <div class="info-block-title">Beneficios para la comunidad</div>
+      <ul>
+        <li>Atención médica privada y respaldo hospitalario.</li>
+        <li>Atención preventiva y servicios de urgencia.</li>
+        <li>Telemedicina y diagnóstico especializado.</li>
+        <li>Ambulancias y atención domiciliaria.</li>
+        <li>Descuentos adicionales en servicios del Hospital Clínicas del Este.</li>
+      </ul>
+    </div>
+    <div class="com-block">
+      <div class="info-block-title">Próximamente</div>
+      <div>El programa se ampliará con nuevos aliados: farmacias, odontología, ópticas, laboratorios especializados, atención psicológica, fisioterapia y rehabilitación, servicios para adultos mayores, programas de bienestar y prevención, descuentos en medicamentos y programas de vacunación.</div>
+    </div>
+  </div>
+
+  <div class="com-kicker" style="margin-top:30px">Preguntas frecuentes</div>
+  <div class="tramite-list">
+    <div class="tramite-item" id="tramite-salud-faq1">
+      <div class="tramite-header" onclick="toggleTramite('salud-faq1')">
+        <div class="tramite-left"><div class="tramite-badge">?</div><div><div class="tramite-title" style="font-size:16px">¿Quién puede afiliarse?</div></div></div>
+        <span class="tramite-arrow">▼</span>
+      </div>
+      <div class="tramite-body"><div class="tramite-content">Las personas que cumplan con las condiciones establecidas por Vida y Salud Medicina Prepagada.</div></div>
+    </div>
+    <div class="tramite-item" id="tramite-salud-faq2">
+      <div class="tramite-header" onclick="toggleTramite('salud-faq2')">
+        <div class="tramite-left"><div class="tramite-badge">?</div><div><div class="tramite-title" style="font-size:16px">¿El Viceconsulado vende seguros?</div></div></div>
+        <span class="tramite-arrow">▼</span>
+      </div>
+      <div class="tramite-body"><div class="tramite-content"><strong>No.</strong> El Viceconsulado únicamente facilita el acceso al convenio y orienta a la comunidad.</div></div>
+    </div>
+    <div class="tramite-item" id="tramite-salud-faq3">
+      <div class="tramite-header" onclick="toggleTramite('salud-faq3')">
+        <div class="tramite-left"><div class="tramite-badge">?</div><div><div class="tramite-title" style="font-size:16px">¿Quién presta el servicio médico?</div></div></div>
+        <span class="tramite-arrow">▼</span>
+      </div>
+      <div class="tramite-body"><div class="tramite-content">Vida y Salud Medicina Prepagada, con respaldo del Hospital Clínicas del Este, conforme a las condiciones de cada plan.</div></div>
+    </div>
+    <div class="tramite-item" id="tramite-salud-faq4">
+      <div class="tramite-header" onclick="toggleTramite('salud-faq4')">
+        <div class="tramite-left"><div class="tramite-badge">?</div><div><div class="tramite-title" style="font-size:16px">¿Cómo solicito información?</div></div></div>
+        <span class="tramite-arrow">▼</span>
+      </div>
+      <div class="tramite-body"><div class="tramite-content">Contacte al Viceconsulado Honorario de España en Nueva Esparta: recibirá orientación y será remitido al asesor autorizado para completar el proceso de afiliación.</div></div>
+    </div>
+  </div>
+
+  <div class="com-kicker" style="margin-top:40px">Convenio 2 · Atención primaria</div>
+  <h2 style="font-family:'Libre Baskerville',Georgia,serif;font-size:26px;color:var(--texto);margin:0 0 6px">Atención Médica Primaria (APS)</h2>
+  <p class="com-intro" style="margin-bottom:22px">
+    Alianza estratégica con el <strong>Hospital Clínicas del Este</strong>, institución de
+    reconocido prestigio en Nueva Esparta, para acceder a servicios de salud en condiciones
+    preferenciales mediante un Convenio de Atención Médica Primaria (APS): amplia red de servicios
+    médicos de calidad, tarifas especiales, atención integral y respaldo institucional.
+  </p>
+
+  <div class="com-grid">
+    <div class="com-block" style="text-align:center">
+      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:30px;color:var(--rojo)">+239</div>
+      <div style="font-size:13px;color:#888;margin-top:4px">procedimientos médicos en el Baremo Especial</div>
+    </div>
+    <div class="com-block" style="text-align:center">
+      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:30px;color:var(--rojo)">30,67 %</div>
+      <div style="font-size:13px;color:#888;margin-top:4px">descuento promedio · hasta 60 % en determinados procedimientos</div>
+    </div>
+    <div class="com-block" style="text-align:center">
+      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:30px;color:var(--rojo)">24 h</div>
+      <div style="font-size:13px;color:#888;margin-top:4px">urgencias y emergencias todos los días</div>
+    </div>
+    <div class="com-block" style="text-align:center">
+      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:30px;color:var(--rojo)">12 %</div>
+      <div style="font-size:13px;color:#888;margin-top:4px">de descuento en farmacia</div>
+    </div>
+  </div>
+
+  <div class="com-kicker" style="margin-top:14px">Servicios y cobertura</div>
+  <div class="tramite-list">
+
+    <div class="tramite-item" id="tramite-aps-ben">
+      <div class="tramite-header" onclick="toggleTramite('aps-ben')">
+        <div class="tramite-left">
+          <div class="tramite-badge">BEN</div>
+          <div>
+            <div class="tramite-title">Beneficios del convenio</div>
+            <div class="tramite-subtitle">Servicios incluidos para los beneficiarios</div>
+            <div class="tramite-tags"><span class="t-tag t-tag-cita">Urgencias 24 h</span><span class="t-tag t-tag-gratis">12 % farmacia</span></div>
+          </div>
+        </div>
+        <span class="tramite-arrow">▼</span>
+      </div>
+      <div class="tramite-body"><div class="tramite-content">
+        <ul>
+          <li>Atención Médica Primaria (APS) y consultas con especialistas.</li>
+          <li>Laboratorio clínico e imagenología diagnóstica.</li>
+          <li>Tomografía computarizada (TAC), resonancia magnética, ecografías y mamografías.</li>
+          <li>Cardiología, traumatología, fisiatría y rehabilitación.</li>
+          <li>Urgencias y emergencias las 24 horas.</li>
+          <li>Traslado y entrega de medicamentos a domicilio.</li>
+          <li>12 % de descuento en farmacia.</li>
+        </ul>
+      </div></div>
+    </div>
+
+    <div class="tramite-item" id="tramite-aps-cob">
+      <div class="tramite-header" onclick="toggleTramite('aps-cob')">
+        <div class="tramite-left">
+          <div class="tramite-badge">COB</div>
+          <div>
+            <div class="tramite-title">Cobertura médica</div>
+            <div class="tramite-subtitle">Especialidades, diagnóstico y estudios</div>
+          </div>
+        </div>
+        <span class="tramite-arrow">▼</span>
+      </div>
+      <div class="tramite-body"><div class="tramite-content">
+        <p class="subsection-label">Consultas especializadas</p>
+        <div>Medicina Familiar · Medicina Interna · Pediatría · Cardiología · Ginecología · Obstetricia · Neurología · Gastroenterología · Oftalmología · Urología · Neumonología · Traumatología · Cirugía General · Fisiatría.</div>
+        <div style="height:14px"></div>
+        <p class="subsection-label">Diagnóstico</p>
+        <div>Laboratorio Clínico · Imagenología · Radiología · Ecografía · Mamografía · Resonancia Magnética · Tomografía Computarizada · Estudios Doppler.</div>
+        <div style="height:14px"></div>
+        <p class="subsection-label">Estudios especializados</p>
+        <div>Electrocardiograma · Ecocardiograma · Holter · Espirometría · Prueba de esfuerzo · Procedimientos ambulatorios · Rehabilitación física.</div>
+      </div></div>
+    </div>
+
+    <div class="tramite-item" id="tramite-aps-acc">
+      <div class="tramite-header" onclick="toggleTramite('aps-acc')">
+        <div class="tramite-left">
+          <div class="tramite-badge">ACC</div>
+          <div>
+            <div class="tramite-title">Quiénes pueden acceder</div>
+            <div class="tramite-subtitle">Beneficiarios del Baremo Especial</div>
+          </div>
+        </div>
+        <span class="tramite-arrow">▼</span>
+      </div>
+      <div class="tramite-body"><div class="tramite-content">
+        <ul>
+          <li>Ciudadanos españoles residentes en Nueva Esparta.</li>
+          <li>Españoles desplazados temporalmente o visitantes.</li>
+          <li>Personal del Viceconsulado Honorario de España.</li>
+        </ul>
+        <div class="tramite-note">El Baremo Especial se aplica previa identificación y según las condiciones acordadas entre ambas instituciones.</div>
+      </div></div>
+    </div>
+
+    <div class="tramite-item" id="tramite-aps-bar">
+      <div class="tramite-header" onclick="toggleTramite('aps-bar')">
+        <div class="tramite-left">
+          <div class="tramite-badge">BAR</div>
+          <div>
+            <div class="tramite-title">Baremo Especial y vigencia</div>
+            <div class="tramite-subtitle">Tarifas preferenciales y condiciones</div>
+            <div class="tramite-tags"><span class="t-tag t-tag-cita">+239 procedimientos</span><span class="t-tag t-tag-tasa">Vigencia 1 año</span></div>
+          </div>
+        </div>
+        <span class="tramite-arrow">▼</span>
+      </div>
+      <div class="tramite-body"><div class="tramite-content">
+        <div>Tarifas preferenciales para <strong>más de 239 procedimientos</strong>, elaborado en exclusiva para la comunidad española atendida por el Viceconsulado. El listado completo de servicios y precios está disponible en PDF.</div>
+        <div class="tramite-note">El Baremo Especial tiene una vigencia de <strong>un (1) año</strong>, con revisiones periódicas y actualización de tarifas conforme a lo establecido entre el Hospital Clínicas del Este y el Viceconsulado.</div>
+        <div class="tramite-links">
+          <a class="tramite-link" href="documentos/Baremo-Especial-APS.pdf" download>⬇ Descargar Baremo Especial APS (PDF)</a>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="tramite-item" id="tramite-aps-tel">
+      <div class="tramite-header" onclick="toggleTramite('aps-tel')">
+        <div class="tramite-left">
+          <div class="tramite-badge">APS</div>
+          <div>
+            <div class="tramite-title">Contacto · Unidad APS</div>
+            <div class="tramite-subtitle">Hospital Clínicas del Este</div>
+          </div>
+        </div>
+        <span class="tramite-arrow">▼</span>
+      </div>
+      <div class="tramite-body"><div class="tramite-content">
+        <div>Lcda. <strong>Theomar Cova</strong> — Gerente de la Unidad APS.</div>
+        <div style="margin-top:4px">Lcda. <strong>Osmari Vizcaíno</strong> — Gerente de Admisión y Emergencias.</div>
+        <div class="tramite-note">
+          Teléfono: <strong>+58 424-849-7990</strong><br>
+          Correos: <a href="mailto:apshospitalclinicadeleste@gmail.com">apshospitalclinicadeleste@gmail.com</a> · <a href="mailto:gerentedeaps@hce.com.ve">gerentedeaps@hce.com.ve</a>
+        </div>
+      </div></div>
+    </div>
+
+  </div>
+
+  <div class="consulado-block com-official">
+    <div>
+      <div style="font-family:'DM Sans';font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dorado);margin-bottom:8px">Solicitar información</div>
+      <div>¿Desea saber cuál es el plan más adecuado para usted o su familia? El equipo del Viceconsulado le orientará y le pondrá en contacto con los representantes autorizados del convenio.</div>
+    </div>
+    <div>
+      <a href="#" onclick="document.getElementById('emergencia-anchor').scrollIntoView({behavior:'smooth'});return false;">Contactar al Viceconsulado ↗</a>
     </div>
   </div>
 </div>
