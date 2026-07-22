@@ -66,7 +66,7 @@ a { color: var(--rojo); }
 
 /* Nombre: aparece al scrollear */
 .nav-brand { overflow: hidden; max-width: 0; opacity: 0; white-space: nowrap; transition: max-width 0.4s ease, opacity 0.3s ease; }
-.nav--scrolled .nav-brand { max-width: 260px; opacity: 1; }
+.nav--scrolled .nav-brand { max-width: 300px; opacity: 1; }
 .nav-title { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 14px; line-height: 1.3; color: var(--texto); }
 .nav-sub   { font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--gris-claro); }
 
@@ -75,14 +75,15 @@ a { color: var(--rojo); }
   font-family: 'DM Sans', sans-serif;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.2px;
   text-transform: uppercase;
   color: var(--gris);
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px 9px;
+  padding: 8px 7px;
   border-radius: 4px;
+  white-space: nowrap;
   transition: color 0.2s, background 0.2s;
 }
 .nav-btn:hover, .nav-btn.active { color: var(--rojo); background: rgba(170,21,27,0.06); }
@@ -1168,7 +1169,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
       <button class="nav-btn" data-section="salud">Convenios de Salud</button>
       <button class="nav-btn" data-section="cavespa">CAVESPA</button>
       <button class="nav-btn" data-section="conoce">Conoce</button>
-      <button class="nav-btn" onclick="document.getElementById('emergencia-anchor').scrollIntoView({behavior:'smooth'});closeMenu()">Contacto de emergencia</button>
+      <button class="nav-btn" onclick="document.getElementById('emergencia-anchor').scrollIntoView({behavior:'smooth'});closeMenu()">Emergencia</button>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Abrir menú">
       <span></span><span></span><span></span>
