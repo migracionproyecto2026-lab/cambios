@@ -1160,17 +1160,13 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
           <a class="nav-btn" href="https://sutramiteconsular.maec.es" target="_blank" rel="noopener noreferrer">Estado de Trámite ↗</a>
         </div>
       </div>
-      <button class="nav-btn" data-section="ubicacion">Nosotros</button>
-      <div class="nav-dropdown" id="comunidadDropdown">
-        <button class="nav-btn nav-dropdown-toggle" onclick="toggleDropdown(this)" aria-haspopup="true" aria-expanded="false">Comunidad<span class="nav-caret">▾</span></button>
-        <div class="nav-dropdown-menu">
-          <button class="nav-btn" data-section="cre">CRE</button>
-          <button class="nav-btn" data-section="cavespa">CAVESPA</button>
-          <button class="nav-btn" data-section="consejeria">Consejería Laboral</button>
-        </div>
-      </div>
-      <button class="nav-btn" data-section="salud">Convenios de Salud</button>
       <button class="nav-btn" data-section="faq">FAQ</button>
+      <button class="nav-btn" data-section="ubicacion">Nosotros</button>
+      <button class="nav-btn" data-section="cre">CRE</button>
+      <button class="nav-btn" data-section="consejeria">Consejería Laboral</button>
+      <button class="nav-btn" data-section="salud">Convenios de Salud</button>
+      <button class="nav-btn" data-section="cavespa">CAVESPA</button>
+      <button class="nav-btn" data-section="conoce">Conoce</button>
       <button class="nav-btn" onclick="document.getElementById('emergencia-anchor').scrollIntoView({behavior:'smooth'});closeMenu()">Contacto de emergencia</button>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Abrir menú">
@@ -1673,53 +1669,135 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
     de registro civil, documentación y asistencia a ciudadanos.
   </p>
 
-  <!-- Conoce: folleto apilado, imagen lateral alternada + reveal al scroll (GSAP) -->
-  <div class="conoce-folleto">
-
-    <div class="conoce-row">
-      <figure class="conoce-figure"><picture><source srcset="images/conoce-venezuela.webp" type="image/webp"><img src="images/conoce-venezuela.jpg" alt="Paisaje de Venezuela — Parque Nacional Canaima" loading="lazy" decoding="async"></picture><img class="conoce-layer conoce-layer--mid" src="images/conoce-venezuela-mid.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="conoce-layer conoce-layer--near" src="images/conoce-venezuela-near.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"></figure>
-      <div class="conoce-body">
-        <h3>País de residencia</h3>
-        <div class="conoce-sub">Conoce Venezuela</div>
-        <!-- TODO: enriquecer cifras desde VENEZUELA_FICHA PAIS.pdf (MAEC) -->
-        <p>República Bolivariana de Venezuela, país de acogida de la comunidad española en el oriente del país. Capital: Caracas. Idioma oficial: español. Moneda: bolívar (Bs). El Viceconsulado atiende a los españoles residentes en su territorio insular.</p>
-        <a href="https://www.exteriores.gob.es/es/PoliticaExterior/Paginas/FichasPais.aspx" target="_blank" rel="noopener">Ficha país del MAEC ↗</a>
+  <!-- Equipo -->
+  <div class="team-section">
+    <div class="team-card team-card--single">
+      <div class="team-photo">
+        <img src="images/Pic_Manuel.png" alt="Manuel Leiros">
+      </div>
+      <div class="team-name">Manuel Leiros</div>
+      <div class="team-role">Vicecónsul Honorario</div>
+      <div class="team-desc">
+        <div class="desc" id="cfg-ubicacion-completa">Porlamar, Isla de Margarita, Nueva Esparta</div>
+        <div class="small" style="margin-top:8px;line-height:1.6">
+          <span style="display:block"><strong>Circunscripción:</strong> Estado Nueva Esparta</span>
+          <span style="display:block"><strong>Vicecónsul Honorario:</strong> <span id="cfg-viceconsul-nombre">D. Manuel Leiros Pampinella</span></span>
+        </div>
+        Representante del Gobierno de España en el estado Nueva Esparta. Dependiente del Consulado General de España en Caracas. Encargado de las obligaciones consulares y las relaciones institucionales en la región insular.
       </div>
     </div>
-
-    <div class="conoce-row reverse">
-      <figure class="conoce-figure"><picture><source srcset="images/conoce-nuevaesparta.webp" type="image/webp"><img src="images/conoce-nuevaesparta.jpg" alt="Playa con cocoteros en la Isla de Margarita, Nueva Esparta" loading="lazy" decoding="async"></picture><img class="conoce-layer conoce-layer--mid" src="images/conoce-nuevaesparta-mid.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="conoce-layer conoce-layer--near" src="images/conoce-nuevaesparta-near.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"></figure>
-      <div class="conoce-body">
-        <h3>Nuestra circunscripción</h3>
-        <div class="conoce-sub">Conoce Nueva Esparta</div>
-        <p>Único estado insular de Venezuela, formado por las islas de <strong>Margarita, Coche y Cubagua</strong>. Capital: La Asunción; principal ciudad: Porlamar. Reúne la mayor comunidad española del oriente venezolano y es la jurisdicción de este Viceconsulado Honorario.</p>
-        <a href="#" onclick="document.getElementById('cfg-ubicacion-completa').scrollIntoView({behavior:'smooth'});return false;">Cómo llegar a la oficina ↓</a>
-      </div>
-    </div>
-
-    <div class="conoce-row">
-      <figure class="conoce-figure"><picture><source srcset="images/conoce-espana.webp" type="image/webp"><img src="images/conoce-espana.jpg" alt="Plaza Mayor de Madrid, España" loading="lazy" decoding="async"></picture><img class="conoce-layer conoce-layer--mid" src="images/conoce-espana-mid.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="conoce-layer conoce-layer--near" src="images/conoce-espana-near.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"></figure>
-      <div class="conoce-body">
-        <h3>El país que representamos</h3>
-        <div class="conoce-sub">Conoce España</div>
-        <p>Reino de España, Estado miembro de la Unión Europea, organizado en 17 comunidades autónomas. Capital: Madrid. Información oficial para residentes en el exterior sobre residencia, estudios, trabajo y cultura.</p>
-        <a href="https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Conoce-Espana.aspx" target="_blank" rel="noopener">Portal «Conoce España» ↗</a>
-      </div>
-    </div>
-
-    <div class="conoce-row reverse">
-      <figure class="conoce-figure"><img src="images/Edificio.jpeg" alt="Sede del Viceconsulado / Consulado General de España" loading="lazy" decoding="async"><img class="conoce-layer conoce-layer--mid" src="images/Edificio-mid.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="conoce-layer conoce-layer--near" src="images/Edificio-near.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"></figure>
-      <div class="conoce-body">
-        <h3>La red consular</h3>
-        <div class="conoce-sub">Conoce el Consulado</div>
-        <p>El Viceconsulado Honorario de Nueva Esparta depende del <strong>Consulado General de España en Caracas</strong>, que a su vez se integra en la Embajada de España. El Viceconsulado tramita los servicios más comunes; el Consulado General resuelve visados, apostillas y trámites mayores.</p>
-        <a href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank" rel="noopener">Web del Consulado General ↗</a>
-      </div>
-    </div>
-
   </div>
 
-  <!-- ===== Conoce en detalle (dos países, tres islas) ===== -->
+  <!-- Info strip: reemplaza los 4 cuadros -->
+  <div class="info-strip">
+    <div class="info-block">
+      <div class="info-block-title">Dirección</div>
+      <div>Av. José Asunción Rodríguez</div>
+      <div>Porlamar 6301, Nueva Esparta</div>
+      <div style="margin-top:16px">
+        <a class="btn btn-red btn-sm" href="https://maps.app.goo.gl/d9gfnNzqo79YbMp48" target="_blank">Ver en Google Maps ↗</a>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-title">Horario de Atención</div>
+      <div id="cfg-horario-dias">Lunes a Viernes</div>
+      <div class="info-highlight" id="cfg-horario-atencion">8:00 — 12:00</div>
+      <div class="info-muted" id="cfg-horario-nota">Atención presencial e información general</div>
+      <div class="info-muted" style="margin-top:8px;padding-top:8px;border-top:1px solid var(--borde)">Sábado y Domingo: Cerrado</div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-title">Contacto</div>
+      <!-- CAMBIAR: datos reales -->
+      <div class="channel-label">WhatsApp · Consultas rápidas</div>
+      <div style="margin-bottom:14px"><a href="https://wa.me/584248429665" style="color:var(--texto);text-decoration:none;font-weight:600">+58 424-8429665</a><div style="font-size:13px;color:#999">Respuesta en horario laboral</div></div>
+      <div class="channel-label">Correo · Solicitudes formales</div>
+      <div style="margin-bottom:14px"><a href="mailto:ch.porlamar@maec.es" style="color:var(--rojo);text-decoration:none;font-weight:500">ch.porlamar@maec.es</a></div>
+      <div class="channel-label">Instagram · Noticias y avisos</div>
+      <div style="margin-bottom:16px;color:#555;font-size:14px">@viceconsulado_espana_ne</div>
+      <div style="margin-top:0;display:flex;gap:8px;flex-wrap:wrap">
+        <a class="btn btn-green btn-sm" href="https://wa.me/584248429665" target="_blank" style="color:white">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp
+        </a>
+        <a class="btn btn-sm" href="https://www.instagram.com/viceconsulado_espana_ne" target="_blank" style="background:#E1306C;color:white">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Consulado General -->
+  <div class="consulado-block">
+    <div>
+      <div style="font-family:'DM Sans';font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dorado);margin-bottom:8px">Consulado General en Caracas</div>
+      <div><strong>Edif. Bancaracas, Piso 7</strong> — Plaza La Castellana, Caracas 1060</div>
+    </div>
+    <div>
+      <div>Tel: +58 212 2660333</div>
+      <div>Emergencias 24h: <button type="button" class="inline-link" onclick="document.getElementById('emergencia-anchor').scrollIntoView({behavior:'smooth'})">+58 424 2090264</button></div>
+    </div>
+    <div>
+      <a href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank">Web oficial del Consulado ↗</a>
+    </div>
+  </div>
+
+  <!-- Organización institucional (información complementaria) -->
+  <div style="margin-top:46px">
+    <div class="com-kicker">Información complementaria</div>
+    <h2 style="font-family:'Libre Baskerville',Georgia,serif;font-size:26px;color:var(--texto);margin:0 0 8px">Organización institucional de España en Venezuela</h2>
+    <p class="page-desc" style="margin-bottom:26px">El Viceconsulado Honorario de España en Nueva Esparta forma parte de la Red Consular de España en Venezuela y desarrolla sus funciones bajo la dirección y supervisión del Consulado General de España en Caracas.</p>
+
+    <div style="max-width:660px;margin:0 auto 36px">
+      <div class="com-block" style="text-align:center;border-top-color:var(--rojo)">
+        <div class="info-block-title" style="color:var(--rojo)">Embajada de España en Venezuela</div>
+        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Álvaro Enrique Albacete Perea</div>
+        <div style="font-size:13px;color:#888">Embajador de España · máxima representación diplomática del Reino de España, dirige la acción exterior del Estado en el país.</div>
+      </div>
+      <div style="text-align:center;color:var(--dorado-oscuro);font-size:24px;line-height:1;margin:10px 0">↓</div>
+      <div class="com-block" style="text-align:center;border-top-color:var(--rojo)">
+        <div class="info-block-title" style="color:var(--rojo)">Consulado General de España en Caracas</div>
+        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Ramón Molina Lladó</div>
+        <div style="font-size:13px;color:#888">Cónsul General · principal oficina consular; presta los servicios consulares, protege los intereses de los ciudadanos españoles y dirige, coordina y supervisa la Red de Viceconsulados Honorarios.</div>
+      </div>
+      <div style="text-align:center;color:var(--dorado-oscuro);font-size:24px;line-height:1;margin:10px 0">↓</div>
+      <div class="com-block" style="text-align:center;border-top-color:var(--dorado-oscuro)">
+        <div class="info-block-title">Viceconsulado Honorario de España en Nueva Esparta</div>
+        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Manuel Leiros Pampinella</div>
+        <div style="font-size:13px;color:#888">Vicecónsul Honorario · enlace directo entre la comunidad española de la circunscripción y el Consulado General, facilitando la atención ciudadana, la orientación consular y la canalización de los trámites autorizados.</div>
+      </div>
+    </div>
+
+    <div class="com-kicker">Dependencias e instituciones españolas en Venezuela</div>
+    <div class="com-grid">
+      <div class="com-block">
+        <div class="info-block-title">Embajada de España en Venezuela</div>
+        <div>Máxima representación diplomática del Reino de España.</div>
+      </div>
+      <div class="com-block">
+        <div class="info-block-title">Consulado General de España en Caracas</div>
+        <div>Oficina consular de carrera responsable de la coordinación de todos los Viceconsulados Honorarios de España en Venezuela.</div>
+      </div>
+      <div class="com-block">
+        <div class="info-block-title">Consejería de Trabajo, Migraciones y Seguridad Social</div>
+        <div>Atención en empleo, pensiones, Seguridad Social, ayudas asistenciales y programas para los españoles residentes en Venezuela.</div>
+        <div style="margin-top:8px"><a href="#" onclick="showSection('consejeria');return false;">Ver Consejería →</a></div>
+      </div>
+      <div class="com-block">
+        <div class="info-block-title">Consejo de Residentes Españoles (CRE)</div>
+        <div>Órgano consultivo y representativo de la comunidad española residente, que colabora con el Consulado General para trasladar sus necesidades e inquietudes.</div>
+        <div style="margin-top:8px"><a href="#" onclick="showSection('cre');return false;">Ver CRE →</a></div>
+      </div>
+      <div class="com-block">
+        <div class="info-block-title">Cámara Venezolano-Española de Industria y Comercio (CAVESPA)</div>
+        <div>Promueve las relaciones económicas, empresariales y comerciales entre España y Venezuela, fortaleciendo la cooperación entre empresas e instituciones de ambos países.</div>
+        <div style="margin-top:8px"><a href="#" onclick="showSection('cavespa');return false;">Ver CAVESPA →</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CONOCE ==================== -->
+<div id="sec-conoce" class="section">
+  <button class="back-btn" onclick="showSection('inicio')">← Volver al inicio</button>
+  <h1 class="page-title">Conoce nuestros destinos</h1>
   <div class="conoce-detalle" style="margin-top:34px">
     <div class="com-kicker">Dos países · tres islas · una historia</div>
     <p class="page-desc" style="margin-bottom:8px">
@@ -1978,130 +2056,6 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
       El Viceconsulado promueve el conocimiento y la cercanía entre España y Venezuela, y da a
       conocer Margarita, Coche y Cubagua, el territorio que nos recibe y fortalece los vínculos
       entre nuestras comunidades.
-    </div>
-  </div>
-
-  <!-- Equipo -->
-  <div class="team-section">
-    <div class="team-card team-card--single">
-      <div class="team-photo">
-        <img src="images/Pic_Manuel.png" alt="Manuel Leiros">
-      </div>
-      <div class="team-name">Manuel Leiros</div>
-      <div class="team-role">Vicecónsul Honorario</div>
-      <div class="team-desc">
-        <div class="desc" id="cfg-ubicacion-completa">Porlamar, Isla de Margarita, Nueva Esparta</div>
-        <div class="small" style="margin-top:8px;line-height:1.6">
-          <span style="display:block"><strong>Circunscripción:</strong> Estado Nueva Esparta</span>
-          <span style="display:block"><strong>Vicecónsul Honorario:</strong> <span id="cfg-viceconsul-nombre">D. Manuel Leiros Pampinella</span></span>
-        </div>
-        Representante del Gobierno de España en el estado Nueva Esparta. Dependiente del Consulado General de España en Caracas. Encargado de las obligaciones consulares y las relaciones institucionales en la región insular.
-      </div>
-    </div>
-  </div>
-
-  <!-- Info strip: reemplaza los 4 cuadros -->
-  <div class="info-strip">
-    <div class="info-block">
-      <div class="info-block-title">Dirección</div>
-      <div>Av. José Asunción Rodríguez</div>
-      <div>Porlamar 6301, Nueva Esparta</div>
-      <div style="margin-top:16px">
-        <a class="btn btn-red btn-sm" href="https://maps.app.goo.gl/d9gfnNzqo79YbMp48" target="_blank">Ver en Google Maps ↗</a>
-      </div>
-    </div>
-    <div class="info-block">
-      <div class="info-block-title">Horario de Atención</div>
-      <div id="cfg-horario-dias">Lunes a Viernes</div>
-      <div class="info-highlight" id="cfg-horario-atencion">8:00 — 12:00</div>
-      <div class="info-muted" id="cfg-horario-nota">Atención presencial e información general</div>
-      <div class="info-muted" style="margin-top:8px;padding-top:8px;border-top:1px solid var(--borde)">Sábado y Domingo: Cerrado</div>
-    </div>
-    <div class="info-block">
-      <div class="info-block-title">Contacto</div>
-      <!-- CAMBIAR: datos reales -->
-      <div class="channel-label">WhatsApp · Consultas rápidas</div>
-      <div style="margin-bottom:14px"><a href="https://wa.me/584248429665" style="color:var(--texto);text-decoration:none;font-weight:600">+58 424-8429665</a><div style="font-size:13px;color:#999">Respuesta en horario laboral</div></div>
-      <div class="channel-label">Correo · Solicitudes formales</div>
-      <div style="margin-bottom:14px"><a href="mailto:ch.porlamar@maec.es" style="color:var(--rojo);text-decoration:none;font-weight:500">ch.porlamar@maec.es</a></div>
-      <div class="channel-label">Instagram · Noticias y avisos</div>
-      <div style="margin-bottom:16px;color:#555;font-size:14px">@viceconsulado_espana_ne</div>
-      <div style="margin-top:0;display:flex;gap:8px;flex-wrap:wrap">
-        <a class="btn btn-green btn-sm" href="https://wa.me/584248429665" target="_blank" style="color:white">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          WhatsApp
-        </a>
-        <a class="btn btn-sm" href="https://www.instagram.com/viceconsulado_espana_ne" target="_blank" style="background:#E1306C;color:white">Instagram</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Consulado General -->
-  <div class="consulado-block">
-    <div>
-      <div style="font-family:'DM Sans';font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dorado);margin-bottom:8px">Consulado General en Caracas</div>
-      <div><strong>Edif. Bancaracas, Piso 7</strong> — Plaza La Castellana, Caracas 1060</div>
-    </div>
-    <div>
-      <div>Tel: +58 212 2660333</div>
-      <div>Emergencias 24h: <button type="button" class="inline-link" onclick="document.getElementById('emergencia-anchor').scrollIntoView({behavior:'smooth'})">+58 424 2090264</button></div>
-    </div>
-    <div>
-      <a href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank">Web oficial del Consulado ↗</a>
-    </div>
-  </div>
-
-  <!-- Organización institucional (información complementaria) -->
-  <div style="margin-top:46px">
-    <div class="com-kicker">Información complementaria</div>
-    <h2 style="font-family:'Libre Baskerville',Georgia,serif;font-size:26px;color:var(--texto);margin:0 0 8px">Organización institucional de España en Venezuela</h2>
-    <p class="page-desc" style="margin-bottom:26px">El Viceconsulado Honorario de España en Nueva Esparta forma parte de la Red Consular de España en Venezuela y desarrolla sus funciones bajo la dirección y supervisión del Consulado General de España en Caracas.</p>
-
-    <div style="max-width:660px;margin:0 auto 36px">
-      <div class="com-block" style="text-align:center;border-top-color:var(--rojo)">
-        <div class="info-block-title" style="color:var(--rojo)">Embajada de España en Venezuela</div>
-        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Álvaro Enrique Albacete Perea</div>
-        <div style="font-size:13px;color:#888">Embajador de España · máxima representación diplomática del Reino de España, dirige la acción exterior del Estado en el país.</div>
-      </div>
-      <div style="text-align:center;color:var(--dorado-oscuro);font-size:24px;line-height:1;margin:10px 0">↓</div>
-      <div class="com-block" style="text-align:center;border-top-color:var(--rojo)">
-        <div class="info-block-title" style="color:var(--rojo)">Consulado General de España en Caracas</div>
-        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Ramón Molina Lladó</div>
-        <div style="font-size:13px;color:#888">Cónsul General · principal oficina consular; presta los servicios consulares, protege los intereses de los ciudadanos españoles y dirige, coordina y supervisa la Red de Viceconsulados Honorarios.</div>
-      </div>
-      <div style="text-align:center;color:var(--dorado-oscuro);font-size:24px;line-height:1;margin:10px 0">↓</div>
-      <div class="com-block" style="text-align:center;border-top-color:var(--dorado-oscuro)">
-        <div class="info-block-title">Viceconsulado Honorario de España en Nueva Esparta</div>
-        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Manuel Leiros Pampinella</div>
-        <div style="font-size:13px;color:#888">Vicecónsul Honorario · enlace directo entre la comunidad española de la circunscripción y el Consulado General, facilitando la atención ciudadana, la orientación consular y la canalización de los trámites autorizados.</div>
-      </div>
-    </div>
-
-    <div class="com-kicker">Dependencias e instituciones españolas en Venezuela</div>
-    <div class="com-grid">
-      <div class="com-block">
-        <div class="info-block-title">Embajada de España en Venezuela</div>
-        <div>Máxima representación diplomática del Reino de España.</div>
-      </div>
-      <div class="com-block">
-        <div class="info-block-title">Consulado General de España en Caracas</div>
-        <div>Oficina consular de carrera responsable de la coordinación de todos los Viceconsulados Honorarios de España en Venezuela.</div>
-      </div>
-      <div class="com-block">
-        <div class="info-block-title">Consejería de Trabajo, Migraciones y Seguridad Social</div>
-        <div>Atención en empleo, pensiones, Seguridad Social, ayudas asistenciales y programas para los españoles residentes en Venezuela.</div>
-        <div style="margin-top:8px"><a href="#" onclick="showSection('consejeria');return false;">Ver Consejería →</a></div>
-      </div>
-      <div class="com-block">
-        <div class="info-block-title">Consejo de Residentes Españoles (CRE)</div>
-        <div>Órgano consultivo y representativo de la comunidad española residente, que colabora con el Consulado General para trasladar sus necesidades e inquietudes.</div>
-        <div style="margin-top:8px"><a href="#" onclick="showSection('cre');return false;">Ver CRE →</a></div>
-      </div>
-      <div class="com-block">
-        <div class="info-block-title">Cámara Venezolano-Española de Industria y Comercio (CAVESPA)</div>
-        <div>Promueve las relaciones económicas, empresariales y comerciales entre España y Venezuela, fortaleciendo la cooperación entre empresas e instituciones de ambos países.</div>
-        <div style="margin-top:8px"><a href="#" onclick="showSection('cavespa');return false;">Ver CAVESPA →</a></div>
-      </div>
     </div>
   </div>
 </div>
