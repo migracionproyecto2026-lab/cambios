@@ -1152,9 +1152,14 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
     </a>
     <div class="nav-links" id="navLinks">
       <button class="nav-btn active" data-section="inicio">Inicio</button>
-      <button class="nav-btn" data-section="tramites">Servicios Consulares</button>
-      <button class="nav-btn" data-section="citas">Citas</button>
-      <a class="nav-btn" href="https://sutramiteconsular.maec.es" target="_blank" rel="noopener noreferrer">Estado de Trámite</a>
+      <div class="nav-dropdown" id="tramitesDropdown">
+        <button class="nav-btn nav-dropdown-toggle" onclick="toggleDropdown(this)" aria-haspopup="true" aria-expanded="false">Trámites<span class="nav-caret">▾</span></button>
+        <div class="nav-dropdown-menu">
+          <button class="nav-btn" data-section="tramites">Servicios Consulares</button>
+          <button class="nav-btn" data-section="citas">Citas</button>
+          <a class="nav-btn" href="https://sutramiteconsular.maec.es" target="_blank" rel="noopener noreferrer">Estado de Trámite ↗</a>
+        </div>
+      </div>
       <button class="nav-btn" data-section="ubicacion">Nosotros</button>
       <div class="nav-dropdown" id="comunidadDropdown">
         <button class="nav-btn nav-dropdown-toggle" onclick="toggleDropdown(this)" aria-haspopup="true" aria-expanded="false">Comunidad<span class="nav-caret">▾</span></button>
