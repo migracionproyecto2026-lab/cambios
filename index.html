@@ -776,10 +776,22 @@ footer { background: #1a1a1a; margin-top: 60px; }
     box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     z-index: 999;
     gap: 2px;
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
   .nav-links.open { display: flex; }
   .nav-btn { font-size: 16px; padding: 16px; text-align: left; border-radius: 6px; width: 100%; }
   .nav-sub { display: none; }
+  /* Dropdown Comunidad en móvil: fluye en la columna (no se superpone a los botones) */
+  .nav-dropdown { display: block; width: 100%; }
+  .nav-dropdown-menu {
+    position: static; min-width: 0; padding: 2px 0 2px 14px;
+    box-shadow: none; border: none; border-top: none; border-radius: 0;
+    background: transparent;
+  }
+  .nav-dropdown-menu .nav-btn { font-size: 15px; padding: 13px 14px; }
 
   /* HERO */
   .hero { padding: 40px 20px 48px; }
@@ -950,7 +962,7 @@ footer { background: #1a1a1a; margin-top: 60px; }
 .com-block:hover { box-shadow:0 10px 26px rgba(0,0,0,0.07); transform:translateY(-2px); }
 .consulado-block.com-official { justify-content:space-between; }
 /* ── Conoce en detalle: hero banner por destino ── */
-.conoce-hero { margin:0 0 20px; border-radius:14px; overflow:hidden; box-shadow:0 10px 28px rgba(0,0,0,0.10); aspect-ratio:16 / 6; }
+.conoce-hero { margin:0 0 20px; border-radius:14px; overflow:hidden; box-shadow:0 10px 28px rgba(0,0,0,0.10); aspect-ratio:16 / 8; }
 .conoce-hero img { width:100%; height:100%; object-fit:cover; display:block; }
 @media (max-width:720px){ .conoce-hero { aspect-ratio:16 / 9; } }
 
@@ -1012,6 +1024,8 @@ footer { background: #1a1a1a; margin-top: 60px; }
   position: fixed; bottom: 24px; right: 24px;
   z-index: 150;
 }
+/* Menú móvil abierto: ocultar los FAB para que no se superpongan */
+body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; pointer-events: none !important; }
 .sticky-cta-btn {
   font-family: 'DM Sans'; font-weight: 700; font-size: 15px;
   background: var(--rojo); color: white;
@@ -1704,22 +1718,18 @@ footer { background: #1a1a1a; margin-top: 60px; }
   <div class="conoce-detalle" style="margin-top:34px">
     <div class="com-kicker">Dos países · tres islas · una historia</div>
     <p class="page-desc" style="margin-bottom:8px">
-      España y Venezuela comparten siglos de historia, cultura, tradiciones y vínculos humanos.
-      Le invitamos a conocer mejor nuestros territorios: descubrir <strong>España</strong>, recorrer
-      <strong>Venezuela</strong> y acercarse a las tres islas que forman el estado Nueva Esparta —
-      <strong>Margarita, Coche y Cubagua</strong>. No es solo una guía turística: es un espacio
-      cercano para conocer lo que forma parte de nuestra identidad.
+      España y Venezuela comparten siglos de historia, cultura y vínculos humanos. Le invitamos a
+      descubrir <strong>España</strong>, recorrer <strong>Venezuela</strong> y conocer las tres islas
+      de Nueva Esparta: <strong>Margarita, Coche y Cubagua</strong>.
     </p>
 
     <!-- ESPAÑA -->
     <div class="com-kicker" style="margin-top:34px">Conoce España</div>
     <p class="page-desc">
-      Historia, diversidad y una forma especial de vivir. En un mismo recorrido conviven grandes
-      ciudades y pequeños pueblos, costas mediterráneas, montañas, islas, espacios naturales y
-      monumentos que conservan la memoria de distintas civilizaciones. Sus paisajes van de volcanes
-      y desiertos a cumbres nevadas, verdes valles y extensas costas.
+      Un país de contrastes: grandes ciudades y pueblos con encanto, costas mediterráneas, montañas,
+      islas y monumentos que conservan la memoria de distintas civilizaciones.
     </p>
-    <figure class="conoce-hero"><picture><source srcset="images/conoce-espana.webp" type="image/webp"><img src="images/conoce-espana.jpg" alt="Plaza Mayor de Madrid, España" loading="lazy" decoding="async"></picture></figure>
+    <figure class="conoce-hero"><picture><source srcset="images/conoce-espana-det.webp" type="image/webp"><img src="images/conoce-espana-det.jpg" alt="La Alhambra de Granada con Sierra Nevada al fondo, España" loading="lazy" decoding="async"></picture></figure>
     <div class="tramite-list">
       <div class="tramite-item" id="tramite-conoce-esp-cul">
         <div class="tramite-header" onclick="toggleTramite('conoce-esp-cul')">
@@ -1760,11 +1770,10 @@ footer { background: #1a1a1a; margin-top: 60px; }
     <!-- VENEZUELA -->
     <div class="com-kicker" style="margin-top:34px">Conoce Venezuela</div>
     <p class="page-desc">
-      Un país caribeño lleno de colores, música, sabores y contrastes naturales: playas, islas,
-      montañas, llanuras, selvas, desiertos y grandes ríos. Conocer Venezuela es también acercarse
-      a su gente, abierta, familiar y orgullosa de sus costumbres. Naturaleza, tradición y hospitalidad.
+      País caribeño de contrastes naturales —playas, montañas, llanuras, selvas y grandes ríos— y de
+      gente cercana y hospitalaria. Naturaleza, tradición y hospitalidad.
     </p>
-    <figure class="conoce-hero"><picture><source srcset="images/conoce-venezuela.webp" type="image/webp"><img src="images/conoce-venezuela.jpg" alt="Parque Nacional Canaima, Venezuela" loading="lazy" decoding="async"></picture></figure>
+    <figure class="conoce-hero"><picture><source srcset="images/conoce-venezuela-det.webp" type="image/webp"><img src="images/conoce-venezuela-det.jpg" alt="Vista aérea del archipiélago de Los Roques, Venezuela" loading="lazy" decoding="async"></picture></figure>
     <div class="tramite-list">
       <div class="tramite-item" id="tramite-conoce-ven-nat">
         <div class="tramite-header" onclick="toggleTramite('conoce-ven-nat')">
@@ -1814,22 +1823,19 @@ footer { background: #1a1a1a; margin-top: 60px; }
     <!-- MARGARITA, COCHE Y CUBAGUA -->
     <div class="com-kicker" style="margin-top:34px">Margarita, Coche y Cubagua</div>
     <p class="page-desc">
-      El estado Nueva Esparta está formado por tres islas con paisajes, historias y personalidades
-      diferentes. <strong>Margarita</strong> es el principal centro poblado y turístico;
-      <strong>Coche</strong> destaca por sus playas tranquilas y los deportes de viento;
-      <strong>Cubagua</strong> conserva un extraordinario valor histórico y arqueológico ligado a la
-      explotación de perlas y al antiguo asentamiento de Nueva Cádiz. Tres islas unidas por el mar,
-      la historia y la identidad neoespartana.
+      Tres islas con personalidad propia: <strong>Margarita</strong>, principal centro poblado y
+      turístico; <strong>Coche</strong>, de playas tranquilas y deportes de viento; y
+      <strong>Cubagua</strong>, de gran valor histórico y arqueológico (perlas y Nueva Cádiz).
+      Unidas por el mar, la historia y la identidad neoespartana.
     </p>
 
     <h3 style="font-family:'Libre Baskerville',Georgia,serif;font-size:22px;color:var(--texto);margin:26px 0 4px">Isla de Margarita — La Perla del Caribe</h3>
     <p class="page-desc">
-      Playas, historia, tradiciones religiosas, pueblos marineros y encuentros familiares. Su
-      paisaje cambia entre el cerro El Copey, las lagunas y manglares de La Restinga, las costas de
-      Macanao y las playas del norte y del sur. Conviven el turismo, la pesca artesanal, el comercio
-      y una cultura profundamente vinculada con el mar.
+      Playas, historia, tradiciones religiosas y pueblos marineros. Su paisaje va del cerro El Copey
+      a los manglares de La Restinga y las playas del norte y del sur, con una cultura profundamente
+      ligada al mar.
     </p>
-    <figure class="conoce-hero"><picture><source srcset="images/conoce-nuevaesparta.webp" type="image/webp"><img src="images/conoce-nuevaesparta.jpg" alt="Playa El Agua, Isla de Margarita" loading="lazy" decoding="async"></picture></figure>
+    <figure class="conoce-hero"><picture><source srcset="images/conoce-margarita.webp" type="image/webp"><img src="images/conoce-margarita.jpg" alt="Playa Puerto Cruz, Isla de Margarita" loading="lazy" decoding="async"></picture></figure>
     <div class="tramite-list">
       <div class="tramite-item" id="tramite-conoce-mar-pla">
         <div class="tramite-header" onclick="toggleTramite('conoce-mar-pla')">
@@ -1887,9 +1893,8 @@ footer { background: #1a1a1a; margin-top: 60px; }
 
     <h3 style="font-family:'Libre Baskerville',Georgia,serif;font-size:22px;color:var(--texto);margin:30px 0 4px">Isla de Coche — Tranquilidad, viento y mar</h3>
     <p class="page-desc">
-      Paisajes abiertos, aguas tranquilas y extensas playas. Un ambiente para descansar, caminar
-      junto al mar y disfrutar de la naturaleza, conocido también por las condiciones que ofrecen
-      algunos sectores para el kitesurf y el windsurf. Calma, horizonte y libertad.
+      Paisajes abiertos, aguas tranquilas y extensas playas, con buenas condiciones para el kitesurf
+      y el windsurf. Calma, horizonte y libertad.
     </p>
     <figure class="conoce-hero"><picture><source srcset="images/conoce-coche.webp" type="image/webp"><img src="images/conoce-coche.jpg" alt="Playa de aguas turquesas en la Isla de Coche" loading="lazy" decoding="async"></picture></figure>
     <div class="tramite-list">
@@ -1926,9 +1931,9 @@ footer { background: #1a1a1a; margin-top: 60px; }
 
     <h3 style="font-family:'Libre Baskerville',Georgia,serif;font-size:22px;color:var(--texto);margin:30px 0 4px">Isla de Cubagua — Donde comenzó una parte de nuestra historia</h3>
     <p class="page-desc">
-      La más pequeña y menos poblada de las tres islas, con un enorme valor histórico. Sus costas
-      estuvieron vinculadas desde el siglo XVI con la explotación de perlas y con el establecimiento
-      de Nueva Cádiz, uno de los primeros centros urbanos españoles de la región. Memoria, mar y patrimonio.
+      La más pequeña y menos poblada, con enorme valor histórico: desde el siglo XVI sus costas se
+      vincularon a la explotación de perlas y a Nueva Cádiz, uno de los primeros centros urbanos
+      españoles de la región. Memoria, mar y patrimonio.
     </p>
     <figure class="conoce-hero"><picture><source srcset="images/conoce-cubagua.webp" type="image/webp"><img src="images/conoce-cubagua.jpg" alt="Ruinas de Nueva Cádiz, Isla de Cubagua" loading="lazy" decoding="async"></picture></figure>
     <div class="tramite-list">
@@ -1965,10 +1970,9 @@ footer { background: #1a1a1a; margin-top: 60px; }
     </div>
 
     <div class="tramite-note" style="margin-top:26px">
-      El Viceconsulado Honorario de España en Nueva Esparta promueve el conocimiento, el respeto y
-      la cercanía entre España y Venezuela. A través de esta ventana compartimos la riqueza cultural
-      de ambos países y damos a conocer Margarita, Coche y Cubagua, territorio que nos recibe, nos
-      inspira y fortalece día a día los vínculos entre nuestras comunidades.
+      El Viceconsulado promueve el conocimiento y la cercanía entre España y Venezuela, y da a
+      conocer Margarita, Coche y Cubagua, el territorio que nos recibe y fortalece los vínculos
+      entre nuestras comunidades.
     </div>
   </div>
 
@@ -2992,10 +2996,15 @@ function toggleMenu() {
   var open = links.classList.toggle('open');
   ham.classList.toggle('open', open);
   ham.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  // Bloquea el scroll de la página de fondo + oculta los FAB mientras el menú está abierto (móvil)
+  document.body.style.overflow = open ? 'hidden' : '';
+  document.body.classList.toggle('nav-open', open);
 }
 function closeMenu() {
   document.getElementById('navLinks').classList.remove('open');
   document.getElementById('hamburger').classList.remove('open');
+  document.body.style.overflow = '';
+  document.body.classList.remove('nav-open');
   document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
     d.classList.remove('open');
     var t = d.querySelector('.nav-dropdown-toggle');
