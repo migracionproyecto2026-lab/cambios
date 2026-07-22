@@ -759,11 +759,8 @@ footer { background: #1a1a1a; margin-top: 60px; }
   .footer-col:last-child { grid-column: 1 / -1; }
 }
 
-/* MOBILE (≤ 768px) */
-@media (max-width: 768px) {
-  body { font-size: 17px; }
-
-  /* NAV hamburger */
+/* NAV colapsado (hamburguesa) en laptops chicos y móvil (≤ 1024px) */
+@media (max-width: 1024px) {
   .hamburger { display: flex; }
   .nav-links {
     display: none;
@@ -786,7 +783,7 @@ footer { background: #1a1a1a; margin-top: 60px; }
   .nav-links.open { display: flex; }
   .nav-btn { font-size: 16px; padding: 16px; text-align: left; border-radius: 6px; width: 100%; }
   .nav-sub { display: none; }
-  /* Dropdown Comunidad en móvil: fluye en la columna (no se superpone a los botones) */
+  /* Dropdown en columna: fluye, no se superpone a los botones */
   .nav-dropdown { display: block; width: 100%; }
   .nav-dropdown-menu {
     position: static; min-width: 0; padding: 2px 0 2px 14px;
@@ -794,6 +791,11 @@ footer { background: #1a1a1a; margin-top: 60px; }
     background: transparent;
   }
   .nav-dropdown-menu .nav-btn { font-size: 15px; padding: 13px 14px; }
+}
+
+/* MOBILE (≤ 768px) */
+@media (max-width: 768px) {
+  body { font-size: 17px; }
 
   /* HERO */
   .hero { padding: 40px 20px 48px; }
