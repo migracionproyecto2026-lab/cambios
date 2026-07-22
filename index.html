@@ -387,7 +387,7 @@ button:focus:not(:focus-visible) { outline: none; }
 .tramite-item.open .tramite-arrow { transform: rotate(180deg); }
 .tramite-item.open .tramite-header { border-bottom: 1px solid #f0ede8; }
 .tramite-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-.tramite-item.open .tramite-body { max-height: 2000px; }
+.tramite-item.open .tramite-body { max-height: 4000px; }
 .tramite-content { padding: 24px 26px 28px; font-family: 'DM Sans', sans-serif; font-size: 15.5px; color: #444; line-height: 1.85; }
 .tramite-content div, .tramite-content p { font-family: 'DM Sans', sans-serif; }
 .tramite-content ul {
@@ -2850,28 +2850,298 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
 
   <!-- GLOSARIO España–Venezuela -->
   <div class="glosario-wrap">
-    <h2>Glosario España–Venezuela</h2>
-    <p class="faq-intro">Términos del español de España que aparecen en trámites y documentos oficiales, con su equivalente en el español de Venezuela.</p>
-    <table class="glosario-table">
-      <thead><tr><th scope="col">En España</th><th scope="col">En Venezuela</th></tr></thead>
-      <tbody>
-        <tr><td>DNI (Documento Nacional de Identidad)</td><td>Cédula de identidad</td></tr>
-        <tr><td>Carné de conducir</td><td>Licencia de conducir</td></tr>
-        <tr><td>Empadronamiento / Padrón</td><td>Registro del domicilio (no tiene equivalente directo)</td></tr>
-        <tr><td>Cita previa</td><td>Cita</td></tr>
-        <tr><td>Fotocopia compulsada</td><td>Copia certificada</td></tr>
-        <tr><td>Partida de nacimiento</td><td>Acta / partida de nacimiento</td></tr>
-        <tr><td>Ayuntamiento</td><td>Alcaldía</td></tr>
-        <tr><td>Subvención</td><td>Subsidio / ayuda</td></tr>
-        <tr><td>Paro (desempleo)</td><td>Desempleo</td></tr>
-        <tr><td>Trabajador autónomo</td><td>Trabajador independiente</td></tr>
-        <tr><td>Móvil</td><td>Celular</td></tr>
-        <tr><td>Ordenador</td><td>Computadora</td></tr>
-        <tr><td>Coche</td><td>Carro</td></tr>
-        <tr><td>Piso</td><td>Apartamento</td></tr>
-        <tr><td>Zumo</td><td>Jugo</td></tr>
-      </tbody>
-    </table>
+    <h2>Palabras de España y Venezuela que conviene conocer</h2>
+    <p class="faq-intro">Aunque en España y Venezuela hablamos el mismo idioma, algunas palabras cambian según el país, lo que puede generar dudas al rellenar un formulario, acudir a una cita o realizar un trámite. Este glosario reúne términos de la vida diaria, la administración y el Registro Civil. <strong>Importante:</strong> las palabras de ambos países son correctas; solo pertenecen a distintas formas de hablar español.</p>
+
+    <div class="tramite-list">
+
+      <div class="tramite-item" id="tramite-glo-diario">
+        <div class="tramite-header" onclick="toggleTramite('glo-diario')">
+          <div class="tramite-left"><div class="tramite-badge">DIA</div><div>
+            <div class="tramite-title">Palabras de uso diario</div>
+            <div class="tramite-subtitle">Vida cotidiana</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div style="overflow-x:auto"><table class="glosario-table">
+            <thead><tr><th scope="col">En España</th><th scope="col">En Venezuela</th><th scope="col">¿Qué significa?</th></tr></thead>
+            <tbody>
+              <tr><td>Coche</td><td>Carro</td><td>Automóvil</td></tr>
+              <tr><td>Móvil</td><td>Celular</td><td>Teléfono</td></tr>
+              <tr><td>Ordenador</td><td>Computadora</td><td>Equipo informático</td></tr>
+              <tr><td>Piso</td><td>Apartamento</td><td>Vivienda</td></tr>
+              <tr><td>Portal</td><td>Entrada del edificio</td><td>Acceso principal</td></tr>
+              <tr><td>Ascensor</td><td>Ascensor</td><td>Elevador del edificio</td></tr>
+              <tr><td>Maletero</td><td>Maleta o baúl</td><td>Compartimento trasero del carro</td></tr>
+              <tr><td>Conducir</td><td>Manejar</td><td>Usar un vehículo</td></tr>
+              <tr><td>Carné de conducir</td><td>Licencia de conducir</td><td>Permiso para manejar</td></tr>
+              <tr><td>Acera</td><td>Acera</td><td>Espacio para caminar junto a la calle</td></tr>
+              <tr><td>Rotonda</td><td>Redoma</td><td>Cruce circular</td></tr>
+              <tr><td>Autobús</td><td>Autobús o bus</td><td>Transporte público</td></tr>
+              <tr><td>Billete</td><td>Pasaje o boleto</td><td>Documento para viajar</td></tr>
+              <tr><td>Cola</td><td>Cola o fila</td><td>Personas esperando</td></tr>
+              <tr><td>Grifo</td><td>Llave</td><td>Salida de agua</td></tr>
+              <tr><td>Fregadero</td><td>Lavaplatos</td><td>Lugar donde se lavan los platos</td></tr>
+              <tr><td>Frigorífico</td><td>Nevera</td><td>Electrodoméstico para conservar alimentos</td></tr>
+              <tr><td>Zumo</td><td>Jugo</td><td>Bebida de frutas</td></tr>
+              <tr><td>Patata</td><td>Papa</td><td>Tubérculo</td></tr>
+              <tr><td>Melocotón</td><td>Durazno</td><td>Fruta</td></tr>
+              <tr><td>Judías verdes</td><td>Vainitas</td><td>Vegetal</td></tr>
+              <tr><td>Guisantes</td><td>Arvejas</td><td>Legumbre</td></tr>
+              <tr><td>Pajita</td><td>Pitillo</td><td>Tubo para beber</td></tr>
+              <tr><td>Bocadillo</td><td>Sándwich</td><td>Pan con algún relleno</td></tr>
+            </tbody>
+          </table></div>
+        </div></div>
+      </div>
+
+      <div class="tramite-item" id="tramite-glo-expr">
+        <div class="tramite-header" onclick="toggleTramite('glo-expr')">
+          <div class="tramite-left"><div class="tramite-badge">EXP</div><div>
+            <div class="tramite-title">Expresiones frecuentes</div>
+            <div class="tramite-subtitle">Lo que escuchará a menudo</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div style="overflow-x:auto"><table class="glosario-table">
+            <thead><tr><th scope="col">En España</th><th scope="col">Equivalente en Venezuela</th></tr></thead>
+            <tbody>
+              <tr><td>Vale</td><td>Está bien / De acuerdo</td></tr>
+              <tr><td>Qué guay</td><td>Qué chévere</td></tr>
+              <tr><td>Tío o tía</td><td>Pana / Amigo o amiga</td></tr>
+              <tr><td>Curro</td><td>Trabajo</td></tr>
+              <tr><td>Currar</td><td>Trabajar</td></tr>
+              <tr><td>Pasta</td><td>Dinero / Plata</td></tr>
+              <tr><td>Quedar con alguien</td><td>Reunirse con alguien</td></tr>
+              <tr><td>Dar de alta</td><td>Registrar o activar</td></tr>
+              <tr><td>Dar de baja</td><td>Cancelar o desactivar</td></tr>
+              <tr><td>Echar una firma</td><td>Firmar</td></tr>
+              <tr><td>Pedir cita</td><td>Solicitar una cita</td></tr>
+              <tr><td>Hacer una gestión</td><td>Realizar un trámite</td></tr>
+              <tr><td>Empadronarse</td><td>Registrarse como residente</td></tr>
+              <tr><td>Presentar un documento</td><td>Entregar un documento</td></tr>
+              <tr><td>Aportar documentación</td><td>Llevar o entregar documentos adicionales</td></tr>
+              <tr><td>Subsanar</td><td>Corregir o completar algo que falta</td></tr>
+              <tr><td>Recoger un documento</td><td>Retirar un documento</td></tr>
+              <tr><td>Comparecer</td><td>Presentarse personalmente</td></tr>
+              <tr><td>Abonar una tasa</td><td>Pagar un importe oficial</td></tr>
+              <tr><td>Cumplimentar un formulario</td><td>Llenar un formulario</td></tr>
+            </tbody>
+          </table></div>
+        </div></div>
+      </div>
+
+      <div class="tramite-item" id="tramite-glo-form">
+        <div class="tramite-header" onclick="toggleTramite('glo-form')">
+          <div class="tramite-left"><div class="tramite-badge">FOR</div><div>
+            <div class="tramite-title">Palabras en formularios</div>
+            <div class="tramite-subtitle">Solicitudes y cuestionarios</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div style="overflow-x:auto"><table class="glosario-table">
+            <thead><tr><th scope="col">Término</th><th scope="col">Explicación sencilla</th></tr></thead>
+            <tbody>
+              <tr><td>Nombre</td><td>Primer nombre</td></tr>
+              <tr><td>Apellidos</td><td>Los dos apellidos, cuando corresponda</td></tr>
+              <tr><td>Segundo apellido</td><td>Apellido materno</td></tr>
+              <tr><td>Fecha de nacimiento</td><td>Día, mes y año de nacimiento</td></tr>
+              <tr><td>Lugar de nacimiento</td><td>Ciudad o municipio donde nació</td></tr>
+              <tr><td>País de nacimiento</td><td>País donde nació</td></tr>
+              <tr><td>Nacionalidad</td><td>País del que es ciudadano</td></tr>
+              <tr><td>Estado civil</td><td>Soltero, casado, divorciado, viudo, etc.</td></tr>
+              <tr><td>Domicilio</td><td>Dirección donde vive</td></tr>
+              <tr><td>Residencia habitual</td><td>Lugar donde vive normalmente</td></tr>
+              <tr><td>Código postal</td><td>Número que identifica la zona de la dirección</td></tr>
+              <tr><td>Municipio</td><td>Localidad administrativa</td></tr>
+              <tr><td>Provincia</td><td>División territorial española</td></tr>
+              <tr><td>Comunidad Autónoma</td><td>Región de España</td></tr>
+              <tr><td>Teléfono de contacto</td><td>Número donde pueden localizarle</td></tr>
+              <tr><td>Correo electrónico</td><td>Dirección de email</td></tr>
+              <tr><td>Representante legal</td><td>Persona autorizada para actuar por otra</td></tr>
+              <tr><td>Progenitor</td><td>Padre o madre</td></tr>
+              <tr><td>Cónyuge</td><td>Esposo o esposa</td></tr>
+              <tr><td>Pareja de hecho</td><td>Pareja registrada legalmente sin matrimonio</td></tr>
+              <tr><td>Menor de edad</td><td>Persona que todavía no ha cumplido 18 años</td></tr>
+              <tr><td>Mayor de edad</td><td>Persona de 18 años o más</td></tr>
+              <tr><td>Persona a cargo</td><td>Familiar que depende de otra persona</td></tr>
+              <tr><td>Declarante</td><td>Persona que aporta o comunica la información</td></tr>
+              <tr><td>Interesado</td><td>Persona a quien corresponde el trámite</td></tr>
+              <tr><td>Solicitante</td><td>Persona que presenta la solicitud</td></tr>
+            </tbody>
+          </table></div>
+        </div></div>
+      </div>
+
+      <div class="tramite-item" id="tramite-glo-doc">
+        <div class="tramite-header" onclick="toggleTramite('glo-doc')">
+          <div class="tramite-left"><div class="tramite-badge">DOC</div><div>
+            <div class="tramite-title">Documentos y trámites</div>
+            <div class="tramite-subtitle">Términos administrativos</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div style="overflow-x:auto"><table class="glosario-table">
+            <thead><tr><th scope="col">En España</th><th scope="col">Explicación</th></tr></thead>
+            <tbody>
+              <tr><td>DNI</td><td>Documento de identidad de los ciudadanos españoles</td></tr>
+              <tr><td>NIE</td><td>Número de identificación de una persona extranjera en España</td></tr>
+              <tr><td>TIE</td><td>Tarjeta física de identidad de extranjero</td></tr>
+              <tr><td>Pasaporte en vigor</td><td>Pasaporte vigente</td></tr>
+              <tr><td>Documento caducado</td><td>Documento vencido</td></tr>
+              <tr><td>Fotocopia compulsada</td><td>Copia revisada oficialmente frente al original</td></tr>
+              <tr><td>Copia auténtica</td><td>Copia con validez oficial</td></tr>
+              <tr><td>Original y copia</td><td>Documento original acompañado de una fotocopia</td></tr>
+              <tr><td>Justificante</td><td>Comprobante</td></tr>
+              <tr><td>Resguardo</td><td>Constancia de haber presentado o pagado algo</td></tr>
+              <tr><td>Certificado</td><td>Documento oficial que confirma un hecho</td></tr>
+              <tr><td>Certificación literal</td><td>Copia completa de una inscripción oficial</td></tr>
+              <tr><td>Cita previa</td><td>Cita solicitada antes de acudir</td></tr>
+              <tr><td>Sede electrónica</td><td>Página oficial para realizar trámites por internet</td></tr>
+              <tr><td>Clave o Cl@ve</td><td>Sistema de identificación digital en España</td></tr>
+              <tr><td>Firma electrónica</td><td>Firma digital</td></tr>
+              <tr><td>Tasa</td><td>Pago oficial necesario para algunos trámites</td></tr>
+              <tr><td>Expediente</td><td>Conjunto de documentos de un trámite</td></tr>
+              <tr><td>Número de expediente</td><td>Código con el que se identifica el caso</td></tr>
+              <tr><td>Plazo</td><td>Tiempo disponible para realizar una gestión</td></tr>
+              <tr><td>Requerimiento</td><td>Solicitud oficial para aportar o corregir información</td></tr>
+              <tr><td>Notificación</td><td>Comunicación oficial</td></tr>
+              <tr><td>Resolución</td><td>Decisión final sobre una solicitud</td></tr>
+              <tr><td>Recurso</td><td>Solicitud para revisar una decisión</td></tr>
+            </tbody>
+          </table></div>
+        </div></div>
+      </div>
+
+      <div class="tramite-item" id="tramite-glo-rc">
+        <div class="tramite-header" onclick="toggleTramite('glo-rc')">
+          <div class="tramite-left"><div class="tramite-badge">CIV</div><div>
+            <div class="tramite-title">Registro Civil</div>
+            <div class="tramite-subtitle">Nacimiento, matrimonio, nacionalidad</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div style="overflow-x:auto"><table class="glosario-table">
+            <thead><tr><th scope="col">Término</th><th scope="col">¿Qué significa?</th></tr></thead>
+            <tbody>
+              <tr><td>Registro Civil</td><td>Oficina donde se inscriben nacimientos, matrimonios, defunciones y otros hechos civiles</td></tr>
+              <tr><td>Inscripción de nacimiento</td><td>Registro oficial del nacimiento de una persona</td></tr>
+              <tr><td>Certificado de nacimiento</td><td>Documento que acredita el nacimiento</td></tr>
+              <tr><td>Certificación literal de nacimiento</td><td>Copia completa de la inscripción de nacimiento</td></tr>
+              <tr><td>Tomo, página y sección</td><td>Datos utilizados para localizar una inscripción</td></tr>
+              <tr><td>Matrimonio civil</td><td>Matrimonio celebrado ante una autoridad civil</td></tr>
+              <tr><td>Inscripción de matrimonio</td><td>Registro oficial del matrimonio</td></tr>
+              <tr><td>Capitulaciones matrimoniales</td><td>Acuerdo sobre los bienes del matrimonio</td></tr>
+              <tr><td>Régimen económico matrimonial</td><td>Forma en que se organizan los bienes de los esposos</td></tr>
+              <tr><td>Separación de bienes</td><td>Cada esposo conserva sus propios bienes</td></tr>
+              <tr><td>Gananciales</td><td>Bienes compartidos durante el matrimonio</td></tr>
+              <tr><td>Divorcio</td><td>Disolución legal del matrimonio</td></tr>
+              <tr><td>Sentencia firme de divorcio</td><td>Decisión definitiva de un tribunal</td></tr>
+              <tr><td>Defunción</td><td>Fallecimiento</td></tr>
+              <tr><td>Certificado de defunción</td><td>Documento que acredita el fallecimiento</td></tr>
+              <tr><td>Libro de Familia</td><td>Documento familiar tradicional español, hoy sustituido en muchos trámites por registros digitales</td></tr>
+              <tr><td>Filiación</td><td>Relación legal entre una persona y sus padres</td></tr>
+              <tr><td>Reconocimiento de filiación</td><td>Declaración legal de maternidad o paternidad</td></tr>
+              <tr><td>Cambio de nombre</td><td>Modificación oficial del nombre</td></tr>
+              <tr><td>Rectificación registral</td><td>Corrección de un dato en el Registro Civil</td></tr>
+              <tr><td>Fe de vida</td><td>Documento que acredita que una persona está viva</td></tr>
+              <tr><td>Fe de vida y estado</td><td>Acredita que una persona está viva y señala su estado civil</td></tr>
+              <tr><td>Nacionalidad por opción</td><td>Forma de adquirir la nacionalidad española en ciertos casos familiares</td></tr>
+              <tr><td>Jura o promesa</td><td>Acto necesario en algunos procesos de nacionalidad</td></tr>
+              <tr><td>Conservación de la nacionalidad</td><td>Declaración para mantener la nacionalidad española en determinados casos</td></tr>
+              <tr><td>Recuperación de la nacionalidad</td><td>Procedimiento para volver a obtener la nacionalidad española</td></tr>
+              <tr><td>Doble nacionalidad</td><td>Situación de quien posee dos nacionalidades</td></tr>
+            </tbody>
+          </table></div>
+        </div></div>
+      </div>
+
+      <div class="tramite-item" id="tramite-glo-conf">
+        <div class="tramite-header" onclick="toggleTramite('glo-conf')">
+          <div class="tramite-left"><div class="tramite-badge">OJO</div><div>
+            <div class="tramite-title">Palabras que pueden causar confusión</div>
+            <div class="tramite-subtitle">Mismo término, distinto sentido</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <p class="subsection-label">Coger</p>
+          <div>En España se usa con normalidad: coger el autobús, coger una cita, coger un documento. En Venezuela suele decirse <strong>tomar, agarrar o recoger</strong>, porque la palabra puede tener otro sentido coloquial.</div>
+          <p class="subsection-label" style="margin-top:14px">Apellidos</p>
+          <div>Los formularios españoles suelen pedir <strong>primer apellido</strong> y <strong>segundo apellido</strong> (normalmente el del padre y el de la madre). Si usa un solo apellido, escríbalo según su documentación oficial.</div>
+          <p class="subsection-label" style="margin-top:14px">Piso</p>
+          <div>Puede significar un apartamento o la planta de un edificio. «Vivo en un piso» = vive en un apartamento; «Vivo en el tercer piso» = indica la planta.</div>
+          <p class="subsection-label" style="margin-top:14px">Baja</p>
+          <div>No siempre es una enfermedad: puede ser baja médica, cancelación de un servicio, salida de un registro o fin de una relación laboral.</div>
+          <p class="subsection-label" style="margin-top:14px">Alta</p>
+          <div>Puede ser inscripción en un sistema, activación de un servicio, inicio de una relación laboral o autorización médica para volver a la actividad.</div>
+          <p class="subsection-label" style="margin-top:14px">Pendiente</p>
+          <div>En un trámite significa que falta una revisión, una respuesta o algún documento.</div>
+          <p class="subsection-label" style="margin-top:14px">Conforme</p>
+          <div>Significa que la persona está de acuerdo con la información indicada.</div>
+          <p class="subsection-label" style="margin-top:14px">Antecedentes</p>
+          <div>Según el formulario puede referirse a hechos anteriores o al historial administrativo, médico o penal. Lea bien la pregunta antes de responder.</div>
+          <p class="subsection-label" style="margin-top:14px">Unión de hecho</p>
+          <div>Relación de pareja estable registrada legalmente. En España suele usarse la expresión <strong>pareja de hecho</strong>.</div>
+          <p class="subsection-label" style="margin-top:14px">Natural de</p>
+          <div>Indica dónde nació la persona. «Natural de Caracas» = nacido en Caracas.</div>
+          <p class="subsection-label" style="margin-top:14px">Vecino de</p>
+          <div>En documentos administrativos indica el lugar donde vive la persona, no que sea vecino de otra vivienda.</div>
+          <p class="subsection-label" style="margin-top:14px">En vigor</p>
+          <div>Significa que un documento sigue siendo válido y no está vencido.</div>
+          <p class="subsection-label" style="margin-top:14px">Compulsa</p>
+          <div>Comprobación oficial de que una copia coincide con el documento original.</div>
+        </div></div>
+      </div>
+
+      <div class="tramite-item" id="tramite-glo-frases">
+        <div class="tramite-header" onclick="toggleTramite('glo-frases')">
+          <div class="tramite-left"><div class="tramite-badge">OFI</div><div>
+            <div class="tramite-title">Frases habituales en oficinas y citas</div>
+            <div class="tramite-subtitle">Qué significan</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div><strong>«Le falta documentación»</strong> — debe entregar uno o más documentos adicionales.</div>
+          <div style="margin-top:8px"><strong>«Debe aportar el original»</strong> — presentar el documento original, no solo una copia.</div>
+          <div style="margin-top:8px"><strong>«Tiene que pedir cita previa»</strong> — reservar una cita antes de acudir.</div>
+          <div style="margin-top:8px"><strong>«Su expediente está en trámite»</strong> — la solicitud todavía está siendo revisada.</div>
+          <div style="margin-top:8px"><strong>«Está pendiente de resolución»</strong> — todavía no existe una decisión final.</div>
+          <div style="margin-top:8px"><strong>«Debe subsanar la solicitud»</strong> — corregir un error o entregar algo que falta.</div>
+          <div style="margin-top:8px"><strong>«La documentación no está en vigor»</strong> — algún documento está vencido.</div>
+          <div style="margin-top:8px"><strong>«Debe firmar en todas las hojas»</strong> — firmar cada página indicada.</div>
+          <div style="margin-top:8px"><strong>«Marque la casilla correspondiente»</strong> — seleccionar la opción que aplica a su situación.</div>
+          <div style="margin-top:8px"><strong>«No procede»</strong> — esa opción o trámite no corresponde en ese caso.</div>
+          <div style="margin-top:8px"><strong>«Se tendrá por desistida la solicitud»</strong> — puede considerarse abandonada si no se presenta lo solicitado dentro del plazo.</div>
+        </div></div>
+      </div>
+
+      <div class="tramite-item" id="tramite-glo-consejos">
+        <div class="tramite-header" onclick="toggleTramite('glo-consejos')">
+          <div class="tramite-left"><div class="tramite-badge">TIP</div><div>
+            <div class="tramite-title">Consejos para responder un formulario</div>
+            <div class="tramite-subtitle">Antes de rellenar</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div>Lea toda la pregunta y fíjese especialmente en palabras como:</div>
+          <ul>
+            <li>sí o no;</li>
+            <li>actualmente / anteriormente;</li>
+            <li>residencia habitual;</li>
+            <li>nacionalidad de origen;</li>
+            <li>estado civil;</li>
+            <li>fecha de expedición / fecha de caducidad;</li>
+            <li>domicilio a efectos de notificaciones.</li>
+          </ul>
+          <div class="tramite-note">Cuando una pregunta no esté clara, es preferible pedir una explicación antes de responder: una palabra puede tener un uso distinto en España y Venezuela, especialmente en documentos administrativos.</div>
+        </div></div>
+      </div>
+
+    </div>
+
+    <div class="tramite-note" style="margin-top:20px">
+      <strong>Un idioma que nos une.</strong> Las diferencias entre el español de España y el de Venezuela forman parte de la riqueza de nuestro idioma. Conocerlas facilita la comunicación, evita confusiones y ayuda a realizar trámites con mayor seguridad. Desde el Viceconsulado Honorario de España en Nueva Esparta queremos acercar la información de una manera sencilla, útil y comprensible.
+    </div>
   </div>
 
   <div style="margin-top:32px;background:#f8f7f4;border-radius:10px;padding:24px;text-align:center">
