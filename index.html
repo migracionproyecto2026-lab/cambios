@@ -699,16 +699,47 @@ footer { background: #1a1a1a; margin-top: 60px; }
 .footer-col a:hover { color: white; }
 .footer-col .schedule-row { display: flex; justify-content: space-between; gap: 12px; }
 .footer-col .schedule-row span:last-child { color: white; font-weight: 500; }
-.footer-legal { padding: 30px 20px 100px; text-align: center; }
-.footer-logo-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 14px; }
+/* ── PIE: mapa del sitio (marca · accesos · comunidad · institucional) ── */
+.footer-nav { border-bottom: 1px solid #333; padding: 44px 20px; }
+.footer-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.1fr;
+  gap: 40px;
+}
+.footer-nav-col a, .footer-nav-col div, .footer-nav-col p {
+  font-family: 'DM Sans';
+  font-size: 14px;
+  color: #bbb;
+  line-height: 2;
+  text-decoration: none;
+}
+.footer-nav-col a { display: block; }
+.footer-nav-col a:hover { color: white; }
+.footer-brand-row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.footer-brand-name { font-family: 'DM Sans'; font-size: 14px; font-weight: 700; color: white; line-height: 1.4; }
+.footer-brand-desc { font-family: 'DM Sans'; font-size: 13.5px; color: #999; line-height: 1.8; }
+.footer-social { display: flex; gap: 10px; margin-top: 18px; }
+.footer-social a {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: #2a2a2a; border: 1px solid #3a3a3a;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+.footer-social a:hover { background: var(--rojo); border-color: var(--rojo); }
+.footer-social svg { width: 17px; height: 17px; fill: #ccc; }
+.footer-social a:hover svg { fill: white; }
+
+.footer-legal { padding: 26px 20px 100px; text-align: center; }
 .footer-shield { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
-.footer-name { font-family: 'DM Sans'; font-size: 13px; font-weight: 600; color: white; }
-.footer-text { font-family: 'DM Sans'; font-size: 12px; color: #555; line-height: 1.9; }
-.footer-cta { margin-top: 20px; display: flex; justify-content: center; }
+.footer-text { font-family: 'DM Sans'; font-size: 12px; color: #666; line-height: 1.9; }
+.footer-cta { margin-bottom: 18px; display: flex; justify-content: center; }
 .footer-cta .btn-red { color: white; text-decoration: none; }
 .foot-links { margin-top: 14px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 .foot-links a { font-family: 'DM Sans'; font-size: 12px; color: var(--rojo); text-decoration: none; }
 .foot-links a:hover { color: #e03030; }
+.footer-copy { font-family: 'DM Sans'; font-size: 12px; color: #555; margin-top: 16px; }
 
 /* WHATSAPP FLOAT — legacy, reemplazado por stickyWa */
 .wa-float {
@@ -759,6 +790,8 @@ footer { background: #1a1a1a; margin-top: 60px; }
   .bio-img-main { grid-column: auto; aspect-ratio: 4/3; }
   .footer-info-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
   .footer-col:last-child { grid-column: 1 / -1; }
+  .footer-nav-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-nav-col--marca { grid-column: 1 / -1; }
 }
 
 /* NAV colapsado (hamburguesa) en laptops chicos y móvil (≤ 1024px) */
@@ -772,7 +805,9 @@ footer { background: #1a1a1a; margin-top: 60px; }
     border-top: 1px solid var(--borde);
     border-bottom: 3px solid var(--rojo);
     flex-direction: column;
-    padding: 8px 20px 22px;
+    /* El relleno inferior deja hueco para la barra flotante del navegador:
+       sin el, el ultimo item del menu (Emergencia) queda tapado en iOS. */
+    padding: 8px 20px calc(64px + env(safe-area-inset-bottom, 0px));
     box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     z-index: 999;
     gap: 2px;
@@ -783,6 +818,14 @@ footer { background: #1a1a1a; margin-top: 60px; }
     overscroll-behavior: contain;
   }
   .nav-links.open { display: flex; }
+  /* Emergencia: ultimo item, separado y en rojo para que se distinga */
+  .nav-btn--emergencia {
+    color: var(--rojo) !important;
+    font-weight: 700;
+    margin-top: 6px;
+    border-top: 1px solid var(--borde);
+    border-radius: 0 0 6px 6px;
+  }
   .nav-btn { font-size: 16px; padding: 16px; text-align: left; border-radius: 6px; width: 100%; }
   .nav-sub { display: none; }
   /* Dropdown en columna: fluye, no se superpone a los botones */
@@ -884,6 +927,9 @@ footer { background: #1a1a1a; margin-top: 60px; }
   .footer-info-inner { grid-template-columns: 1fr; gap: 28px; }
   .footer-col:last-child { grid-column: auto; }
   .footer-info { padding: 36px 20px; }
+  .footer-nav-inner { grid-template-columns: 1fr; gap: 26px; }
+  .footer-nav { padding: 34px 20px; }
+  .footer-nav-col--marca { grid-column: auto; }
 
   /* WA FLOAT */
   .wa-float { width: 54px; height: 54px; bottom: 18px; right: 18px; }
@@ -958,6 +1004,57 @@ footer { background: #1a1a1a; margin-top: 60px; }
 .com-block li { margin-bottom: 6px; }
 .com-block a { color: var(--rojo); font-weight: 600; text-decoration: none; }
 
+/* ── CENTRO DE DESCARGAS ── */
+.dl-toolbar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 18px; }
+.dl-search {
+  flex: 1 1 260px; min-width: 0;
+  font-family: 'DM Sans'; font-size: 15px;
+  padding: 13px 16px;
+  border: 1px solid var(--borde); border-radius: 8px;
+  background: #fff; color: var(--texto);
+}
+.dl-search:focus { outline: none; border-color: var(--rojo); }
+.dl-count { font-family: 'DM Sans'; font-size: 13.5px; color: #888; }
+.dl-cats { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+.dl-cat {
+  font-family: 'DM Sans'; font-size: 13px; font-weight: 600;
+  padding: 9px 16px; border-radius: 20px; cursor: pointer;
+  background: #fff; border: 1px solid var(--borde); color: #666;
+  transition: all 0.18s;
+}
+.dl-cat:hover { border-color: var(--rojo); color: var(--rojo); }
+.dl-cat.active { background: var(--rojo); border-color: var(--rojo); color: #fff; }
+.dl-list { display: flex; flex-direction: column; gap: 10px; }
+.dl-row {
+  display: flex; align-items: center; gap: 16px;
+  background: #fff; border: 1px solid var(--borde); border-radius: 10px;
+  padding: 16px 18px;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+.dl-row:hover { border-color: var(--dorado-oscuro); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.dl-icon {
+  flex-shrink: 0; width: 40px; height: 46px; border-radius: 5px;
+  background: #fdf0f0; border: 1px solid #f2d5d5;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Sans'; font-size: 9.5px; font-weight: 700;
+  letter-spacing: 0.5px; color: var(--rojo);
+}
+.dl-body { flex: 1 1 auto; min-width: 0; }
+.dl-title { font-family: 'DM Sans'; font-size: 15.5px; font-weight: 600; color: var(--texto); line-height: 1.45; }
+.dl-meta { font-family: 'DM Sans'; font-size: 12.5px; color: #999; margin-top: 3px; }
+.dl-action { flex-shrink: 0; }
+.dl-action .btn { min-width: 132px; justify-content: center; }
+.dl-empty {
+  font-family: 'DM Sans'; font-size: 15px; color: #999; text-align: center;
+  padding: 40px 20px; border: 1px dashed var(--borde); border-radius: 10px;
+}
+@media (max-width: 620px) {
+  .dl-row { flex-wrap: wrap; gap: 12px; }
+  .dl-body { flex-basis: calc(100% - 56px); }
+  .dl-action { flex-basis: 100%; }
+  .dl-action .btn { width: 100%; justify-content: center; }
+}
+
 /* ── ORGANIGRAMA (Nosotros): Embajada › Consulado General › Viceconsulado › Vicecónsul ── */
 .org-step {
   font-family: 'DM Sans', sans-serif;
@@ -1005,8 +1102,10 @@ footer { background: #1a1a1a; margin-top: 60px; }
 
 @media (max-width: 768px) {
   .nav-dropdown { display: block; width: 100%; }
-  .nav-dropdown-menu { position: static; display: block; box-shadow: none; border: none; border-radius: 0; padding: 0 0 0 14px; min-width: 0; }
-  .nav-dropdown-toggle .nav-caret { display: none; }
+  /* En movil el submenu se despliega al tocar, no va siempre abierto: con dos
+     desplegables el menu llegaba a 15 filas y "Emergencia" quedaba fuera de
+     pantalla. Plegado son 7 filas y se ve entero sin desplazar. */
+  .nav-dropdown-menu { position: static; box-shadow: none; border: none; border-radius: 0; padding: 0 0 0 14px; min-width: 0; }
   .com-grid { grid-template-columns: 1fr; }
   .conoce-folleto { gap: 40px; }
   .conoce-row, .conoce-row.reverse { grid-template-columns: 1fr; gap: 18px; }
@@ -1182,16 +1281,23 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
           <button class="nav-btn" data-section="tramites">Servicios Consulares</button>
           <button class="nav-btn" data-section="citas">Citas</button>
           <a class="nav-btn" href="https://sutramiteconsular.maec.es" target="_blank" rel="noopener noreferrer">Estado de Trámite ↗</a>
+          <button class="nav-btn" data-section="descargas">Descargas</button>
         </div>
       </div>
       <button class="nav-btn" data-section="faq">FAQ</button>
       <button class="nav-btn" data-section="ubicacion">Nosotros</button>
-      <button class="nav-btn" data-section="cre">CRE</button>
-      <button class="nav-btn" data-section="consejeria">Consejería Laboral</button>
-      <button class="nav-btn" data-section="salud">Convenios de Salud</button>
-      <button class="nav-btn" data-section="cavespa">CAVESPA</button>
+      <div class="nav-dropdown" id="comunidadDropdown">
+        <button class="nav-btn nav-dropdown-toggle" onclick="toggleDropdown(this)" aria-haspopup="true" aria-expanded="false">Comunidad Española<span class="nav-caret">▾</span></button>
+        <div class="nav-dropdown-menu">
+          <button class="nav-btn" data-section="comunidad">Ver todas</button>
+          <button class="nav-btn" data-section="cre">CRE</button>
+          <button class="nav-btn" data-section="consejeria">Consejería Laboral</button>
+          <button class="nav-btn" data-section="salud">Convenios de Salud</button>
+          <button class="nav-btn" data-section="cavespa">CAVESPA</button>
+        </div>
+      </div>
       <button class="nav-btn" data-section="conoce">Conoce</button>
-      <button class="nav-btn" onclick="document.getElementById('emergencia-anchor').scrollIntoView({behavior:'smooth'});closeMenu()">Emergencia</button>
+      <button class="nav-btn nav-btn--emergencia" onclick="document.getElementById('emergencia-anchor').scrollIntoView({behavior:'smooth'});closeMenu()">Emergencia</button>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Abrir menú">
       <span></span><span></span><span></span>
@@ -1367,7 +1473,6 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
         <div class="tramite-links">
           <a class="tramite-link" href="https://www.exteriores.gob.es/DocumentosAuxiliaresSC/Venezuela/CARACAS%20(C)/Hoja%20declaratoria%20inscripci%C3%B3n%20nacimiento.pdf" target="_blank">Hoja declaratoria ↗</a>
           <a class="tramite-link" href="https://www.exteriores.gob.es/Documents/DocumentosSC/Inscripci%C3%B3n%20Consular/20240812%20SOLICITUD%20DE%20INSCRIPCION%20COMO%20RESIDENTE.pdf" target="_blank">Formulario residente ↗</a>
-          <a class="tramite-link" href="documentos/Requisitos inscripcion de nacimiento.pdf" download>⬇ Requisitos (PDF)</a>
         </div>
         <div style="margin-top:16px"><button class="btn btn-red btn-sm" onclick="showSection('citas')">Solicitar cita</button></div>
       </div></div>
@@ -1677,6 +1782,100 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
       <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
       Escribir por WhatsApp
     </a>
+  </div>
+</div>
+
+<!-- ==================== CENTRO DE DESCARGAS ==================== -->
+<div id="sec-descargas" class="section">
+  <button class="back-btn" onclick="showSection('inicio')">← Volver al inicio</button>
+  <h1 class="page-title">Centro de Descargas</h1>
+  <p class="page-desc">
+    Formularios y documentos disponibles para los trámites que se gestionan en este
+    Viceconsulado. Los formularios oficiales se descargan de la web del Ministerio de Asuntos
+    Exteriores, Unión Europea y Cooperación; las hojas de requisitos las facilita el Viceconsulado.
+  </p>
+
+  <div class="dl-toolbar">
+    <input class="dl-search" id="dlSearch" type="search" placeholder="Buscar documento…" oninput="filtrarDescargas()" aria-label="Buscar documento">
+    <span class="dl-count" id="dlCount"></span>
+  </div>
+
+  <div class="dl-cats" id="dlCats">
+    <button class="dl-cat active" data-cat="todos"      onclick="catDescargas(this)">Todos</button>
+    <button class="dl-cat"        data-cat="formulario" onclick="catDescargas(this)">Formularios oficiales</button>
+    <button class="dl-cat"        data-cat="requisitos" onclick="catDescargas(this)">Hojas de requisitos</button>
+    <button class="dl-cat"        data-cat="registro"   onclick="catDescargas(this)">Registro Civil</button>
+    <button class="dl-cat"        data-cat="consular"   onclick="catDescargas(this)">Inscripción consular</button>
+  </div>
+
+  <div class="dl-list" id="dlList">
+
+    <div class="dl-row" data-cat="formulario consular">
+      <div class="dl-icon">PDF</div>
+      <div class="dl-body">
+        <div class="dl-title">Solicitud de inscripción como residente</div>
+        <div class="dl-meta">Formulario oficial · PDF · 204 KB · exteriores.gob.es</div>
+      </div>
+      <div class="dl-action">
+        <a class="btn btn-red btn-sm" href="https://www.exteriores.gob.es/Documents/DocumentosSC/Inscripci%C3%B3n%20Consular/20240812%20SOLICITUD%20DE%20INSCRIPCION%20COMO%20RESIDENTE.pdf" target="_blank" rel="noopener noreferrer" style="color:white;text-decoration:none">Descargar ↗</a>
+      </div>
+    </div>
+
+    <div class="dl-row" data-cat="formulario registro">
+      <div class="dl-icon">PDF</div>
+      <div class="dl-body">
+        <div class="dl-title">Hoja declaratoria — inscripción de nacimiento</div>
+        <div class="dl-meta">Formulario oficial · PDF · 93 KB · exteriores.gob.es</div>
+      </div>
+      <div class="dl-action">
+        <a class="btn btn-red btn-sm" href="https://www.exteriores.gob.es/DocumentosAuxiliaresSC/Venezuela/CARACAS%20(C)/Hoja%20declaratoria%20inscripci%C3%B3n%20nacimiento.pdf" target="_blank" rel="noopener noreferrer" style="color:white;text-decoration:none">Descargar ↗</a>
+      </div>
+    </div>
+
+    <div class="dl-row" data-cat="formulario registro">
+      <div class="dl-icon">PDF</div>
+      <div class="dl-body">
+        <div class="dl-title">Hoja declaratoria — inscripción de matrimonio</div>
+        <div class="dl-meta">Formulario oficial · PDF · 532 KB · exteriores.gob.es</div>
+      </div>
+      <div class="dl-action">
+        <a class="btn btn-red btn-sm" href="https://www.exteriores.gob.es/DocumentosAuxiliaresSC/Venezuela/CARACAS%20(C)/Hoja%20declaratoria%20inscripci%C3%B3n%20matrimonio.pdf" target="_blank" rel="noopener noreferrer" style="color:white;text-decoration:none">Descargar ↗</a>
+      </div>
+    </div>
+
+    <div class="dl-row" data-cat="formulario registro">
+      <div class="dl-icon">PDF</div>
+      <div class="dl-body">
+        <div class="dl-title">Hoja declaratoria — inscripción de defunción</div>
+        <div class="dl-meta">Formulario oficial · PDF · 78 KB · exteriores.gob.es</div>
+      </div>
+      <div class="dl-action">
+        <a class="btn btn-red btn-sm" href="https://www.exteriores.gob.es/DocumentosAuxiliaresSC/Venezuela/CARACAS%20(C)/Hoja%20declaratoria%20inscripci%C3%B3n%20defunci%C3%B3n.pdf" target="_blank" rel="noopener noreferrer" style="color:white;text-decoration:none">Descargar ↗</a>
+      </div>
+    </div>
+
+    <div class="dl-row" data-cat="requisitos registro">
+      <div class="dl-icon">PDF</div>
+      <div class="dl-body">
+        <div class="dl-title">Requisitos para la inscripción de matrimonio</div>
+        <div class="dl-meta">Hoja de requisitos del Viceconsulado · PDF · 111 KB</div>
+      </div>
+      <div class="dl-action">
+        <a class="btn btn-red btn-sm" href="documentos/Requisitos inscripcion de matrimonio.pdf" download style="color:white;text-decoration:none">Descargar</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="dl-empty" id="dlEmpty" style="display:none">
+    No hay documentos que coincidan con la búsqueda.
+  </div>
+
+  <div class="tramite-note" style="margin-top:26px">
+    ¿No encuentra un documento? Escriba al Viceconsulado por
+    <a href="https://wa.me/584248429665" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    o a <a href="mailto:ch.porlamar@maec.es">ch.porlamar@maec.es</a> y se le indicará el
+    formulario que corresponde a su trámite.
   </div>
 </div>
 
@@ -2099,9 +2298,55 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
   </div>
 </div>
 
+<!-- ==================== COMUNIDAD ESPAÑOLA (hub) ==================== -->
+<div id="sec-comunidad" class="section">
+  <button class="back-btn" onclick="showSection('inicio')">← Volver al inicio</button>
+  <div class="com-kicker">Instituciones y servicios</div>
+  <h1 class="page-title com-title">Comunidad Española</h1>
+  <p class="page-desc">
+    Instituciones y servicios disponibles para la comunidad española residente en Venezuela.
+    Seleccione una para ver su información y sus datos de contacto.
+  </p>
+
+  <div class="com-grid">
+    <div class="com-block">
+      <div class="info-block-title">Representación de residentes</div>
+      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:18px;color:var(--texto);margin:6px 0 8px">Consejo de Residentes Españoles (CRE)</div>
+      <div>Órgano consultivo y representativo de la comunidad española residente, que colabora con el Consulado General para trasladar sus necesidades e inquietudes.</div>
+      <div style="margin-top:12px"><a href="#" onclick="showSection('cre');return false;">Información y contacto →</a></div>
+    </div>
+
+    <div class="com-block">
+      <div class="info-block-title">Organismo de la Embajada</div>
+      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:18px;color:var(--texto);margin:6px 0 8px">Consejería de Trabajo, Migraciones y Seguridad Social</div>
+      <div>Atención en empleo, pensiones, Seguridad Social, ayudas asistenciales y programas para los españoles residentes en Venezuela.</div>
+      <div style="margin-top:12px"><a href="#" onclick="showSection('consejeria');return false;">Información y contacto →</a></div>
+    </div>
+
+    <div class="com-block">
+      <div class="info-block-title">Programa del Viceconsulado</div>
+      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:18px;color:var(--texto);margin:6px 0 8px">Convenios de Salud</div>
+      <div>Convenios con instituciones médicas de reconocido prestigio, con condiciones preferenciales para los ciudadanos españoles residentes en Nueva Esparta.</div>
+      <div style="margin-top:12px"><a href="#" onclick="showSection('salud');return false;">Información y contacto →</a></div>
+    </div>
+
+    <div class="com-block">
+      <div class="info-block-title">Comercio e industria</div>
+      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:18px;color:var(--texto);margin:6px 0 8px">Cámara Venezolano-Española de Industria y Comercio (CAVESPA)</div>
+      <div>Promueve las relaciones económicas, empresariales y comerciales entre España y Venezuela, fortaleciendo la cooperación entre empresas e instituciones de ambos países.</div>
+      <div style="margin-top:12px"><a href="#" onclick="showSection('cavespa');return false;">Información y contacto →</a></div>
+    </div>
+  </div>
+
+  <div class="tramite-note">
+    El Viceconsulado actúa como <strong>enlace institucional</strong>: orienta y canaliza, y no
+    sustituye a los organismos indicados en sus funciones propias.
+  </div>
+</div>
+
 <!-- ==================== CRE ==================== -->
 <div id="sec-cre" class="section">
-  <button class="back-btn" onclick="showSection('inicio')">← Volver al inicio</button>
+  <button class="back-btn" onclick="showSection('comunidad')">← Volver a Comunidad Española</button>
   <div class="com-kicker">Comunidad · Representación de residentes</div>
   <h1 class="page-title com-title">Consejo de Residentes Españoles (CRE)</h1>
   <p class="com-intro">
@@ -2188,7 +2433,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
 
 <!-- ==================== CAVESPA ==================== -->
 <div id="sec-cavespa" class="section">
-  <button class="back-btn" onclick="showSection('inicio')">← Volver al inicio</button>
+  <button class="back-btn" onclick="showSection('comunidad')">← Volver a Comunidad Española</button>
   <div class="com-kicker">Comunidad · Comercio e industria</div>
   <h1 class="page-title com-title">CAVESPA</h1>
   <p class="com-intro">
@@ -2275,7 +2520,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
 
 <!-- ==================== CONSEJERÍA LABORAL ==================== -->
 <div id="sec-consejeria" class="section">
-  <button class="back-btn" onclick="showSection('inicio')">← Volver al inicio</button>
+  <button class="back-btn" onclick="showSection('comunidad')">← Volver a Comunidad Española</button>
   <div class="com-kicker">Comunidad · Organismo de la Embajada</div>
   <h1 class="page-title com-title">Consejería de Trabajo, Migraciones y Seguridad Social</h1>
   <p class="com-intro">
@@ -2360,7 +2605,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
 
 <!-- ==================== SALUD ==================== -->
 <div id="sec-salud" class="section">
-  <button class="back-btn" onclick="showSection('inicio')">← Volver al inicio</button>
+  <button class="back-btn" onclick="showSection('comunidad')">← Volver a Comunidad Española</button>
   <h1 class="page-title">Convenios de Salud</h1>
   <p class="page-desc">Cuidamos de nuestra comunidad, también en materia de salud. Un programa permanente de convenios con instituciones médicas de reconocido prestigio, con condiciones preferenciales para los ciudadanos españoles residentes en Nueva Esparta. Seleccione un plan o servicio para ver el detalle.</p>
 
@@ -2694,7 +2939,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
         <div>Tarifas preferenciales para <strong>más de 239 procedimientos</strong>, elaborado en exclusiva para la comunidad española atendida por el Viceconsulado. El listado completo de servicios y precios está disponible en PDF.</div>
         <div class="tramite-note">El Baremo Especial tiene una vigencia de <strong>un (1) año</strong>, con revisiones periódicas y actualización de tarifas conforme a lo establecido entre el Hospital Clínicas del Este y el Viceconsulado.</div>
         <div class="tramite-links">
-          <a class="tramite-link" href="documentos/Baremo-Especial-APS.pdf" download>⬇ Descargar Baremo Especial APS (PDF)</a>
+          <a class="tramite-link" href="https://wa.me/584248429665?text=Buenos%20d%C3%ADas%2C%20deseo%20solicitar%20el%20Baremo%20Especial%20APS%20en%20PDF." target="_blank" rel="noopener noreferrer">Solicitar el Baremo Especial por WhatsApp ↗</a>
         </div>
       </div></div>
     </div>
@@ -3206,24 +3451,75 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
     </div>
   </div>
 
+  <!-- Mapa del sitio: marca · accesos rápidos · comunidad · institucional -->
+  <div class="footer-nav">
+    <div class="footer-nav-inner">
+
+      <div class="footer-nav-col footer-nav-col--marca">
+        <div class="footer-brand-row">
+          <img class="footer-shield" src="images/Logo.jpeg" alt="Logo Viceconsulado">
+          <span class="footer-brand-name">Viceconsulado Honorario de España<br>en Nueva Esparta</span>
+        </div>
+        <p class="footer-brand-desc">
+          Dependiente del Consulado General de España en Caracas y de la Embajada de España
+          en Venezuela. Ministerio de Asuntos Exteriores, Unión Europea y Cooperación.
+        </p>
+        <div class="footer-social">
+          <a href="https://wa.me/584248429665" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp del Viceconsulado">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/viceconsulado_espana_ne" target="_blank" rel="noopener noreferrer" aria-label="Instagram del Viceconsulado">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16m0-2.16C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.93 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0m0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32m0 10.16a4 4 0 110-8 4 4 0 010 8m7.85-10.4a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-nav-col">
+        <div class="footer-col-title">Accesos rápidos</div>
+        <a href="#" onclick="showSection('inicio');return false;">Inicio</a>
+        <a href="#" onclick="showSection('tramites');return false;">Servicios Consulares</a>
+        <a href="#" onclick="showSection('citas');return false;">Citas</a>
+        <a href="https://sutramiteconsular.maec.es" target="_blank" rel="noopener noreferrer">Estado de Trámite ↗</a>
+        <a href="#" onclick="showSection('descargas');return false;">Centro de Descargas</a>
+        <a href="#" onclick="showSection('faq');return false;">Preguntas Frecuentes</a>
+        <a href="#" onclick="showSection('ubicacion');return false;">Nosotros</a>
+        <a href="#" onclick="showSection('conoce');return false;">Conoce</a>
+      </div>
+
+      <div class="footer-nav-col">
+        <div class="footer-col-title">Comunidad española</div>
+        <a href="#" onclick="showSection('comunidad');return false;">Ver todas las instituciones</a>
+        <a href="#" onclick="showSection('cre');return false;">Consejo de Residentes Españoles</a>
+        <a href="#" onclick="showSection('consejeria');return false;">Consejería Laboral</a>
+        <a href="#" onclick="showSection('salud');return false;">Convenios de Salud</a>
+        <a href="#" onclick="showSection('cavespa');return false;">CAVESPA</a>
+      </div>
+
+      <div class="footer-nav-col">
+        <div class="footer-col-title">Enlaces institucionales</div>
+        <a href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank" rel="noopener noreferrer">Consulado General en Caracas ↗</a>
+        <a href="https://www.exteriores.gob.es/Embajadas/caracas" target="_blank" rel="noopener noreferrer">Embajada de España en Venezuela ↗</a>
+        <a href="https://www.exteriores.gob.es" target="_blank" rel="noopener noreferrer">Ministerio de Asuntos Exteriores (MAEC) ↗</a>
+        <a href="https://www.lamoncloa.gob.es" target="_blank" rel="noopener noreferrer">Gobierno de España ↗</a>
+      </div>
+
+    </div>
+  </div>
+
   <!-- Legal -->
   <div class="footer-legal">
-    <div class="footer-logo-row">
-      <img class="footer-shield" src="images/Logo.jpeg" alt="Logo Viceconsulado">
-      <span class="footer-name">Viceconsulado Honorario de España en Nueva Esparta</span>
-    </div>
-    <p class="footer-text">
-      Ministerio de Asuntos Exteriores, Unión Europea y Cooperación<br>
-      Los datos facilitados serán tratados conforme a la normativa de protección de datos vigente.
-    </p>
     <!-- Enlace destacado al Consulado General (botón rojo) -->
     <div class="footer-cta">
       <a class="btn btn-red btn-sm" href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank" rel="noopener noreferrer">Web del Consulado General en Caracas ↗</a>
     </div>
+    <p class="footer-text">
+      Los datos facilitados serán tratados conforme a la normativa de protección de datos vigente.
+    </p>
     <div class="foot-links">
       <a href="politica-privacidad.html">Política de Privacidad</a>
       <a href="aviso-legal.html">Aviso Legal</a>
     </div>
+    <div class="footer-copy">© 2026 Viceconsulado Honorario de España en Nueva Esparta · Todos los derechos reservados</div>
   </div>
 </footer>
 
@@ -3317,6 +3613,44 @@ document.addEventListener('keydown', function(e) {
   window._updateNav = updateNav;
   updateNav();
 })();
+
+// ============================================
+// CENTRO DE DESCARGAS — filtro por categoría + búsqueda
+// ============================================
+function catDescargas(btn) {
+  document.querySelectorAll('#dlCats .dl-cat').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  filtrarDescargas();
+}
+function filtrarDescargas() {
+  var buscador = document.getElementById('dlSearch');
+  if (!buscador) return;
+  var texto  = buscador.value.trim().toLowerCase();
+  var activa = document.querySelector('#dlCats .dl-cat.active');
+  var cat    = activa ? activa.dataset.cat : 'todos';
+  var filas  = document.querySelectorAll('#dlList .dl-row');
+  var visibles = 0;
+
+  filas.forEach(function(fila) {
+    var cats  = (fila.dataset.cat || '').split(/\s+/);
+    var coincideCat   = (cat === 'todos') || cats.indexOf(cat) !== -1;
+    var coincideTexto = !texto || fila.textContent.toLowerCase().indexOf(texto) !== -1;
+    var mostrar = coincideCat && coincideTexto;
+    fila.style.display = mostrar ? '' : 'none';
+    if (mostrar) visibles++;
+  });
+
+  var vacio = document.getElementById('dlEmpty');
+  if (vacio) vacio.style.display = visibles ? 'none' : 'block';
+
+  var contador = document.getElementById('dlCount');
+  if (contador) {
+    contador.textContent = visibles === filas.length
+      ? filas.length + ' documentos disponibles'
+      : visibles + ' de ' + filas.length + ' documentos';
+  }
+}
+document.addEventListener('DOMContentLoaded', filtrarDescargas);
 
 // ============================================
 // ACORDEONES DE TRÁMITES
