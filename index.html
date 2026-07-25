@@ -704,6 +704,8 @@ footer { background: #1a1a1a; margin-top: 60px; }
 .footer-shield { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
 .footer-name { font-family: 'DM Sans'; font-size: 13px; font-weight: 600; color: white; }
 .footer-text { font-family: 'DM Sans'; font-size: 12px; color: #555; line-height: 1.9; }
+.footer-cta { margin-top: 20px; display: flex; justify-content: center; }
+.footer-cta .btn-red { color: white; text-decoration: none; }
 .foot-links { margin-top: 14px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 .foot-links a { font-family: 'DM Sans'; font-size: 12px; color: var(--rojo); text-decoration: none; }
 .foot-links a:hover { color: #e03030; }
@@ -955,6 +957,24 @@ footer { background: #1a1a1a; margin-top: 60px; }
 .com-block li, .com-block div, .com-block p { font-family: 'DM Sans', sans-serif; font-size: 14.5px; color: #555; line-height: 1.75; }
 .com-block li { margin-bottom: 6px; }
 .com-block a { color: var(--rojo); font-weight: 600; text-decoration: none; }
+
+/* ── ORGANIGRAMA (Nosotros): Embajada › Consulado General › Viceconsulado › Vicecónsul ── */
+.org-step {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+.org-arrow {
+  text-align: center;
+  color: var(--dorado-oscuro);
+  font-size: 24px;
+  line-height: 1;
+  margin: 10px 0;
+}
 /* ── COMUNIDAD polish (jerarquía + realce, sin cambios de contenido) ── */
 .com-kicker { font-family:'DM Sans',sans-serif; font-size:12px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; color:var(--rojo); margin-bottom:12px; display:flex; align-items:center; gap:10px; }
 .com-kicker::before { content:''; width:28px; height:2px; background:var(--dorado-oscuro); display:inline-block; }
@@ -1673,9 +1693,45 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
     de registro civil, documentación y asistencia a ciudadanos.
   </p>
 
-  <!-- Equipo -->
+  <!-- ORGANIZACIÓN INSTITUCIONAL -->
+  <!-- Orden institucional: 1 Embajada · 2 Consulado General · 3 Viceconsulado · 4 Vicecónsul -->
+  <div class="com-kicker">Organización institucional</div>
+  <h2 style="font-family:'Libre Baskerville',Georgia,serif;font-size:26px;color:var(--texto);margin:0 0 8px">La Red Consular de España en Venezuela</h2>
+  <p class="page-desc" style="margin-bottom:26px">El Viceconsulado Honorario de España en Nueva Esparta forma parte de la Red Consular de España en Venezuela y desarrolla sus funciones bajo la dirección y supervisión del Consulado General de España en Caracas.</p>
+
+  <div style="max-width:660px;margin:0 auto 20px">
+    <!-- 1 · EMBAJADA -->
+    <div class="com-block" style="text-align:center;border-top:3px solid var(--rojo)">
+      <div class="org-step">1 · Representación diplomática</div>
+      <div class="info-block-title" style="color:var(--rojo)">Embajada de España en Venezuela</div>
+      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Álvaro Enrique Albacete Perea</div>
+      <div style="font-size:13px;color:#888">Embajador de España · máxima representación diplomática del Reino de España, dirige la acción exterior del Estado en el país.</div>
+    </div>
+    <div class="org-arrow">↓</div>
+
+    <!-- 2 · CONSULADO GENERAL -->
+    <div class="com-block" style="text-align:center;border-top:3px solid var(--rojo)">
+      <div class="org-step">2 · Oficina consular de carrera</div>
+      <div class="info-block-title" style="color:var(--rojo)">Consulado General de España en Caracas</div>
+      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Ramón Molina Lladó</div>
+      <div style="font-size:13px;color:#888">Cónsul General · principal oficina consular; presta los servicios consulares, protege los intereses de los ciudadanos españoles y dirige, coordina y supervisa la Red de Viceconsulados Honorarios.</div>
+    </div>
+    <div class="org-arrow">↓</div>
+
+    <!-- 3 · VICECONSULADO (la oficina) -->
+    <div class="com-block" style="text-align:center;border-top:3px solid var(--dorado-oscuro)">
+      <div class="org-step">3 · Oficina consular honoraria</div>
+      <div class="info-block-title">Viceconsulado Honorario de España en Nueva Esparta</div>
+      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">Porlamar, Isla de Margarita</div>
+      <div style="font-size:13px;color:#888">Circunscripción: Estado Nueva Esparta — islas de Margarita, Coche y Cubagua. Tramita los servicios consulares más comunes y canaliza hacia el Consulado General los trámites que le corresponden.</div>
+    </div>
+    <div class="org-arrow">↓</div>
+  </div>
+
+  <!-- 4 · VICECÓNSUL (la persona) -->
   <div class="team-section">
     <div class="team-card team-card--single">
+      <div class="org-step" style="text-align:center">4 · Titular del Viceconsulado</div>
       <div class="team-photo">
         <img src="images/Pic_Manuel.png" alt="Manuel Leiros">
       </div>
@@ -1739,36 +1795,12 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
       <div>Emergencias 24h: <button type="button" class="inline-link" onclick="document.getElementById('emergencia-anchor').scrollIntoView({behavior:'smooth'})">+58 424 2090264</button></div>
     </div>
     <div>
-      <a href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank">Web oficial del Consulado ↗</a>
+      <a class="btn btn-red btn-sm" href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank" rel="noopener noreferrer" style="color:white;text-decoration:none">Web oficial del Consulado General ↗</a>
     </div>
   </div>
 
-  <!-- Organización institucional (información complementaria) -->
+  <!-- Dependencias e instituciones (información complementaria) -->
   <div style="margin-top:46px">
-    <div class="com-kicker">Información complementaria</div>
-    <h2 style="font-family:'Libre Baskerville',Georgia,serif;font-size:26px;color:var(--texto);margin:0 0 8px">Organización institucional de España en Venezuela</h2>
-    <p class="page-desc" style="margin-bottom:26px">El Viceconsulado Honorario de España en Nueva Esparta forma parte de la Red Consular de España en Venezuela y desarrolla sus funciones bajo la dirección y supervisión del Consulado General de España en Caracas.</p>
-
-    <div style="max-width:660px;margin:0 auto 36px">
-      <div class="com-block" style="text-align:center;border-top-color:var(--rojo)">
-        <div class="info-block-title" style="color:var(--rojo)">Embajada de España en Venezuela</div>
-        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Álvaro Enrique Albacete Perea</div>
-        <div style="font-size:13px;color:#888">Embajador de España · máxima representación diplomática del Reino de España, dirige la acción exterior del Estado en el país.</div>
-      </div>
-      <div style="text-align:center;color:var(--dorado-oscuro);font-size:24px;line-height:1;margin:10px 0">↓</div>
-      <div class="com-block" style="text-align:center;border-top-color:var(--rojo)">
-        <div class="info-block-title" style="color:var(--rojo)">Consulado General de España en Caracas</div>
-        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Ramón Molina Lladó</div>
-        <div style="font-size:13px;color:#888">Cónsul General · principal oficina consular; presta los servicios consulares, protege los intereses de los ciudadanos españoles y dirige, coordina y supervisa la Red de Viceconsulados Honorarios.</div>
-      </div>
-      <div style="text-align:center;color:var(--dorado-oscuro);font-size:24px;line-height:1;margin:10px 0">↓</div>
-      <div class="com-block" style="text-align:center;border-top-color:var(--dorado-oscuro)">
-        <div class="info-block-title">Viceconsulado Honorario de España en Nueva Esparta</div>
-        <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Manuel Leiros Pampinella</div>
-        <div style="font-size:13px;color:#888">Vicecónsul Honorario · enlace directo entre la comunidad española de la circunscripción y el Consulado General, facilitando la atención ciudadana, la orientación consular y la canalización de los trámites autorizados.</div>
-      </div>
-    </div>
-
     <div class="com-kicker">Dependencias e instituciones españolas en Venezuela</div>
     <div class="com-grid">
       <div class="com-block">
@@ -1907,14 +1939,17 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
       </div>
     </div>
 
-    <!-- MARGARITA, COCHE Y CUBAGUA -->
-    <div class="com-kicker" style="margin-top:34px">Margarita, Coche y Cubagua</div>
+    <!-- NUEVA ESPARTA — Margarita, Coche y Cubagua -->
+    <div class="com-kicker" style="margin-top:34px">Conoce Nueva Esparta · Margarita, Coche y Cubagua</div>
     <p class="page-desc">
-      Tres islas con personalidad propia: <strong>Margarita</strong>, principal centro poblado y
-      turístico; <strong>Coche</strong>, de playas tranquilas y deportes de viento; y
-      <strong>Cubagua</strong>, de gran valor histórico y arqueológico (perlas y Nueva Cádiz).
-      Unidas por el mar, la historia y la identidad neoespartana.
+      El Estado Nueva Esparta es el único estado insular de Venezuela y la circunscripción que
+      atiende este Viceconsulado. Lo forman tres islas con personalidad propia:
+      <strong>Margarita</strong>, principal centro poblado y turístico; <strong>Coche</strong>,
+      de playas tranquilas y deportes de viento; y <strong>Cubagua</strong>, de gran valor
+      histórico y arqueológico (perlas y Nueva Cádiz). Unidas por el mar, la historia y la
+      identidad neoespartana.
     </p>
+    <figure class="conoce-hero"><picture><source srcset="images/conoce-nuevaesparta.webp" type="image/webp"><img src="images/conoce-nuevaesparta.jpg" alt="Costa del Estado Nueva Esparta, Venezuela" loading="lazy" decoding="async"></picture></figure>
 
     <h3 style="font-family:'Libre Baskerville',Georgia,serif;font-size:22px;color:var(--texto);margin:26px 0 4px">Isla de Margarita — La Perla del Caribe</h3>
     <p class="page-desc">
@@ -3181,10 +3216,13 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
       Ministerio de Asuntos Exteriores, Unión Europea y Cooperación<br>
       Los datos facilitados serán tratados conforme a la normativa de protección de datos vigente.
     </p>
+    <!-- Enlace destacado al Consulado General (botón rojo) -->
+    <div class="footer-cta">
+      <a class="btn btn-red btn-sm" href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank" rel="noopener noreferrer">Web del Consulado General en Caracas ↗</a>
+    </div>
     <div class="foot-links">
       <a href="politica-privacidad.html">Política de Privacidad</a>
       <a href="aviso-legal.html">Aviso Legal</a>
-      <a href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank">Consulado General en Caracas</a>
     </div>
   </div>
 </footer>
