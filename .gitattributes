@@ -1,0 +1,13 @@
+# Los PDF y las imagenes son binarios: git NO debe tocar sus finales de linea
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.ico  binary
+# HTML/CSS/JS/MD: normalizar a LF en el repo
+*.html text eol=lf
+*.css  text eol=lf
+*.js   text eol=lf
+*.md   text eol=lf
+*.svg  text eol=lf
