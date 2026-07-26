@@ -1179,6 +1179,15 @@ footer { background: #1a1a1a; margin-top: 60px; }
 .conoce-hero { margin:0 0 20px; border-radius:14px; overflow:hidden; box-shadow:0 10px 28px rgba(0,0,0,0.10); aspect-ratio:16 / 8; }
 .conoce-hero img { width:100%; height:100%; object-fit:cover; display:block; }
 @media (max-width:720px){ .conoce-hero { aspect-ratio:16 / 9; } }
+/* Atribución de imágenes con licencia CC — discreta pero legible */
+.creditos-img {
+  font-family: 'DM Sans', sans-serif; font-size: 12px; color: #999;
+  line-height: 1.8; margin: 22px 0 0; padding-top: 14px;
+  border-top: 1px solid var(--borde);
+}
+.creditos-img strong { color: #777; font-weight: 700; }
+.creditos-img a { color: #888; text-decoration: underline; }
+.creditos-img a:hover { color: var(--rojo); }
 
 /* ── GLOSARIO (FAQ) ── */
 .glosario-wrap { margin-top: 40px; max-width: 800px; }
@@ -2302,7 +2311,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
       Un país de contrastes: grandes ciudades y pueblos con encanto, costas mediterráneas, montañas,
       islas y monumentos que conservan la memoria de distintas civilizaciones.
     </p>
-    <figure class="conoce-hero"><picture><source srcset="images/conoce-espana-det.webp" type="image/webp"><img src="images/conoce-espana-det.jpg" alt="Plaza Mayor de Madrid con la estatua ecuestre de Felipe III, España" loading="lazy" decoding="async"></picture></figure>
+    <figure class="conoce-hero"><picture><source srcset="images/conoce-espana-det.webp" type="image/webp"><img src="images/conoce-espana-det.jpg" alt="Toledo sobre el río Tajo, con el Alcázar y el puente de Alcántara, España" loading="lazy" decoding="async"></picture></figure>
     <div class="tramite-list">
       <div class="tramite-item" id="tramite-conoce-esp-cul">
         <div class="tramite-header" onclick="toggleTramite('conoce-esp-cul')">
@@ -2346,7 +2355,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
       País caribeño de contrastes naturales —playas, montañas, llanuras, selvas y grandes ríos— y de
       gente cercana y hospitalaria. Naturaleza, tradición y hospitalidad.
     </p>
-    <figure class="conoce-hero"><picture><source srcset="images/conoce-venezuela-det.webp" type="image/webp"><img src="images/conoce-venezuela-det.jpg" alt="Vista aérea del archipiélago de Los Roques, Venezuela" loading="lazy" decoding="async"></picture></figure>
+    <figure class="conoce-hero"><picture><source srcset="images/conoce-venezuela-det.webp" type="image/webp"><img src="images/conoce-venezuela-det.jpg" alt="Los tepuyes Kukenán y Roraima sobre la Gran Sabana, Venezuela" loading="lazy" decoding="async"></picture></figure>
     <div class="tramite-list">
       <div class="tramite-item" id="tramite-conoce-ven-nat">
         <div class="tramite-header" onclick="toggleTramite('conoce-ven-nat')">
@@ -2549,6 +2558,18 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
       conocer Margarita, Coche y Cubagua, el territorio que nos recibe y fortalece los vínculos
       entre nuestras comunidades.
     </div>
+
+    <!-- Atribución de imágenes: obligatoria en las licencias CC BY-SA -->
+    <p class="creditos-img">
+      <strong>Créditos de las imágenes.</strong>
+      Toledo sobre el Tajo: <em>King of Hearts</em>,
+      <a href="https://commons.wikimedia.org/wiki/File:Tagus_Toledo_June_2016_panorama.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>,
+      <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.
+      Tepuyes Kukenán y Roraima: <em>Paolo Costa Baldi</em>,
+      <a href="https://commons.wikimedia.org/wiki/File:Kukenan_Roraima_GS.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>,
+      <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>.
+      Ambas se muestran recortadas y reescaladas para adaptarlas al formato de la página.
+    </p>
   </div>
 </div>
 
