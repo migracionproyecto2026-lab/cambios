@@ -1004,6 +1004,85 @@ footer { background: #1a1a1a; margin-top: 60px; }
 .com-block li { margin-bottom: 6px; }
 .com-block a { color: var(--rojo); font-weight: 600; text-decoration: none; }
 
+/* ── BARRA SUPERIOR DE UTILIDADES (propuesta, pantalla 1) ──
+   Solo en escritorio: por debajo de 1024px manda la hamburguesa, y su menu
+   es position:fixed desde top:72px, asi que una barra encima lo descuadraria. */
+.topbar { background: #1a1a1a; padding: 0 20px; }
+.topbar-inner {
+  max-width: 1200px; margin: 0 auto;
+  height: 38px; display: flex; align-items: center; gap: 26px; flex-wrap: nowrap;
+}
+.topbar a, .topbar span {
+  font-family: 'DM Sans', sans-serif; font-size: 12.5px;
+  color: #bbb; text-decoration: none; white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 7px;
+}
+.topbar a:hover { color: #fff; }
+.topbar svg { width: 14px; height: 14px; flex-shrink: 0; }
+.topbar-emergencia { color: #fff !important; font-weight: 700; }
+.topbar-emergencia svg { fill: var(--rojo); }
+.topbar-emergencia:hover { color: var(--dorado) !important; }
+.topbar-sep { margin-left: auto; }
+@media (max-width: 1024px) { .topbar { display: none; } }
+
+/* ── ACCESOS RÁPIDOS (inicio, propuesta pantalla 1) ── */
+.accesos { margin: 8px auto 0; max-width: 1200px; padding: 0 20px; }
+.accesos-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+}
+.acceso {
+  background: #fff; border: 1px solid var(--borde); border-radius: 10px;
+  padding: 20px 14px; text-align: center; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  min-height: 128px;
+  transition: border-color .18s, box-shadow .18s, transform .18s;
+  font-family: 'DM Sans', sans-serif;
+}
+.acceso:hover { border-color: var(--rojo); box-shadow: 0 6px 18px rgba(0,0,0,0.07); transform: translateY(-2px); }
+.acceso-icon {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: #fdf0f0; display: flex; align-items: center; justify-content: center;
+}
+.acceso-icon svg { width: 21px; height: 21px; stroke: var(--rojo); fill: none; stroke-width: 1.8; }
+.acceso-label { font-size: 13.5px; font-weight: 600; color: var(--texto); line-height: 1.35; }
+@media (max-width: 900px) { .accesos-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) {
+  .accesos-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .acceso { padding: 16px 10px; min-height: 112px; }
+  .acceso-label { font-size: 12.5px; }
+}
+
+/* ── EMERGENCIAS CONSULARES (propuesta, pantalla 7) ── */
+.emg-hero {
+  background: var(--rojo); border-radius: 14px; padding: 32px 28px;
+  text-align: center; margin-bottom: 28px;
+}
+.emg-hero-title {
+  font-family: 'Libre Baskerville', Georgia, serif; font-size: 25px; color: #fff; margin: 0 0 6px;
+}
+.emg-hero-sub { font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.7; }
+.emg-phone {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 18px;
+  background: #fff; color: var(--rojo); text-decoration: none;
+  font-family: 'DM Sans', sans-serif; font-size: 21px; font-weight: 700;
+  padding: 14px 28px; border-radius: 8px;
+}
+.emg-phone:hover { background: var(--dorado); color: #1a1a1a; }
+.emg-phone svg { width: 19px; height: 19px; }
+.emg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 900px) { .emg-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .emg-grid { grid-template-columns: 1fr; } }
+.emg-card {
+  background: #fff; border: 1px solid var(--borde); border-top: 3px solid var(--rojo);
+  border-radius: 10px; padding: 22px 20px;
+}
+.emg-card-title {
+  font-family: 'DM Sans', sans-serif; font-size: 15.5px; font-weight: 700;
+  color: var(--texto); margin: 12px 0 7px;
+}
+.emg-card p { font-family: 'DM Sans', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
+.emg-card-icon svg { width: 24px; height: 24px; stroke: var(--rojo); fill: none; stroke-width: 1.7; }
+
 /* ── CENTRO DE DESCARGAS ── */
 .dl-toolbar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 18px; }
 .dl-search {
@@ -1072,6 +1151,20 @@ footer { background: #1a1a1a; margin-top: 60px; }
   line-height: 1;
   margin: 10px 0;
 }
+/* Datos oficiales tomados de exteriores.gob.es */
+.org-datos {
+  margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--borde);
+  font-family: 'DM Sans', sans-serif; font-size: 13px; color: #666; line-height: 1.8;
+}
+.org-datos a { color: var(--rojo); text-decoration: none; font-weight: 600; }
+.org-datos a:hover { text-decoration: underline; }
+.org-datos-emg { margin-top: 6px; color: var(--rojo); font-weight: 600; }
+.org-datos-emg a { font-weight: 700; }
+.org-fuente {
+  font-family: 'DM Sans', sans-serif; font-size: 12px; color: #999;
+  text-align: center; margin: 0 auto 30px; max-width: 660px; line-height: 1.7;
+}
+.org-fuente a { color: #999; }
 /* ── COMUNIDAD polish (jerarquía + realce, sin cambios de contenido) ── */
 .com-kicker { font-family:'DM Sans',sans-serif; font-size:12px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; color:var(--rojo); margin-bottom:12px; display:flex; align-items:center; gap:10px; }
 .com-kicker::before { content:''; width:28px; height:2px; background:var(--dorado-oscuro); display:inline-block; }
@@ -1260,6 +1353,20 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
   </defs>
 </svg>
 
+<!-- BARRA SUPERIOR DE UTILIDADES (solo escritorio) -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="topbar-emergencia" href="tel:+584242090264">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+      Emergencias 24 h · +58 424 209 0264
+    </a>
+    <a class="topbar-sep" href="https://wa.me/584248429665" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a href="#" onclick="showSection('citas');return false;">Solicitar cita</a>
+    <a href="https://maps.app.goo.gl/d9gfnNzqo79YbMp48" target="_blank" rel="noopener noreferrer">Ubicación</a>
+    <a href="mailto:ch.porlamar@maec.es">ch.porlamar@maec.es</a>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
@@ -1297,7 +1404,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
         </div>
       </div>
       <button class="nav-btn" data-section="conoce">Conoce</button>
-      <button class="nav-btn nav-btn--emergencia" onclick="document.getElementById('emergencia-anchor').scrollIntoView({behavior:'smooth'});closeMenu()">Emergencia</button>
+      <button class="nav-btn nav-btn--emergencia" data-section="emergencias">Emergencia</button>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Abrir menú">
       <span></span><span></span><span></span>
@@ -1325,6 +1432,45 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
 
 <!-- ==================== INICIO ==================== -->
 <div id="sec-inicio" class="section active">
+
+  <!-- ACCESOS RÁPIDOS (propuesta, pantalla 1) -->
+  <div class="accesos" style="padding:0;margin-bottom:34px">
+    <div class="com-kicker">Accesos rápidos</div>
+    <div class="accesos-grid">
+      <button class="acceso" onclick="irATramite('pasaportes')">
+        <span class="acceso-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span>
+        <span class="acceso-label">Pasaportes</span>
+      </button>
+      <button class="acceso" onclick="irATramite('nacimiento')">
+        <span class="acceso-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span>
+        <span class="acceso-label">Registro Civil</span>
+      </button>
+      <button class="acceso" onclick="irATramite('otros')">
+        <span class="acceso-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg></span>
+        <span class="acceso-label">Inscripción consular</span>
+      </button>
+      <button class="acceso" onclick="irATramite('fevida')">
+        <span class="acceso-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M17 11l2 2 4-4"/></svg></span>
+        <span class="acceso-label">Fe de Vida</span>
+      </button>
+      <button class="acceso" onclick="showSection('citas')">
+        <span class="acceso-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg></span>
+        <span class="acceso-label">Solicitar cita</span>
+      </button>
+      <button class="acceso" onclick="showSection('descargas')">
+        <span class="acceso-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg></span>
+        <span class="acceso-label">Descargas</span>
+      </button>
+      <button class="acceso" onclick="showSection('faq')">
+        <span class="acceso-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+        <span class="acceso-label">Preguntas frecuentes</span>
+      </button>
+      <button class="acceso" onclick="showSection('emergencias')">
+        <span class="acceso-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></span>
+        <span class="acceso-label">Emergencias 24 h</span>
+      </button>
+    </div>
+  </div>
 
   <!-- CARRUSEL DE AVISOS — carga dinámicamente desde /api/banners -->
   <div class="carousel-section" id="carousel-section" style="display:none;">
@@ -1378,10 +1524,22 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
   <h1 class="page-title">Servicios Consulares</h1>
   <p class="page-desc">Seleccione un servicio para ver los requisitos completos y los documentos necesarios para su cita.</p>
 
-  <div class="tramite-list">
+  <!-- Buscador + pestañas por categoría (propuesta, pantalla 3) -->
+  <div class="dl-toolbar">
+    <input class="dl-search" id="trSearch" type="search" placeholder="Buscar trámite…" oninput="filtrarTramites()" aria-label="Buscar trámite">
+    <span class="dl-count" id="trCount"></span>
+  </div>
+  <div class="dl-cats" id="trCats">
+    <button class="dl-cat active" data-cat="todos"        onclick="catTramites(this)">Todos</button>
+    <button class="dl-cat"        data-cat="documentacion" onclick="catTramites(this)">Documentación</button>
+    <button class="dl-cat"        data-cat="registro"      onclick="catTramites(this)">Registro Civil</button>
+    <button class="dl-cat"        data-cat="certificados"  onclick="catTramites(this)">Certificados y otros</button>
+  </div>
+
+  <div class="tramite-list" id="tramitesList">
 
     <!-- PASAPORTES -->
-    <div class="tramite-item" id="tramite-pasaportes">
+    <div class="tramite-item" data-cat="documentacion" id="tramite-pasaportes">
       <div class="tramite-header" onclick="toggleTramite('pasaportes')">
         <div class="tramite-left">
           <div class="tramite-badge">PAS</div>
@@ -1432,7 +1590,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
     </div>
 
     <!-- NACIMIENTO -->
-    <div class="tramite-item" id="tramite-nacimiento">
+    <div class="tramite-item" data-cat="registro" id="tramite-nacimiento">
       <div class="tramite-header" onclick="toggleTramite('nacimiento')">
         <div class="tramite-left">
           <div class="tramite-badge">NAC</div>
@@ -1479,7 +1637,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
     </div>
 
     <!-- MATRIMONIO -->
-    <div class="tramite-item" id="tramite-matrimonio">
+    <div class="tramite-item" data-cat="registro" id="tramite-matrimonio">
       <div class="tramite-header" onclick="toggleTramite('matrimonio')">
         <div class="tramite-left">
           <div class="tramite-badge">MAT</div>
@@ -1524,7 +1682,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
     </div>
 
     <!-- DEFUNCIÓN -->
-    <div class="tramite-item" id="tramite-defuncion">
+    <div class="tramite-item" data-cat="registro" id="tramite-defuncion">
       <div class="tramite-header" onclick="toggleTramite('defuncion')">
         <div class="tramite-left">
           <div class="tramite-badge">DEF</div>
@@ -1556,7 +1714,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
     </div>
 
     <!-- FE DE VIDA -->
-    <div class="tramite-item" id="tramite-fevida">
+    <div class="tramite-item" data-cat="documentacion" id="tramite-fevida">
       <div class="tramite-header" onclick="toggleTramite('fevida')">
         <div class="tramite-left">
           <div class="tramite-badge">FEV</div>
@@ -1580,7 +1738,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
     </div>
 
     <!-- OTROS TRÁMITES -->
-    <div class="tramite-item" id="tramite-otros">
+    <div class="tramite-item" data-cat="certificados" id="tramite-otros">
       <div class="tramite-header" onclick="toggleTramite('otros')">
         <div class="tramite-left">
           <div class="tramite-badge">OTR</div>
@@ -1785,6 +1943,81 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
   </div>
 </div>
 
+<!-- ==================== EMERGENCIAS CONSULARES ==================== -->
+<div id="sec-emergencias" class="section">
+  <button class="back-btn" onclick="showSection('inicio')">← Volver al inicio</button>
+  <h1 class="page-title">Emergencias Consulares</h1>
+  <p class="page-desc">
+    Si usted es español y necesita ayuda urgente fuera del horario de atención, el Consulado
+    General de España en Caracas mantiene un teléfono de emergencia disponible las 24 horas.
+  </p>
+
+  <div class="emg-hero">
+    <h2 class="emg-hero-title">Emergencias 24 horas</h2>
+    <div class="emg-hero-sub">
+      Atendido por el Consulado General de España en Caracas.<br>
+      Para consultas y trámites que no sean urgentes, utilice el horario de atención habitual.
+    </div>
+    <a class="emg-phone" href="tel:+584242090264">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+      +58 424 209 0264
+    </a>
+  </div>
+
+  <div class="com-kicker">Situaciones que atiende la asistencia consular</div>
+  <div class="emg-grid">
+
+    <div class="emg-card">
+      <div class="emg-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+      <div class="emg-card-title">Detención o arresto</div>
+      <p>La oficina consular puede visitar al detenido, velar por que se respeten sus derechos, informar a la familia si él lo autoriza y facilitar la lista de abogados. No puede pagar fianzas ni sacarle de prisión.</p>
+    </div>
+
+    <div class="emg-card">
+      <div class="emg-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v5"/><path d="M9.5 14.5h5"/></svg></div>
+      <div class="emg-card-title">Fallecimiento</div>
+      <p>Se orienta a la familia sobre la inscripción de la defunción en el Registro Civil consular y sobre los trámites de repatriación o inhumación, que corren por cuenta de los familiares.</p>
+    </div>
+
+    <div class="emg-card">
+      <div class="emg-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M9 8l6 6"/><path d="M15 8l-6 6"/></svg></div>
+      <div class="emg-card-title">Pérdida o robo del pasaporte</div>
+      <p>Denuncie el hecho ante las autoridades locales y contacte con la oficina consular. Según el caso puede expedirse un salvoconducto para regresar a España o tramitarse un nuevo pasaporte.</p>
+    </div>
+
+    <div class="emg-card">
+      <div class="emg-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.86 2h8.28L22 7.86v8.28L16.14 22H7.86L2 16.14V7.86L7.86 2z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
+      <div class="emg-card-title">Accidente grave</div>
+      <p>Se contacta con los familiares, se orienta sobre la atención médica disponible y se acompaña en la relación con las autoridades y los centros sanitarios locales.</p>
+    </div>
+
+    <div class="emg-card">
+      <div class="emg-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 8v8"/><path d="M8 12h8"/></svg></div>
+      <div class="emg-card-title">Hospitalización</div>
+      <p>Se informa a la familia, se orienta sobre coberturas y seguros y se facilita el contacto con el centro médico. Los gastos de asistencia sanitaria corresponden al interesado o a su seguro.</p>
+    </div>
+
+    <div class="emg-card">
+      <div class="emg-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
+      <div class="emg-card-title">Catástrofe o desastre natural</div>
+      <p>Ante situaciones de riesgo colectivo, siga las indicaciones de las autoridades locales y mantenga el contacto con la oficina consular. Estar inscrito como residente facilita la localización.</p>
+    </div>
+
+  </div>
+
+  <div class="tramite-note" style="margin-top:26px">
+    <strong>Qué no cubre la asistencia consular:</strong> no adelanta ni presta dinero, no paga
+    facturas médicas, hoteles, multas o fianzas, no interviene en litigios privados ni sustituye
+    a las autoridades locales. Se recomienda viajar siempre con seguro médico y de repatriación.
+  </div>
+
+  <div class="tramite-note">
+    Para asuntos no urgentes: <a href="https://wa.me/584248429665" target="_blank" rel="noopener noreferrer">WhatsApp del Viceconsulado</a>
+    · <a href="mailto:ch.porlamar@maec.es">ch.porlamar@maec.es</a>
+    · <button type="button" class="inline-link" onclick="showSection('citas')">Solicitar cita</button>
+  </div>
+</div>
+
 <!-- ==================== CENTRO DE DESCARGAS ==================== -->
 <div id="sec-descargas" class="section">
   <button class="back-btn" onclick="showSection('inicio')">← Volver al inicio</button>
@@ -1896,24 +2129,43 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
   <!-- Orden institucional: 1 Embajada · 2 Consulado General · 3 Viceconsulado · 4 Vicecónsul -->
   <div class="com-kicker">Organización institucional</div>
   <h2 style="font-family:'Libre Baskerville',Georgia,serif;font-size:26px;color:var(--texto);margin:0 0 8px">La Red Consular de España en Venezuela</h2>
-  <p class="page-desc" style="margin-bottom:26px">El Viceconsulado Honorario de España en Nueva Esparta forma parte de la Red Consular de España en Venezuela y desarrolla sus funciones bajo la dirección y supervisión del Consulado General de España en Caracas.</p>
+  <p class="page-desc" style="margin-bottom:18px">El Viceconsulado Honorario de España en Nueva Esparta forma parte de la Red Consular de España en Venezuela y desarrolla sus funciones bajo la dirección y supervisión del Consulado General de España en Caracas.</p>
+
+  <p class="org-fuente">
+    Los datos de la Embajada y del Consulado General proceden de la web oficial del
+    <a href="https://www.exteriores.gob.es" target="_blank" rel="noopener noreferrer">Ministerio de Asuntos Exteriores, Unión Europea y Cooperación</a>.
+    Para cualquier gestión, consulte siempre sus páginas oficiales, que son la fuente vigente.
+  </p>
 
   <div style="max-width:660px;margin:0 auto 20px">
-    <!-- 1 · EMBAJADA -->
+    <!-- 1 · EMBAJADA — datos oficiales de exteriores.gob.es -->
     <div class="com-block" style="text-align:center;border-top:3px solid var(--rojo)">
       <div class="org-step">1 · Representación diplomática</div>
       <div class="info-block-title" style="color:var(--rojo)">Embajada de España en Venezuela</div>
       <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Álvaro Enrique Albacete Perea</div>
       <div style="font-size:13px;color:#888">Embajador de España · máxima representación diplomática del Reino de España, dirige la acción exterior del Estado en el país.</div>
+      <div class="org-datos">
+        <div>Torre España, 4ª Avenida entre 3ª y 4ª Transversal, Altamira, Caracas 1060</div>
+        <div>Tel. <a href="tel:+582126270300">+58 212 627 03 00</a> · <a href="mailto:emb.caracas@maec.es">emb.caracas@maec.es</a></div>
+        <div>Atención: lunes a viernes, 8:00 — 14:30</div>
+      </div>
+      <div style="margin-top:14px"><a class="btn btn-outline btn-sm" href="https://www.exteriores.gob.es/Embajadas/caracas" target="_blank" rel="noopener noreferrer">Web de la Embajada ↗</a></div>
     </div>
     <div class="org-arrow">↓</div>
 
-    <!-- 2 · CONSULADO GENERAL -->
+    <!-- 2 · CONSULADO GENERAL — datos oficiales de exteriores.gob.es -->
     <div class="com-block" style="text-align:center;border-top:3px solid var(--rojo)">
       <div class="org-step">2 · Oficina consular de carrera</div>
       <div class="info-block-title" style="color:var(--rojo)">Consulado General de España en Caracas</div>
       <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Ramón Molina Lladó</div>
       <div style="font-size:13px;color:#888">Cónsul General · principal oficina consular; presta los servicios consulares, protege los intereses de los ciudadanos españoles y dirige, coordina y supervisa la Red de Viceconsulados Honorarios.</div>
+      <div class="org-datos">
+        <div>Edif. Bancaracas, piso 7 — Plaza La Castellana, Caracas 1060</div>
+        <div>Tel. <a href="tel:+582122660222">+58 212 266 02 22</a> · <a href="mailto:cog.caracas@maec.es">cog.caracas@maec.es</a></div>
+        <div>Atención: 8:00 — 14:00</div>
+        <div class="org-datos-emg">Emergencia consular 24 h: <a href="tel:+584242090264">+58 424 209 0264</a> · <a href="mailto:emergencia.caracas@maec.es">emergencia.caracas@maec.es</a></div>
+      </div>
+      <div style="margin-top:14px"><a class="btn btn-red btn-sm" href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank" rel="noopener noreferrer" style="color:white;text-decoration:none">Web del Consulado General ↗</a></div>
     </div>
     <div class="org-arrow">↓</div>
 
@@ -1990,8 +2242,9 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
       <div><strong>Edif. Bancaracas, Piso 7</strong> — Plaza La Castellana, Caracas 1060</div>
     </div>
     <div>
-      <div>Tel: +58 212 2660333</div>
-      <div>Emergencias 24h: <button type="button" class="inline-link" onclick="document.getElementById('emergencia-anchor').scrollIntoView({behavior:'smooth'})">+58 424 2090264</button></div>
+      <div>Tel: +58 212 266 02 22</div>
+      <div>cog.caracas@maec.es</div>
+      <div>Emergencias 24h: <button type="button" class="inline-link" onclick="showSection('emergencias')">+58 424 209 0264</button></div>
     </div>
     <div>
       <a class="btn btn-red btn-sm" href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank" rel="noopener noreferrer" style="color:white;text-decoration:none">Web oficial del Consulado General ↗</a>
@@ -2005,10 +2258,12 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
       <div class="com-block">
         <div class="info-block-title">Embajada de España en Venezuela</div>
         <div>Máxima representación diplomática del Reino de España.</div>
+        <div style="margin-top:8px"><a href="https://www.exteriores.gob.es/Embajadas/caracas" target="_blank" rel="noopener noreferrer">Web oficial de la Embajada ↗</a></div>
       </div>
       <div class="com-block">
         <div class="info-block-title">Consulado General de España en Caracas</div>
         <div>Oficina consular de carrera responsable de la coordinación de todos los Viceconsulados Honorarios de España en Venezuela.</div>
+        <div style="margin-top:8px"><a href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank" rel="noopener noreferrer">Web oficial del Consulado General ↗</a></div>
       </div>
       <div class="com-block">
         <div class="info-block-title">Consejería de Trabajo, Migraciones y Seguridad Social</div>
@@ -3481,6 +3736,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
         <a href="#" onclick="showSection('citas');return false;">Citas</a>
         <a href="https://sutramiteconsular.maec.es" target="_blank" rel="noopener noreferrer">Estado de Trámite ↗</a>
         <a href="#" onclick="showSection('descargas');return false;">Centro de Descargas</a>
+        <a href="#" onclick="showSection('emergencias');return false;">Emergencias 24 h</a>
         <a href="#" onclick="showSection('faq');return false;">Preguntas Frecuentes</a>
         <a href="#" onclick="showSection('ubicacion');return false;">Nosotros</a>
         <a href="#" onclick="showSection('conoce');return false;">Conoce</a>
@@ -3613,6 +3869,60 @@ document.addEventListener('keydown', function(e) {
   window._updateNav = updateNav;
   updateNav();
 })();
+
+// ============================================
+// ACCESOS RÁPIDOS — abrir un trámite concreto desde el inicio
+// ============================================
+function irATramite(id) {
+  showSection('tramites');
+  // Si hay un filtro puesto, se limpia para que el trámite pedido sea visible
+  var buscador = document.getElementById('trSearch');
+  if (buscador) buscador.value = '';
+  var todos = document.querySelector('#trCats .dl-cat[data-cat="todos"]');
+  if (todos) catTramites(todos);
+
+  var item = document.getElementById('tramite-' + id);
+  if (!item) return;
+  document.querySelectorAll('#tramitesList .tramite-item').forEach(function(i) { i.classList.remove('open'); });
+  item.classList.add('open');
+  // showSection hace scroll arriba: esperamos a que termine antes de bajar al trámite
+  setTimeout(function() { item.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 420);
+}
+
+// ============================================
+// SERVICIOS CONSULARES — filtro por categoría + búsqueda
+// ============================================
+function catTramites(btn) {
+  document.querySelectorAll('#trCats .dl-cat').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  filtrarTramites();
+}
+function filtrarTramites() {
+  var buscador = document.getElementById('trSearch');
+  if (!buscador) return;
+  var texto  = buscador.value.trim().toLowerCase();
+  var activa = document.querySelector('#trCats .dl-cat.active');
+  var cat    = activa ? activa.dataset.cat : 'todos';
+  // Solo los trámites de Servicios Consulares: los acordeones de Conoce comparten clase
+  var items  = document.querySelectorAll('#tramitesList .tramite-item');
+  var visibles = 0;
+
+  items.forEach(function(item) {
+    var coincideCat   = (cat === 'todos') || item.dataset.cat === cat;
+    var coincideTexto = !texto || item.textContent.toLowerCase().indexOf(texto) !== -1;
+    var mostrar = coincideCat && coincideTexto;
+    item.style.display = mostrar ? '' : 'none';
+    if (mostrar) visibles++;
+  });
+
+  var contador = document.getElementById('trCount');
+  if (contador) {
+    contador.textContent = visibles === items.length
+      ? items.length + ' servicios'
+      : visibles + ' de ' + items.length + ' servicios';
+  }
+}
+document.addEventListener('DOMContentLoaded', filtrarTramites);
 
 // ============================================
 // CENTRO DE DESCARGAS — filtro por categoría + búsqueda
