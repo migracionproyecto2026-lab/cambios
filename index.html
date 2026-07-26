@@ -23,17 +23,17 @@
      Cambiando estos valores cambia la piel entera del sitio.
      El escudo de Espana (SVG en linea) NO usa estas variables a proposito:
      es simbolo oficial y va siempre en rojo y gualda. */
-  --marca: #0E3B6F;
-  --marca-oscuro: #092A50;
-  --marca-rgb: 14,59,111;
+  --marca: #AA151B;
+  --marca-oscuro: #8B1016;
+  --marca-rgb: 170,21,27;
   --realce: #F8CE46;
   --realce-oscuro: #C9A227;
   --realce-rgb: 248,206,70;
-  --tinte: #EEF3F9;
-  --tinte-borde: #CBDAEB;
-  --hero-a: #0E3B6F;
-  --hero-b: #082744;
-  --hero-c: #050F1C;
+  --tinte: #fdf0f0;
+  --tinte-borde: #f2d5d5;
+  --hero-a: #8B0000;
+  --hero-b: #500000;
+  --hero-c: #0a0a0a;
 
   /* Rojo semantico: NO sigue a la marca. Con la marca en azul el rojo vuelve a
      significar algo, y lo usan las dos cosas que deben destacar sobre el resto:
@@ -298,8 +298,8 @@ button:focus:not(:focus-visible) { outline: none; }
 }
 .slide-info {
   background: linear-gradient(135deg, #f6f9fd 0%, #edf3fa 100%);
-  border: 1px solid var(--tinte-borde);
-  border-left: 6px solid var(--marca);
+  border: 1px solid #c0d4e8;
+  border-left: 6px solid #2c7bb6;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
 }
 .slide-label {
@@ -312,7 +312,7 @@ button:focus:not(:focus-visible) { outline: none; }
 }
 .slide-jornada .slide-label { color: #7a5c00; }
 .slide-aviso .slide-label { color: var(--alerta-oscuro); }
-.slide-info .slide-label { color: var(--marca); }
+.slide-info .slide-label { color: #1a5580; }
 .slide-title {
   font-family: 'DM Sans';
   font-size: 21px;
@@ -322,7 +322,7 @@ button:focus:not(:focus-visible) { outline: none; }
 }
 .slide-jornada .slide-title { color: #5a4200; }
 .slide-aviso .slide-title { color: #1a1a1a; }
-.slide-info .slide-title { color: var(--marca-oscuro); }
+.slide-info .slide-title { color: #0d3a5c; }
 .slide-body {
   font-family: 'DM Sans';
   font-size: 15px;
@@ -995,7 +995,7 @@ footer { background: #1a1a1a; margin-top: 60px; }
 .t-tag-cita    { background: #e8f0fe; color: #1a56c4; }
 .t-tag-gratis  { background: #e6f9f0; color: #1a7a4a; }
 .t-tag-tasa    { background: #fff3e0; color: #b35c00; }
-.t-tag-caracas { background: var(--alerta-tinte); color: var(--alerta); }
+.t-tag-caracas { background: #fce8e8; color: var(--alerta); }
 
 /* ── NAV DROPDOWN (Comunidad) ── */
 .nav-dropdown { position: relative; display: inline-block; }
@@ -1332,7 +1332,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
 /* ── REQ BOX (formulario citas) ── */
 .req-box {
   display:none; margin-top:10px;
-  background:var(--tinte); border:1px solid var(--tinte-borde); border-left:4px solid var(--marca);
+  background:#f0f4f8; border:1px solid #c8d8e8; border-left:4px solid #2c7bb6;
   border-radius:7px; padding:14px 16px;
   font-family:'DM Sans'; font-size:14px; color:#2c4a62; line-height:1.8;
 }
