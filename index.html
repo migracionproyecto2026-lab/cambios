@@ -14,10 +14,43 @@
    CONFIGURACIÓN FÁCIL — CAMBIA ESTOS VALORES
    ============================================ */
 :root {
-  --rojo: #AA151B;
-  --rojo-oscuro: #8B1016;
-  --dorado: #F8CE46;
-  --dorado-oscuro: #C9A227;
+  /* ── COLOR DE MARCA — todo el tema sale de aqui ──────────────
+     --marca / --marca-oscuro : color principal (botones, enlaces, acentos)
+     --marca-rgb              : los mismos canales, para las rgba() con alfa
+     --realce / --realce-*    : color secundario (badges, filetes, bordes del hero)
+     --tinte / --tinte-borde  : fondos suaves derivados de la marca
+     --hero-a/b/c             : degradado de la cabecera
+     Cambiando estos valores cambia la piel entera del sitio.
+     El escudo de Espana (SVG en linea) NO usa estas variables a proposito:
+     es simbolo oficial y va siempre en rojo y gualda. */
+  --marca: #0E3B6F;
+  --marca-oscuro: #092A50;
+  --marca-rgb: 14,59,111;
+  --realce: #F8CE46;
+  --realce-oscuro: #C9A227;
+  --realce-rgb: 248,206,70;
+  --tinte: #EEF3F9;
+  --tinte-borde: #CBDAEB;
+  --hero-a: #0E3B6F;
+  --hero-b: #082744;
+  --hero-c: #050F1C;
+
+  /* Rojo semantico: NO sigue a la marca. Con la marca en azul el rojo vuelve a
+     significar algo, y lo usan las dos cosas que deben destacar sobre el resto:
+       - los avisos (.slide-aviso)
+       - el Consulado General de Caracas, que Manuel pidio como distintivo */
+  --alerta: #AA151B;
+  --alerta-oscuro: #8B1016;
+  --alerta-rgb: 170,21,27;
+  --alerta-tinte: #FDF0F0;
+  --alerta-borde: #F2D5D5;
+
+  /* Alias heredados: el resto de la hoja sigue escrito con estos nombres */
+  --rojo: var(--marca);
+  --rojo-oscuro: var(--marca-oscuro);
+  --dorado: var(--realce);
+  --dorado-oscuro: var(--realce-oscuro);
+
   --verde-wa: #25D366;
   --fondo: #FAFAF7;
   --borde: #e8e5df;
@@ -86,7 +119,7 @@ a { color: var(--rojo); }
   white-space: nowrap;
   transition: color 0.2s, background 0.2s;
 }
-.nav-btn:hover, .nav-btn.active { color: var(--rojo); background: rgba(170,21,27,0.06); }
+.nav-btn:hover, .nav-btn.active { color: var(--rojo); background: rgba(var(--marca-rgb),0.06); }
 a.nav-btn { text-decoration: none; display: inline-block; }
 
 /* ── FOCUS VISIBLE (accesibilidad teclado — WCAG 2.4.7) ── */
@@ -114,7 +147,7 @@ button:focus:not(:focus-visible) { outline: none; }
 
 /* HERO */
 .hero {
-  background: linear-gradient(135deg, #8B0000 0%, #500000 50%, #0a0a0a 100%);
+  background: linear-gradient(135deg, var(--hero-a) 0%, var(--hero-b) 50%, var(--hero-c) 100%);
   padding: 60px 20px 64px;
   position: relative;
   overflow: hidden;
@@ -124,7 +157,7 @@ button:focus:not(:focus-visible) { outline: none; }
   position: absolute;
   top: -40%; right: -10%;
   width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(248,206,70,0.10) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--realce-rgb),0.10) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero::after {
@@ -155,7 +188,7 @@ button:focus:not(:focus-visible) { outline: none; }
   border-radius: 50%;
   object-fit: cover;
   filter: drop-shadow(0 6px 28px rgba(0,0,0,0.45));
-  border: 3px solid rgba(248,206,70,0.4);
+  border: 3px solid rgba(var(--realce-rgb),0.4);
 }
 .hero-text { flex: 1; }
 .hero-badge {
@@ -260,13 +293,13 @@ button:focus:not(:focus-visible) { outline: none; }
 .slide-aviso {
   background: linear-gradient(135deg, #fdfcfc 0%, #faf8f6 100%);
   border: 1px solid var(--borde);
-  border-left: 6px solid var(--rojo);
+  border-left: 6px solid var(--alerta);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
 }
 .slide-info {
   background: linear-gradient(135deg, #f6f9fd 0%, #edf3fa 100%);
-  border: 1px solid #c0d4e8;
-  border-left: 6px solid #2c7bb6;
+  border: 1px solid var(--tinte-borde);
+  border-left: 6px solid var(--marca);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
 }
 .slide-label {
@@ -278,8 +311,8 @@ button:focus:not(:focus-visible) { outline: none; }
   margin-bottom: 8px;
 }
 .slide-jornada .slide-label { color: #7a5c00; }
-.slide-aviso .slide-label { color: var(--rojo-oscuro); }
-.slide-info .slide-label { color: #1a5580; }
+.slide-aviso .slide-label { color: var(--alerta-oscuro); }
+.slide-info .slide-label { color: var(--marca); }
 .slide-title {
   font-family: 'DM Sans';
   font-size: 21px;
@@ -289,7 +322,7 @@ button:focus:not(:focus-visible) { outline: none; }
 }
 .slide-jornada .slide-title { color: #5a4200; }
 .slide-aviso .slide-title { color: #1a1a1a; }
-.slide-info .slide-title { color: #0d3a5c; }
+.slide-info .slide-title { color: var(--marca-oscuro); }
 .slide-body {
   font-family: 'DM Sans';
   font-size: 15px;
@@ -343,9 +376,13 @@ button:focus:not(:focus-visible) { outline: none; }
 }
 .btn:hover { transform: translateY(-1px); }
 .btn-red { background: var(--rojo); color: white; }
-.btn-red:hover { background: var(--rojo-oscuro); box-shadow: 0 4px 14px rgba(170,21,27,0.3); }
+.btn-red:hover { background: var(--rojo-oscuro); box-shadow: 0 4px 14px rgba(var(--marca-rgb),0.3); }
 .btn-outline { background: none; border: 2px solid var(--rojo); color: var(--rojo); }
-.btn-outline:hover { background: rgba(170,21,27,0.06); }
+.btn-outline:hover { background: rgba(var(--marca-rgb),0.06); }
+/* Consulado General de Caracas: distintivo en rojo (peticion de Manuel).
+   Es el unico boton que no sigue al color de marca. */
+.btn-alerta { background: var(--alerta); color: white; }
+.btn-alerta:hover { background: var(--alerta-oscuro); box-shadow: 0 4px 14px rgba(var(--alerta-rgb),0.3); }
 .btn-sm { font-size: 14px; padding: 11px 20px; }
 .btn-green { background: var(--verde-wa); color: white; }
 .btn-green:hover { background: #1fb855; box-shadow: 0 4px 12px rgba(37,211,102,0.3); }
@@ -372,8 +409,8 @@ button:focus:not(:focus-visible) { outline: none; }
 .tramite-badge {
   width: 44px; height: 44px;
   border-radius: 50%;
-  background: rgba(170,21,27,0.08);
-  border: 1.5px solid rgba(170,21,27,0.15);
+  background: rgba(var(--marca-rgb),0.08);
+  border: 1.5px solid rgba(var(--marca-rgb),0.15);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
   font-family: 'DM Sans';
@@ -432,7 +469,7 @@ button:focus:not(:focus-visible) { outline: none; }
   border-radius: 5px;
   transition: background 0.2s;
 }
-.tramite-link:hover { background: rgba(170,21,27,0.06); }
+.tramite-link:hover { background: rgba(var(--marca-rgb),0.06); }
 .no-tramites {
   background: #f8f7f4;
   border: 1px solid var(--borde);
@@ -471,7 +508,7 @@ button:focus:not(:focus-visible) { outline: none; }
   transition: border-color 0.2s;
   color: var(--texto);
 }
-.form-input:focus { outline: none; border-color: var(--rojo); box-shadow: 0 0 0 3px rgba(170,21,27,0.07); }
+.form-input:focus { outline: none; border-color: var(--rojo); box-shadow: 0 0 0 3px rgba(var(--marca-rgb),0.07); }
 textarea.form-input { resize: vertical; }
 select.form-input { appearance: auto; }
 .form-hint { font-family: 'DM Sans'; font-size: 13px; color: #999; margin-top: 5px; }
@@ -502,7 +539,7 @@ select.form-input { appearance: auto; }
   color: #555;
   line-height: 1.3;
 }
-.slot-btn:hover { border-color: var(--rojo); color: var(--rojo); background: rgba(170,21,27,0.04); }
+.slot-btn:hover { border-color: var(--rojo); color: var(--rojo); background: rgba(var(--marca-rgb),0.04); }
 .slot-btn.selected { border-color: var(--rojo); background: var(--rojo); color: white; }
 .slot-btn:disabled, .slot-btn.slot-blocked {
   background: #f1efe9; color: #b8b3aa; border-color: #e2ded5;
@@ -735,7 +772,7 @@ footer { background: #1a1a1a; margin-top: 60px; }
 .footer-shield { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
 .footer-text { font-family: 'DM Sans'; font-size: 12px; color: #666; line-height: 1.9; }
 .footer-cta { margin-bottom: 18px; display: flex; justify-content: center; }
-.footer-cta .btn-red { color: white; text-decoration: none; }
+.footer-cta .btn-red, .footer-cta .btn-alerta { color: white; text-decoration: none; }
 .foot-links { margin-top: 14px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 .foot-links a { font-family: 'DM Sans'; font-size: 12px; color: var(--rojo); text-decoration: none; }
 .foot-links a:hover { color: #e03030; }
@@ -958,7 +995,7 @@ footer { background: #1a1a1a; margin-top: 60px; }
 .t-tag-cita    { background: #e8f0fe; color: #1a56c4; }
 .t-tag-gratis  { background: #e6f9f0; color: #1a7a4a; }
 .t-tag-tasa    { background: #fff3e0; color: #b35c00; }
-.t-tag-caracas { background: #fce8e8; color: #aa151b; }
+.t-tag-caracas { background: var(--alerta-tinte); color: var(--alerta); }
 
 /* ── NAV DROPDOWN (Comunidad) ── */
 .nav-dropdown { position: relative; display: inline-block; }
@@ -1041,7 +1078,7 @@ footer { background: #1a1a1a; margin-top: 60px; }
 .acceso:hover { border-color: var(--rojo); box-shadow: 0 6px 18px rgba(0,0,0,0.07); transform: translateY(-2px); }
 .acceso-icon {
   width: 44px; height: 44px; border-radius: 50%;
-  background: #fdf0f0; display: flex; align-items: center; justify-content: center;
+  background: var(--tinte); display: flex; align-items: center; justify-content: center;
 }
 .acceso-icon svg { width: 21px; height: 21px; stroke: var(--rojo); fill: none; stroke-width: 1.8; }
 .acceso-label { font-size: 13.5px; font-weight: 600; color: var(--texto); line-height: 1.35; }
@@ -1053,8 +1090,10 @@ footer { background: #1a1a1a; margin-top: 60px; }
 }
 
 /* ── EMERGENCIAS CONSULARES (propuesta, pantalla 7) ── */
+/* Emergencias van en rojo (--alerta), no en el azul de marca: el rojo es la
+   senal de urgencia y perderla por coherencia cromatica seria un retroceso. */
 .emg-hero {
-  background: var(--rojo); border-radius: 14px; padding: 32px 28px;
+  background: var(--alerta); border-radius: 14px; padding: 32px 28px;
   text-align: center; margin-bottom: 28px;
 }
 .emg-hero-title {
@@ -1063,7 +1102,7 @@ footer { background: #1a1a1a; margin-top: 60px; }
 .emg-hero-sub { font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.7; }
 .emg-phone {
   display: inline-flex; align-items: center; gap: 10px; margin-top: 18px;
-  background: #fff; color: var(--rojo); text-decoration: none;
+  background: #fff; color: var(--alerta); text-decoration: none;
   font-family: 'DM Sans', sans-serif; font-size: 21px; font-weight: 700;
   padding: 14px 28px; border-radius: 8px;
 }
@@ -1073,7 +1112,7 @@ footer { background: #1a1a1a; margin-top: 60px; }
 @media (max-width: 900px) { .emg-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .emg-grid { grid-template-columns: 1fr; } }
 .emg-card {
-  background: #fff; border: 1px solid var(--borde); border-top: 3px solid var(--rojo);
+  background: #fff; border: 1px solid var(--borde); border-top: 3px solid var(--alerta);
   border-radius: 10px; padding: 22px 20px;
 }
 .emg-card-title {
@@ -1081,7 +1120,7 @@ footer { background: #1a1a1a; margin-top: 60px; }
   color: var(--texto); margin: 12px 0 7px;
 }
 .emg-card p { font-family: 'DM Sans', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
-.emg-card-icon svg { width: 24px; height: 24px; stroke: var(--rojo); fill: none; stroke-width: 1.7; }
+.emg-card-icon svg { width: 24px; height: 24px; stroke: var(--alerta); fill: none; stroke-width: 1.7; }
 
 /* ── CENTRO DE DESCARGAS ── */
 .dl-toolbar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 18px; }
@@ -1113,7 +1152,7 @@ footer { background: #1a1a1a; margin-top: 60px; }
 .dl-row:hover { border-color: var(--dorado-oscuro); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
 .dl-icon {
   flex-shrink: 0; width: 40px; height: 46px; border-radius: 5px;
-  background: #fdf0f0; border: 1px solid #f2d5d5;
+  background: var(--tinte); border: 1px solid var(--tinte-borde);
   display: flex; align-items: center; justify-content: center;
   font-family: 'DM Sans'; font-size: 9.5px; font-weight: 700;
   letter-spacing: 0.5px; color: var(--rojo);
@@ -1257,7 +1296,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
   border: none; border-radius: 30px;
   padding: 14px 22px;
   display: flex; align-items: center; gap: 8px;
-  box-shadow: 0 4px 20px rgba(170,21,27,0.40);
+  box-shadow: 0 4px 20px rgba(var(--marca-rgb),0.40);
   cursor: pointer;
   opacity: 0;
   transform: translateY(16px) scale(0.85);
@@ -1265,7 +1304,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
   transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s;
   text-decoration: none;
 }
-.sticky-cta-btn:hover { box-shadow: 0 6px 24px rgba(170,21,27,0.50); }
+.sticky-cta-btn:hover { box-shadow: 0 6px 24px rgba(var(--marca-rgb),0.50); }
 .sticky-cta.visible .sticky-cta-btn {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -1293,7 +1332,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
 /* ── REQ BOX (formulario citas) ── */
 .req-box {
   display:none; margin-top:10px;
-  background:#f0f4f8; border:1px solid #c8d8e8; border-left:4px solid #2c7bb6;
+  background:var(--tinte); border:1px solid var(--tinte-borde); border-left:4px solid var(--marca);
   border-radius:7px; padding:14px 16px;
   font-family:'DM Sans'; font-size:14px; color:#2c4a62; line-height:1.8;
 }
@@ -2165,7 +2204,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
     <!-- 2 · CONSULADO GENERAL — datos oficiales de exteriores.gob.es -->
     <div class="com-block" style="text-align:center;border-top:3px solid var(--rojo)">
       <div class="org-step">2 · Oficina consular de carrera</div>
-      <div class="info-block-title" style="color:var(--rojo)">Consulado General de España en Caracas</div>
+      <div class="info-block-title" style="color:var(--alerta)">Consulado General de España en Caracas</div>
       <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:19px;color:var(--texto);margin:6px 0 4px">D. Ramón Molina Lladó</div>
       <div style="font-size:13px;color:#888">Cónsul General · principal oficina consular; presta los servicios consulares, protege los intereses de los ciudadanos españoles y dirige, coordina y supervisa la Red de Viceconsulados Honorarios.</div>
       <div class="org-datos">
@@ -2174,7 +2213,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
         <div>Atención: 8:00 — 14:00</div>
         <div class="org-datos-emg">Emergencia consular 24 h: <a href="tel:+584242090264">+58 424 209 0264</a> · <a href="mailto:emergencia.caracas@maec.es">emergencia.caracas@maec.es</a></div>
       </div>
-      <div style="margin-top:14px"><a class="btn btn-red btn-sm" href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank" rel="noopener noreferrer" style="color:white;text-decoration:none">Web del Consulado General ↗</a></div>
+      <div style="margin-top:14px"><a class="btn btn-alerta btn-sm" href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank" rel="noopener noreferrer" style="color:white;text-decoration:none">Web del Consulado General ↗</a></div>
     </div>
     <div class="org-arrow">↓</div>
 
@@ -2256,7 +2295,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
       <div>Emergencias 24h: <button type="button" class="inline-link" onclick="showSection('emergencias')">+58 424 209 0264</button></div>
     </div>
     <div>
-      <a class="btn btn-red btn-sm" href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank" rel="noopener noreferrer" style="color:white;text-decoration:none">Web oficial del Consulado General ↗</a>
+      <a class="btn btn-alerta btn-sm" href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank" rel="noopener noreferrer" style="color:white;text-decoration:none">Web oficial del Consulado General ↗</a>
     </div>
   </div>
 
@@ -3717,7 +3756,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
           </a>
         </div>
         <div id="emergencia-anchor" style="margin-top:8px">
-          <a class="btn btn-red btn-sm" href="tel:+584242090264" style="display:inline-flex;align-items:center;gap:8px;color:white;text-decoration:none">
+          <a class="btn btn-alerta btn-sm" href="tel:+584242090264" style="display:inline-flex;align-items:center;gap:8px;color:white;text-decoration:none">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
             Contacto de emergencia
           </a>
@@ -3786,7 +3825,7 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
   <div class="footer-legal">
     <!-- Enlace destacado al Consulado General (botón rojo) -->
     <div class="footer-cta">
-      <a class="btn btn-red btn-sm" href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank" rel="noopener noreferrer">Web del Consulado General en Caracas ↗</a>
+      <a class="btn btn-alerta btn-sm" href="https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx" target="_blank" rel="noopener noreferrer">Web del Consulado General en Caracas ↗</a>
     </div>
     <p class="footer-text">
       Los datos facilitados serán tratados conforme a la normativa de protección de datos vigente.
