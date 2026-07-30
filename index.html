@@ -1218,6 +1218,45 @@ footer { background: #1a1a1a; margin-top: 60px; }
 .conoce-hero { margin:0 0 20px; border-radius:14px; overflow:hidden; box-shadow:0 10px 28px rgba(0,0,0,0.10); aspect-ratio:16 / 8; }
 .conoce-hero img { width:100%; height:100%; object-fit:cover; display:block; }
 @media (max-width:720px){ .conoce-hero { aspect-ratio:16 / 9; } }
+
+/* ── MOSAICO DE COMUNIDADES AUTONOMAS (Conoce Espana) ── */
+.ccaa-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; margin:18px 0 0; }
+.ccaa-card { position:relative; display:block; width:100%; padding:0; border:0; text-align:left; cursor:default;
+  border-radius:12px; overflow:hidden; background:#111; aspect-ratio:16/10;
+  box-shadow:0 2px 8px rgba(0,0,0,0.10); transition:transform .25s ease, box-shadow .25s ease; }
+.ccaa-card:hover { transform:translateY(-3px); box-shadow:0 12px 26px rgba(0,0,0,0.22); }
+.ccaa-card img.ccaa-foto { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s ease; }
+.ccaa-card:hover img.ccaa-foto { transform:scale(1.06); }
+.ccaa-card::after { content:''; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0) 34%, rgba(0,0,0,0.10) 52%, rgba(0,0,0,0.80) 100%); }
+.ccaa-num { position:absolute; top:10px; left:12px; z-index:2;
+  font-family:'Libre Baskerville',Georgia,serif; font-size:26px; line-height:1; color:#fff;
+  text-shadow:0 2px 6px rgba(0,0,0,0.55); opacity:.92; }
+.ccaa-escudo { position:absolute; top:10px; right:12px; z-index:2; width:46px; height:46px;
+  object-fit:contain; filter:drop-shadow(0 2px 5px rgba(0,0,0,0.5)); transition:transform .25s ease; }
+.ccaa-card:hover .ccaa-escudo { transform:scale(1.08); }
+.ccaa-txt { position:absolute; left:14px; right:14px; bottom:12px; z-index:2; }
+.ccaa-nom { font-family:'DM Sans',sans-serif; font-size:15.5px; font-weight:700; letter-spacing:.3px;
+  color:#fff; text-shadow:0 1px 4px rgba(0,0,0,0.6); line-height:1.25; }
+.ccaa-mon { font-family:'DM Sans',sans-serif; font-size:12.5px; color:rgba(255,255,255,0.88);
+  text-shadow:0 1px 4px rgba(0,0,0,0.6); margin-top:3px; line-height:1.35; }
+.ccaa-sub { font-family:'DM Sans',sans-serif; font-size:12px; font-weight:700; letter-spacing:1.4px;
+  text-transform:uppercase; color:var(--dorado-oscuro); margin:26px 0 2px; }
+.ccaa-creditos { font-family:'DM Sans',sans-serif; font-size:12.5px; color:#8a8a8a; line-height:1.7; margin-top:14px; }
+.ccaa-creditos a { color:#7a7a7a; }
+@media (max-width:720px){
+  .ccaa-grid { grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; }
+  .ccaa-num { font-size:20px; top:7px; left:9px; }
+  .ccaa-escudo { width:34px; height:34px; top:7px; right:9px; }
+  .ccaa-nom { font-size:13px; }
+  .ccaa-mon { font-size:11px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .ccaa-card, .ccaa-card img.ccaa-foto, .ccaa-escudo { transition:none; }
+  .ccaa-card:hover { transform:none; }
+  .ccaa-card:hover img.ccaa-foto { transform:none; }
+}
+
 /* Atribución de imágenes con licencia CC — discreta pero legible */
 .creditos-img {
   font-family: 'DM Sans', sans-serif; font-size: 12px; color: #999;
@@ -2389,6 +2428,283 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
         </div>
         <div class="tramite-body"><div class="tramite-content">
           <div>En sus ciudades y pueblos conviven edificios romanos, castillos medievales, catedrales, arquitectura islámica y obras contemporáneas. Es el país de artistas universales como Velázquez, Goya, Gaudí, Picasso, Miró y Dalí. Las Fallas, el flamenco, los castells y otras celebraciones muestran una cultura viva que se transmite entre generaciones.</div>
+        </div></div>
+      </div>
+    </div>
+
+
+    <!-- MOSAICO: LAS COMUNIDADES AUTONOMAS -->
+    <div class="com-kicker" style="margin-top:34px">Las diecisiete comunidades autónomas</div>
+    <p class="page-desc">
+      Cada comunidad autónoma tiene lengua, paisaje, tradiciones y patrimonio propios. Este recorrido
+      recoge un monumento representativo de cada una, junto a su escudo oficial.
+    </p>
+    <div class="ccaa-grid">
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/andalucia.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/andalucia.jpg" alt="Plaza de España, Sevilla — Andalucía" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">1</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-andalucia.png" alt="Escudo de Andalucía" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Andalucía</div>
+          <div class="ccaa-mon">Plaza de España, Sevilla</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/aragon.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/aragon.jpg" alt="Basílica del Pilar, Zaragoza — Aragón" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">2</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-aragon.png" alt="Escudo de Aragón" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Aragón</div>
+          <div class="ccaa-mon">Basílica del Pilar, Zaragoza</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/asturias.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/asturias.jpg" alt="Catedral de Oviedo — Principado de Asturias" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">3</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-asturias.png" alt="Escudo de Principado de Asturias" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Principado de Asturias</div>
+          <div class="ccaa-mon">Catedral de Oviedo</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/baleares.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/baleares.jpg" alt="Catedral de Palma (La Seu) — Illes Balears" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">4</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-baleares.png" alt="Escudo de Illes Balears" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Illes Balears</div>
+          <div class="ccaa-mon">Catedral de Palma (La Seu)</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/paisvasco.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/paisvasco.jpg" alt="Museo Guggenheim, Bilbao — País Vasco / Euskadi" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">5</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-paisvasco.png" alt="Escudo de País Vasco / Euskadi" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">País Vasco / Euskadi</div>
+          <div class="ccaa-mon">Museo Guggenheim, Bilbao</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/canarias.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/canarias.jpg" alt="Parque Nacional del Teide, Tenerife — Canarias" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">6</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-canarias.png" alt="Escudo de Canarias" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Canarias</div>
+          <div class="ccaa-mon">Parque Nacional del Teide, Tenerife</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/cantabria.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/cantabria.jpg" alt="Palacio de la Magdalena, Santander — Cantabria" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">7</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-cantabria.png" alt="Escudo de Cantabria" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Cantabria</div>
+          <div class="ccaa-mon">Palacio de la Magdalena, Santander</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/clm.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/clm.jpg" alt="Alcázar de Toledo — Castilla-La Mancha" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">8</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-clm.png" alt="Escudo de Castilla-La Mancha" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Castilla-La Mancha</div>
+          <div class="ccaa-mon">Alcázar de Toledo</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/cyl.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/cyl.jpg" alt="Acueducto de Segovia — Castilla y León" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">9</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-cyl.png" alt="Escudo de Castilla y León" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Castilla y León</div>
+          <div class="ccaa-mon">Acueducto de Segovia</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/cataluna.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/cataluna.jpg" alt="Sagrada Família, Barcelona — Catalunya" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">10</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-cataluna.png" alt="Escudo de Catalunya" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Catalunya</div>
+          <div class="ccaa-mon">Sagrada Família, Barcelona</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/extremadura.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/extremadura.jpg" alt="Teatro Romano de Mérida — Extremadura" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">11</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-extremadura.png" alt="Escudo de Extremadura" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Extremadura</div>
+          <div class="ccaa-mon">Teatro Romano de Mérida</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/galicia.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/galicia.jpg" alt="Catedral de Santiago de Compostela — Galicia" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">12</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-galicia.png" alt="Escudo de Galicia" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Galicia</div>
+          <div class="ccaa-mon">Catedral de Santiago de Compostela</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/larioja.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/larioja.jpg" alt="Monasterio de Yuso, San Millán de la Cogolla — La Rioja" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">13</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-larioja.png" alt="Escudo de La Rioja" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">La Rioja</div>
+          <div class="ccaa-mon">Monasterio de Yuso, San Millán de la Cogolla</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/madrid.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/madrid.jpg" alt="Puerta de Alcalá, Madrid — Comunidad de Madrid" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">14</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-madrid.png" alt="Escudo de Comunidad de Madrid" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Comunidad de Madrid</div>
+          <div class="ccaa-mon">Puerta de Alcalá, Madrid</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/murcia.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/murcia.jpg" alt="Catedral de Murcia — Región de Murcia" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">15</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-murcia.png" alt="Escudo de Región de Murcia" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Región de Murcia</div>
+          <div class="ccaa-mon">Catedral de Murcia</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/navarra.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/navarra.jpg" alt="Ciudadela de Pamplona — Comunidad Foral de Navarra" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">16</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-navarra.png" alt="Escudo de Comunidad Foral de Navarra" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Comunidad Foral de Navarra</div>
+          <div class="ccaa-mon">Ciudadela de Pamplona</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/valenciana.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/valenciana.jpg" alt="Ciudad de las Artes y las Ciencias, Valencia — Comunitat Valenciana" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">17</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-valenciana.png" alt="Escudo de Comunitat Valenciana" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Comunitat Valenciana</div>
+          <div class="ccaa-mon">Ciudad de las Artes y las Ciencias, Valencia</div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="ccaa-sub">Ciudades autónomas</div>
+    <div class="ccaa-grid">
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/ceuta.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/ceuta.jpg" alt="Murallas Reales de Ceuta — Ciudad Autónoma de Ceuta" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">18</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-ceuta.png" alt="Escudo de Ciudad Autónoma de Ceuta" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Ciudad Autónoma de Ceuta</div>
+          <div class="ccaa-mon">Murallas Reales de Ceuta</div>
+        </figcaption>
+      </figure>
+      <figure class="ccaa-card">
+        <picture>
+          <source srcset="images/ccaa/melilla.webp" type="image/webp">
+          <img class="ccaa-foto" src="images/ccaa/melilla.jpg" alt="Melilla la Vieja — Ciudad Autónoma de Melilla" loading="lazy" decoding="async" width="900" height="562">
+        </picture>
+        <span class="ccaa-num">19</span>
+        <img class="ccaa-escudo" src="images/ccaa/escudo-melilla.png" alt="Escudo de Ciudad Autónoma de Melilla" loading="lazy" decoding="async">
+        <figcaption class="ccaa-txt">
+          <div class="ccaa-nom">Ciudad Autónoma de Melilla</div>
+          <div class="ccaa-mon">Melilla la Vieja</div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="tramite-list" style="margin-top:18px">
+      <div class="tramite-item" id="tramite-conoce-esp-cred">
+        <div class="tramite-header" onclick="toggleTramite('conoce-esp-cred')">
+          <div class="tramite-left"><div class="tramite-badge">IMG</div><div>
+            <div class="tramite-title">Créditos de las imágenes</div>
+            <div class="tramite-subtitle">Fotografías con licencia libre y escudos oficiales</div>
+          </div></div><span class="tramite-arrow">▼</span>
+        </div>
+        <div class="tramite-body"><div class="tramite-content">
+          <div>Las fotografías proceden de Wikimedia Commons y se reproducen bajo licencias Creative Commons, con indicación de autoría. Los escudos son las versiones oficiales de cada comunidad y ciudad autónoma.</div>
+          <div class="ccaa-creditos">
+            <div><strong>Andalucía</strong>: Plaza de España, Sevilla — Carlos Delgado, CC BY-SA 4.0 (<a href="https://commons.wikimedia.org/wiki/File%3APlaza_de_Espa%C3%B1a_%28Sevilla%29_-_01.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>Aragón</strong>: Basílica del Pilar, Zaragoza — Rab Lawrence, CC BY 2.0 (<a href="https://commons.wikimedia.org/wiki/File%3AZaragoza_-_Basilica_de_Nuestra_Se%C3%B1ora_del_Pilar_01.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>Principado de Asturias</strong>: Catedral de Oviedo — Fernando, CC BY-SA 4.0 (<a href="https://commons.wikimedia.org/wiki/File%3ACathedral_of_Oviedo_2021_-_exterior.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>Illes Balears</strong>: Catedral de Palma (La Seu) — Thomas Wolf, www.foto-tw.de, CC BY-SA 3.0 de (<a href="https://commons.wikimedia.org/wiki/File%3AKathedrale_von_Palma_II.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>País Vasco / Euskadi</strong>: Museo Guggenheim, Bilbao — Naotake Murayama, CC BY 2.0 (<a href="https://commons.wikimedia.org/wiki/File%3AMuseo_Guggenheim%2C_Bilbao_%2831273245344%29.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>Canarias</strong>: Parque Nacional del Teide, Tenerife — Photograph by Mike Peel (www.mikepeel.net)., CC BY-SA 4.0 (<a href="https://commons.wikimedia.org/wiki/File%3AAt_Tenerife_2020_689.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>Cantabria</strong>: Palacio de la Magdalena, Santander — Kokonotanloko, CC BY-SA 4.0 (<a href="https://commons.wikimedia.org/wiki/File%3APalacio_de_la_Magdalena%2C_Santander_%28Cantabria%2C_Espa%C3%B1a%29.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>Castilla-La Mancha</strong>: Alcázar de Toledo — Carlos Delgado, CC BY-SA 3.0 es (<a href="https://commons.wikimedia.org/wiki/File%3AAlc%C3%A1zar_de_Toledo_-_01.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>Castilla y León</strong>: Acueducto de Segovia — Marmontel, CC BY 2.0 (<a href="https://commons.wikimedia.org/wiki/File%3AAcqueduc_romain_%2851427728318%29.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>Catalunya</strong>: Sagrada Família, Barcelona — Canaan, CC BY-SA 4.0 (<a href="https://commons.wikimedia.org/wiki/File%3ASF_maig_2026.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>Extremadura</strong>: Teatro Romano de Mérida — Fernando, CC BY-SA 4.0 (<a href="https://commons.wikimedia.org/wiki/File%3AAncient_Roman_theatre_in_M%C3%A9rida_2023.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>Galicia</strong>: Catedral de Santiago de Compostela — Tim Adams, CC BY 3.0 (<a href="https://commons.wikimedia.org/wiki/File%3APlaza_Obradoiro_and_cathedral_in_Santiago_de_Compostela%2C_Spain.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>La Rioja</strong>: Monasterio de Yuso, San Millán de la Cogolla — xiquinhosilva from Cacau, CC BY 2.0 (<a href="https://commons.wikimedia.org/wiki/File%3A21320-San-Millan-de-la-Cogolla_%2832463907708%29.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>Comunidad de Madrid</strong>: Puerta de Alcalá, Madrid — Fernando Pascullo, CC BY-SA 4.0 (<a href="https://commons.wikimedia.org/wiki/File%3APuerta_de_Alcal%C3%A1_2025.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>Región de Murcia</strong>: Catedral de Murcia — Fernando, CC BY-SA 4.0 (<a href="https://commons.wikimedia.org/wiki/File%3AMurcia_2022_-_West_facade_1.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>Comunidad Foral de Navarra</strong>: Ciudadela de Pamplona — Jialxv, CC BY-SA 4.0 (<a href="https://commons.wikimedia.org/wiki/File%3AVista_de_la_Vuelta_del_Castillo_y_la_Ciudadela_%28Pamplona%29_04.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>Comunitat Valenciana</strong>: Ciudad de las Artes y las Ciencias, Valencia — Bybbisch94, Christian Gebhardt, CC BY-SA 4.0 (<a href="https://commons.wikimedia.org/wiki/File%3A20211115.Valencia.-019.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>Ciudad Autónoma de Ceuta</strong>: Murallas Reales de Ceuta — Diego Delso, CC BY-SA 4.0 (<a href="https://commons.wikimedia.org/wiki/File%3AMurallas_Reales%2C_Ceuta%2C_Espa%C3%B1a%2C_2015-12-10%2C_DD_09.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+            <div><strong>Ciudad Autónoma de Melilla</strong>: Melilla la Vieja — TonioMora, CC BY-SA 4.0 (<a href="https://commons.wikimedia.org/wiki/File%3AFrente_de_La_Marina.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>).</div>
+          </div>
         </div></div>
       </div>
     </div>
