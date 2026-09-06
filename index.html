@@ -1402,11 +1402,10 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
   border-radius: 12px;
   padding: 20px 22px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  transition: grid-template-columns .25s ease;
 }
-.lorca-media { grid-area: media; }
-.lorca-body  { grid-area: body;  min-width: 0; }
-.lorca-foot  { grid-area: foot;  min-width: 0; }
+.lorca-media { grid-area: media; transform-origin: top left; }
+.lorca-body  { grid-area: body;  min-width: 0; transform-origin: top left; }
+.lorca-foot  { grid-area: foot;  min-width: 0; transform-origin: top left; }
 .lorca-video {
   display: block; width: 100%; height: auto;
   aspect-ratio: 9 / 16;
@@ -1446,7 +1445,6 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
   .lorca-title { font-size: 18px; }
   .lorca-cta .btn { width: 100%; justify-content: center; }
 }
-@media (prefers-reduced-motion: reduce) { .lorca-card { transition: none; } }
 
 </style>
 </head>
@@ -4975,10 +4973,81 @@ function toggleFaq(btn) {
   var UMBRAL = 1;
   var EP = (typeof API_URL === 'string' ? API_URL : '') + '/api/evento/lorca-2026';
 
-  // 1 - el cartel crece al reproducir y vuelve a su sitio al terminar
+  // 1 - el cartel se expande al reproducir y vuelve a su sitio al terminar.
+  //
+  //     La expansion se anima con FLIP (First - Last - Invert - Play): se mide la
+  //     posicion antes y despues de cambiar la clase y se anima SOLO con transform
+  //     y opacity, que el navegador compone en GPU sin recalcular layout.
+  //
+  //     Por que no basta un transition de CSS: en movil .is-playing cambia
+  //     grid-template-areas de dos columnas a una, y grid-template-areas NO es
+  //     animable. El navegador reflowea de golpe. Eso era el salto seco.
+  var medio  = band.querySelector('.lorca-media');
+  var cuerpo = band.querySelector('.lorca-body');
+  var pie    = band.querySelector('.lorca-foot');
+
+  var mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var DUR  = 260;                              // corto a proposito: rapido, no lento
+  var EASE = 'cubic-bezier(.2,.7,.3,1)';       // arranca decidido y frena suave
+
+  function hayWAAPI() {
+    return typeof Element !== 'undefined' && typeof Element.prototype.animate === 'function';
+  }
+
+  function expandir(activar) {
+    if (!card) return;
+
+    // Sin Web Animations API o con movimiento reducido: se cambia y punto.
+    if (!hayWAAPI() || mqReduce.matches) {
+      card.classList.toggle('is-playing', activar);
+      return;
+    }
+    var piezas = [medio, cuerpo, pie].filter(Boolean);
+
+    // Si hay una animacion a medias (play/pause rapido, o el video termina justo
+    // al abrirse) se cancela antes de medir. Bloquear con una bandera dejaba el
+    // cartel expandido para siempre: llegaba el 'ended' y se ignoraba.
+    piezas.forEach(function (el) {
+      if (el.getAnimations) { el.getAnimations().forEach(function (a) { a.cancel(); }); }
+    });
+
+    var antes = piezas.map(function (el) { return el.getBoundingClientRect(); });
+
+    card.classList.toggle('is-playing', activar);
+
+    var despues = piezas.map(function (el) { return el.getBoundingClientRect(); });
+
+    piezas.forEach(function (el, i) {
+      var a = antes[i], d = despues[i];
+      if (!d.width || !d.height || !a.width) return;
+
+      var dx  = a.left - d.left;
+      var dy  = a.top  - d.top;
+      var esc = a.width / d.width;
+
+      // Si esa pieza no se movio ni cambio de tamano, no se anima nada.
+      if (Math.abs(dx) < 1 && Math.abs(dy) < 1 && Math.abs(esc - 1) < 0.01) return;
+
+      // El poster si escala: es una imagen y aguanta. El texto solo se desplaza,
+      // porque escalar tipografia la deja borrosa durante la animacion.
+      var desde = (el === medio)
+        ? 'translate(' + dx + 'px,' + dy + 'px) scale(' + esc + ')'
+        : 'translate(' + dx + 'px,' + dy + 'px)';
+
+      // transform y opacity los compone el navegador en GPU sin recalcular layout,
+      // asi que no hace falta will-change. Ponerlo y quitarlo creaba una carrera
+      // entre el oncancel de una animacion y el arranque de la siguiente.
+      el.animate(
+        [ { transform: desde,   opacity: (el === medio ? 1 : 0.5) },
+          { transform: 'none',  opacity: 1 } ],
+        { duration: DUR, easing: EASE, fill: 'none' }
+      );
+    });
+  }
+
   if (vid && card) {
-    vid.addEventListener('play',  function () { card.classList.add('is-playing'); });
-    vid.addEventListener('ended', function () { card.classList.remove('is-playing'); });
+    vid.addEventListener('play',  function () { expandir(true);  });
+    vid.addEventListener('ended', function () { expandir(false); });
   }
 
   // 2 - display:none NO pausa un <video>. showSection oculta el hero al cambiar
