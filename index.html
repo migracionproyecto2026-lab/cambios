@@ -1403,7 +1403,10 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
   padding: 22px 24px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.03);
 }
-.evt-media img { display:block; width:100%; height:auto; border-radius:8px; border:1px solid var(--borde); }
+.evt-media img, .evt-video { display:block; width:100%; height:auto; border-radius:8px; border:1px solid var(--borde); }
+.evt-video { aspect-ratio: 9 / 16; object-fit: cover; background: #000; }
+.evt-card { transition: grid-template-columns .25s ease; }
+.evt-card.is-playing { grid-template-columns: 300px 1fr; }   /* al reproducir, el vídeo crece (como la banda de LORCA) */
 .evt-label { font-family:'DM Sans',sans-serif; font-size:11px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color:var(--dorado-oscuro); margin:0 0 8px; }
 .evt-title { font-size: 22px; line-height: 1.3; margin: 0 0 8px; }
 .evt-meta  { font-family:'DM Sans',sans-serif; font-size:14px; color:var(--gris); margin:0 0 12px; }
@@ -1424,6 +1427,8 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
 @media (max-width: 768px) {
   .evt-card { grid-template-columns: 1fr; gap: 16px; padding: 18px 16px; }
   .evt-media { max-width: 200px; }
+  .evt-card.is-playing { grid-template-columns: 1fr; }
+  .evt-card.is-playing .evt-media { max-width: none; width: min(72vw, 260px); margin: 0 auto; }
   .evt-title { font-size: 19px; }
   .evt-details summary { width:100%; justify-content:center; }
 }
@@ -2012,8 +2017,16 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
 
     <article class="evt-card" id="evt-lorca-2026">
       <div class="evt-media">
-        <img src="images/lorca-cartel.jpg" width="540" height="960" loading="lazy"
-             alt="Cartel de La Casa de Bernarda Alba, representada en Cines Unidos La Vela el 19 de septiembre de 2026">
+        <video class="evt-video" id="evt-lorca-video"
+               controls preload="none" playsinline
+               poster="images/lorca-cartel.jpg"
+               width="720" height="1280"
+               controlslist="nodownload noremoteplayback"
+               disablepictureinpicture
+               aria-label="Vídeo de La Casa de Bernarda Alba, representada en Cines Unidos La Vela el 19 de septiembre de 2026">
+          <source src="media/lorca-2026.mp4" type='video/mp4; codecs="avc1.64001F, mp4a.40.2"'>
+          <p>Su navegador no puede reproducir este vídeo. <a href="media/lorca-2026.mp4">Abrir el vídeo (3,3 MB)</a>.</p>
+        </video>
       </div>
       <div class="evt-body">
         <div class="evt-label">Cultura y Comunidad · 19 de septiembre de 2026</div>
@@ -6227,10 +6240,20 @@ var PORTADA_FALLBACK = [
   // 3 · Al cambiar de sección: pausar el vídeo del destacado.
   //     Se envuelve showSection igual que los demás envoltorios del archivo.
   // =================================================================
+  // Vídeo de LORCA en "Cultura y Comunidad": crece al reproducir y vuelve al acabar
+  var evtVideo = document.getElementById('evt-lorca-video');
+  var evtCard = evtVideo && evtVideo.closest ? evtVideo.closest('.evt-card') : null;
+  function pausarEvento() { if (evtVideo && !evtVideo.paused) evtVideo.pause(); }
+  if (evtVideo && evtCard) {
+    evtVideo.addEventListener('play',  function () { evtCard.classList.add('is-playing'); });
+    evtVideo.addEventListener('ended', function () { evtCard.classList.remove('is-playing'); });
+    document.addEventListener('visibilitychange', function () { if (document.hidden) pausarEvento(); });
+  }
+
   var _show = window.showSection;
   if (typeof _show === 'function') {
     window.showSection = function (id) {
-      if (id !== 'inicio') pausarDestacado();
+      if (id !== 'inicio') { pausarDestacado(); pausarEvento(); }
       return _show.apply(this, arguments);
     };
   }
