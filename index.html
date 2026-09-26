@@ -2049,15 +2049,6 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
     </article>
   </section>
 
-  <!-- CARRUSEL DE AVISOS — carga dinámicamente desde /api/banners -->
-  <div class="carousel-section" id="carousel-section" style="display:none;">
-    <div class="section-label">Avisos y Comunicados</div>
-    <div class="carousel-wrap" id="carousel">
-      <div class="carousel-track" id="carouselTrack"></div>
-    </div>
-    <div class="carousel-dots" id="carouselDots"></div>
-  </div>
-
   <!-- ESPAÑA · PASADO Y PRESENTE — tarjetas desde GET /api/portada (respaldo: PORTADA_FALLBACK).
        Oculta hasta que hay al menos una tarjeta vigente. -->
   <section class="pf-section" id="portada-section" aria-labelledby="pf-heading" hidden>
@@ -2070,6 +2061,15 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
       <p class="sr-only" id="pfEstado" aria-live="off" aria-atomic="true"></p>
     </div>
   </section>
+
+  <!-- CARRUSEL DE AVISOS — carga dinámicamente desde /api/banners -->
+  <div class="carousel-section" id="carousel-section" style="display:none;">
+    <div class="section-label">Avisos y Comunicados</div>
+    <div class="carousel-wrap" id="carousel">
+      <div class="carousel-track" id="carouselTrack"></div>
+    </div>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
 
   <!-- BIO SECTION — debajo del carrusel -->
   <section class="bio-section">
