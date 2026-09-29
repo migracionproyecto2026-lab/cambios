@@ -2,6 +2,10 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<!-- CSP: GitHub Pages no permite cabeceras, va en meta. Solo scripts propios y la API del panel;
+     'unsafe-inline' hace falta por los onclick del HTML. Frena scripts de terceros y el envío
+     de datos a otros dominios. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' https:; connect-src 'self' https://admin.viceconsulado-nuevaesparta.com http://localhost:3000; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Viceconsulado Honorario de España en Nueva Esparta, Venezuela. Información de trámites consulares, requisitos y citas previas.">
 <title>Viceconsulado Honorario de España — Nueva Esparta, Venezuela</title>
@@ -2516,8 +2520,6 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
         <button type="button" class="slot-btn" data-hora="10:30" onclick="selectSlot(this)">10:30<br><span style="font-size:11px;font-weight:400">AM</span></button>
         <button type="button" class="slot-btn" data-hora="11:00" onclick="selectSlot(this)">11:00<br><span style="font-size:11px;font-weight:400">AM</span></button>
         <button type="button" class="slot-btn" data-hora="11:30" onclick="selectSlot(this)">11:30<br><span style="font-size:11px;font-weight:400">AM</span></button>
-        <button type="button" class="slot-btn" data-hora="12:00" onclick="selectSlot(this)">12:00<br><span style="font-size:11px;font-weight:400">PM</span></button>
-        <button type="button" class="slot-btn" data-hora="12:30" onclick="selectSlot(this)">12:30<br><span style="font-size:11px;font-weight:400">PM</span></button>
       </div>
       <input type="hidden" name="hora" id="horaInput">
       <div class="form-hint">Duración: 30 min por cita · Su hora queda sujeta a confirmación</div>
@@ -2805,8 +2807,9 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
   <div class="info-strip">
     <div class="info-block">
       <div class="info-block-title">Dirección</div>
-      <div>Av. José Asunción Rodríguez</div>
-      <div>Porlamar 6301, Nueva Esparta</div>
+      <div>Edif. Grupo Leiros</div>
+      <div>Av. José Asunción Rodríguez, sector Conejeros</div>
+      <div>Porlamar 6301, Estado Nueva Esparta</div>
       <div style="margin-top:16px">
         <a class="btn btn-red btn-sm" href="https://maps.app.goo.gl/d9gfnNzqo79YbMp48" target="_blank" rel="noopener noreferrer">Ver en Google Maps ↗</a>
       </div>
@@ -4501,8 +4504,9 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Ubicación</div>
-        <div>Av. José Asunción Rodríguez</div>
-        <div>Porlamar 6301, Nueva Esparta</div>
+        <div>Edif. Grupo Leiros</div>
+        <div>Av. José Asunción Rodríguez, sector Conejeros</div>
+        <div>Porlamar 6301, Estado Nueva Esparta</div>
         <div style="margin-top:8px"><strong style="color:#ccc">Vicecónsul Honorario:</strong></div>
         <div id="cfg-viceconsul">D. Manuel Leiros</div>
         <div style="margin-top:8px"><strong style="color:#ccc">Circunscripción:</strong></div>
