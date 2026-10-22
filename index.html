@@ -1624,6 +1624,15 @@ body.nav-open .sticky-cta, body.nav-open .sticky-wa { opacity: 0 !important; poi
   position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%;
 }
 .pf-card .pf-foto { object-fit: cover; }
+/* autor y licencia de la foto (obligatorio en CC BY / CC BY-SA) */
+.pf-credito {
+  position: absolute; top: 8px; right: 8px; z-index: 3; max-width: calc(100% - 16px); margin: 0;
+  padding: 2px 7px; border-radius: 4px; background: rgba(0,0,0,.45); color: rgba(255,255,255,.88);
+  font-family:'DM Sans',sans-serif; font-size: 10px; line-height: 1.4;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  transition: opacity .35s var(--pf-ease);
+}
+.pf-card:not([data-pos="0"]) .pf-credito, .pf-card--inst .pf-credito { opacity: 0; }
 /* fundido al color de la pagina: la tarjeta "se sumerge" en la portada */
 .pf-shade {
   position: absolute; left: 0; right: 0; bottom: 0; height: 74%; z-index: 1; pointer-events: none;
@@ -5447,35 +5456,35 @@ var PORTADA_FALLBACK = [
     texto: 'El Consulado General sigue prestando determinados servicios presenciales con limitaciones operativas. Consulte la información oficial.',
     imagen: null,
     enlace: { texto: 'Información oficial', url: 'https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx' },
-    desde: '2026-09-25', hasta: '2026-10-31', prioridad: 2, orden: 8 },
+    desde: '2026-09-25', hasta: '2026-11-30', prioridad: 2, orden: 8 },
 
   { id: 'f10', categoria: 'CONSULAR', fecha: 'ACTUALIZADO · 17 SEP 2026',
     titulo: 'Recomendaciones para viajar a Venezuela',
     texto: 'El Ministerio de Asuntos Exteriores mantiene actualizadas sus recomendaciones de viaje a Venezuela: documentación, seguridad y emergencias.',
     imagen: null,
     enlace: { texto: 'Ver recomendaciones', url: 'https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Detalle-recomendaciones-de-viaje.aspx?trc=Venezuela' },
-    desde: '2026-09-25', hasta: '2026-10-31', prioridad: 4, orden: 9 },
+    desde: '2026-09-25', hasta: '2026-11-30', prioridad: 4, orden: 9 },
 
   { id: 'f11', categoria: 'CONSULAR', fecha: 'INFORMACIÓN DE SERVICIO',
     titulo: 'Asistencia consular urgente las 24 horas',
     texto: 'El Consulado General de Caracas mantiene una línea de emergencia consular 24 horas para situaciones graves que afecten a españoles.',
     imagen: null,
     enlace: { texto: 'Emergencias consulares', url: '#emergencias' },
-    desde: '2026-09-25', hasta: '2026-10-31', prioridad: 2, orden: 10 },
+    desde: '2026-09-25', hasta: '2026-11-30', prioridad: 2, orden: 10 },
 
   { id: 'f12', categoria: 'EMBAJADA', fecha: 'ESPAÑA EN VENEZUELA',
     titulo: 'Embajada de España en Venezuela',
     texto: 'La Embajada desarrolla actividad institucional, cultural y de cooperación, y cuenta con una Oficina Cultural para la cultura española.',
     imagen: null,
     enlace: { texto: 'Actualidad Embajada', url: 'https://www.exteriores.gob.es/Embajadas/caracas/es/Paginas/index.aspx' },
-    desde: '2026-09-25', hasta: '2026-10-31', prioridad: 5, orden: 11 },
+    desde: '2026-09-25', hasta: '2026-11-30', prioridad: 5, orden: 11 },
 
   { id: 'f13', categoria: 'CONSULAR', fecha: 'TABLÓN DE ANUNCIOS',
     titulo: 'Convocatorias de interés para la comunidad española',
     texto: 'El Consulado General publica convocatorias, ayudas y oportunidades, como proyectos asistenciales para la emigración y selección de personal.',
     imagen: null,
     enlace: { texto: 'Ver tablón de anuncios', url: 'https://www.exteriores.gob.es/Consulados/caracas/es/Consulado/Paginas/Tabl%c3%b3n-de-anuncios.aspx' },
-    desde: '2026-09-25', hasta: '2026-10-31', prioridad: 5, orden: 12 },
+    desde: '2026-09-25', hasta: '2026-11-30', prioridad: 5, orden: 12 },
 
   { id: 'f14', categoria: 'COMUNIDAD', fecha: '19 SEP 2026',
     titulo: 'La Casa de Bernarda Alba llegó a Margarita',
@@ -5491,7 +5500,70 @@ var PORTADA_FALLBACK = [
       'En Margarita, la obra adquirió una expresión propia gracias al trabajo de artistas de Nueva Esparta, demostrando la capacidad del teatro para tender puentes entre distintas comunidades culturales.\n\n' +
       'Para el Viceconsulado Honorario de España en Nueva Esparta, la difusión de iniciativas de esta naturaleza contribuye a acercar el patrimonio cultural español a la comunidad y a reconocer el trabajo de quienes mantienen vivo el intercambio cultural entre España y Venezuela.\n\n' +
       'La función del 19 de septiembre pasa así a formar parte de la memoria cultural de Nueva Esparta en 2026, dejando una imagen de teatro, participación local y presencia institucional española alrededor de la obra de uno de los autores más universales de nuestra literatura.',
-    desde: '2026-09-25', hasta: '2026-10-31', prioridad: 6, orden: 13 }
+    desde: '2026-09-25', hasta: '2026-10-31', prioridad: 6, orden: 13 },
+
+  /* ---- Noviembre de 2026 (calendario de Claudio, revisado el 21-10-2026) ----
+     Fotos de Wikimedia Commons; el crédito sale en la tarjeta (imagen.credito). */
+  { id: 'n01', categoria: 'TRADICIÓN', fecha: '1 NOV',
+    titulo: 'Día de Todos los Santos',
+    texto: 'Fiesta nacional en la que las familias visitan los cementerios y llevan flores. Se acompaña de huesos de santo, buñuelos y panellets.',
+    imagen: { url: 'images/portada/todos-los-santos-800.webp', urlJpg: 'images/portada/todos-los-santos-800.jpg',
+              alt: 'Bandeja de huesos de santo, dulce típico de Todos los Santos, en una pastelería',
+              credito: 'Foto: Tamorlan · Dominio público' },
+    enlace: { texto: 'Descubrir España', url: 'https://www.spain.info/es/' },
+    desde: '2026-10-28', hasta: '2026-11-02', prioridad: 3, orden: 20 },
+
+  { id: 'n02', categoria: 'FIESTA', fecha: '9 NOV',
+    titulo: 'Madrid honra a la Virgen de la Almudena',
+    texto: 'Fiesta local en Madrid en honor de su patrona, con misa solemne y procesión por el centro de la ciudad, en torno a la catedral.',
+    imagen: { url: 'images/portada/almudena-800.webp', urlJpg: 'images/portada/almudena-800.jpg',
+              alt: 'Imagen de Santa María de la Almudena en procesión por la calle Mayor de Madrid',
+              credito: 'Foto: Thomas Holbach · CC BY-SA 4.0' },
+    enlace: { texto: 'Catedral de la Almudena', url: 'https://catedraldelaalmudena.es/' },
+    desde: '2026-10-28', hasta: '2026-11-10', prioridad: 3, orden: 21 },
+
+  { id: 'n03', categoria: 'TRADICIÓN', fecha: '11 NOV',
+    titulo: 'San Martín y su «veranillo»',
+    texto: 'Fecha tradicional de la matanza en el campo y del «veranillo de San Martín», los días templados que suelen llegar a mediados de noviembre.',
+    imagen: { url: 'images/portada/san-martin-800.webp', urlJpg: 'images/portada/san-martin-800.jpg',
+              alt: 'Bosque con colores de otoño en el Hayedo de Montejo, en la Sierra Norte de Madrid',
+              credito: 'Foto: Pablo Cabezos · CC BY 2.0' },
+    enlace: null,
+    desde: '2026-10-28', hasta: '2026-11-15', prioridad: 4, orden: 22 },
+
+  { id: 'n04', categoria: 'MÚSICA', fecha: '22 NOV',
+    titulo: 'Santa Cecilia, patrona de la música',
+    texto: 'Bandas, coros y escuelas de música celebran conciertos y homenajes en pueblos y ciudades de toda España.',
+    imagen: { url: 'images/portada/santa-cecilia-800.webp', urlJpg: 'images/portada/santa-cecilia-800.jpg',
+              alt: 'Santa Cecilia tocando el órgano, pintura de Antiveduto Gramatica',
+              credito: 'Antiveduto Gramatica · Dominio público' },
+    enlace: null,
+    desde: '2026-10-28', hasta: '2026-11-23', prioridad: 4, orden: 23 },
+
+  { id: 'n05', categoria: 'FIESTA', fecha: '25 NOV',
+    titulo: 'Jaén celebra a Santa Catalina',
+    texto: 'Fiesta local en Jaén en honor de Santa Catalina, que da nombre al castillo que corona la ciudad desde lo alto de su cerro.',
+    imagen: { url: 'images/portada/jaen-santa-catalina-800.webp', urlJpg: 'images/portada/jaen-santa-catalina-800.jpg',
+              alt: 'Castillo de Santa Catalina sobre el cerro que domina la ciudad de Jaén',
+              credito: 'Foto: Pepepitos · Dominio público' },
+    enlace: { texto: 'Conocer Jaén', url: 'https://www.jaen.es/' },
+    desde: '2026-10-28', hasta: '2026-11-26', prioridad: 4, orden: 24 },
+
+  { id: 'n06', categoria: 'EFEMÉRIDE', fecha: '25 NOV',
+    titulo: 'Día contra la violencia hacia la mujer',
+    texto: 'Día Internacional de la Eliminación de la Violencia contra la Mujer, con actos institucionales en toda España. La ONU lo proclamó en 1999.',
+    imagen: null,
+    enlace: { texto: 'Conocer más', url: 'https://www.un.org/es/observances/ending-violence-against-women-day' },
+    desde: '2026-10-28', hasta: '2026-11-30', prioridad: 3, orden: 25 },
+
+  { id: 'n07', categoria: 'EDUCACIÓN', fecha: '27 NOV',
+    titulo: 'Día del Maestro en España',
+    texto: 'Se celebra en la festividad de San José de Calasanz, fundador de las Escuelas Pías y patrón de los maestros españoles.',
+    imagen: { url: 'images/portada/calasanz-800.webp', urlJpg: 'images/portada/calasanz-800.jpg',
+              alt: 'La última comunión de san José de Calasanz, pintura de Francisco de Goya',
+              credito: 'Francisco de Goya · Dominio público' },
+    enlace: null,
+    desde: '2026-10-28', hasta: '2026-11-30', prioridad: 4, orden: 26 }
 ];
 
 (function () {
@@ -5935,7 +6007,7 @@ var PORTADA_FALLBACK = [
     var img = null;
     if (t.imagen && typeof t.imagen === 'object') {
       var u = urlSegura(t.imagen.url, 'media');
-      if (u) img = { url: u, jpg: urlSegura(t.imagen.urlJpg, 'media'), alt: txt(t.imagen.alt, 250) };
+      if (u) img = { url: u, jpg: urlSegura(t.imagen.urlJpg, 'media'), alt: txt(t.imagen.alt, 250), credito: txt(t.imagen.credito, 120) };
     }
     var enl = null, cron = parrafosCronica(t.cronica);
     var et = (t.enlace && typeof t.enlace === 'object') ? txt(t.enlace.texto, 50) : '';
@@ -6034,6 +6106,7 @@ var PORTADA_FALLBACK = [
     if (t.img) {
       var foto = crearFoto(t.img, i === 0);
       card.appendChild(foto);
+      if (t.img.credito) card.appendChild(el('p', 'pf-credito', t.img.credito));
       // si la foto no carga, la tarjeta pasa a la versión institucional (nunca un hueco)
       var imgEl = foto.tagName === 'IMG' ? foto : foto.querySelector('img');
       imgEl.addEventListener('error', function () {
