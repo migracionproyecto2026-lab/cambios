@@ -5456,14 +5456,14 @@ var PORTADA_FALLBACK = [
     texto: 'El Consulado General sigue prestando determinados servicios presenciales con limitaciones operativas. Consulte la información oficial.',
     imagen: null,
     enlace: { texto: 'Información oficial', url: 'https://www.exteriores.gob.es/Consulados/caracas/es/Paginas/index.aspx' },
-    desde: '2026-09-25', hasta: '2026-11-30', prioridad: 2, orden: 8 },
+    desde: '2026-09-25', hasta: '2026-11-30', prioridad: 1, orden: 8 },
 
   { id: 'f10', categoria: 'CONSULAR', fecha: 'ACTUALIZADO · 17 SEP 2026',
     titulo: 'Recomendaciones para viajar a Venezuela',
     texto: 'El Ministerio de Asuntos Exteriores mantiene actualizadas sus recomendaciones de viaje a Venezuela: documentación, seguridad y emergencias.',
     imagen: null,
     enlace: { texto: 'Ver recomendaciones', url: 'https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Detalle-recomendaciones-de-viaje.aspx?trc=Venezuela' },
-    desde: '2026-09-25', hasta: '2026-11-30', prioridad: 4, orden: 9 },
+    desde: '2026-09-25', hasta: '2026-11-30', prioridad: 3, orden: 9 },
 
   { id: 'f11', categoria: 'CONSULAR', fecha: 'INFORMACIÓN DE SERVICIO',
     titulo: 'Asistencia consular urgente las 24 horas',
@@ -5472,19 +5472,9 @@ var PORTADA_FALLBACK = [
     enlace: { texto: 'Emergencias consulares', url: '#emergencias' },
     desde: '2026-09-25', hasta: '2026-11-30', prioridad: 2, orden: 10 },
 
-  { id: 'f12', categoria: 'EMBAJADA', fecha: 'ESPAÑA EN VENEZUELA',
-    titulo: 'Embajada de España en Venezuela',
-    texto: 'La Embajada desarrolla actividad institucional, cultural y de cooperación, y cuenta con una Oficina Cultural para la cultura española.',
-    imagen: null,
-    enlace: { texto: 'Actualidad Embajada', url: 'https://www.exteriores.gob.es/Embajadas/caracas/es/Paginas/index.aspx' },
-    desde: '2026-09-25', hasta: '2026-11-30', prioridad: 5, orden: 11 },
-
-  { id: 'f13', categoria: 'CONSULAR', fecha: 'TABLÓN DE ANUNCIOS',
-    titulo: 'Convocatorias de interés para la comunidad española',
-    texto: 'El Consulado General publica convocatorias, ayudas y oportunidades, como proyectos asistenciales para la emigración y selección de personal.',
-    imagen: null,
-    enlace: { texto: 'Ver tablón de anuncios', url: 'https://www.exteriores.gob.es/Consulados/caracas/es/Consulado/Paginas/Tabl%c3%b3n-de-anuncios.aspx' },
-    desde: '2026-09-25', hasta: '2026-11-30', prioridad: 5, orden: 12 },
+  /* f12 (Embajada) y f13 (Tablón de anuncios) salen del carrusel (22-10-2026):
+     no son "Historia, cultura y actualidad". Pasan a "Avisos y Comunicados"
+     (banners del panel) cuando se publique en producción. */
 
   { id: 'f14', categoria: 'COMUNIDAD', fecha: '19 SEP 2026',
     titulo: 'La Casa de Bernarda Alba llegó a Margarita',
@@ -5528,7 +5518,12 @@ var PORTADA_FALLBACK = [
     imagen: { url: 'images/portada/san-martin-800.webp', urlJpg: 'images/portada/san-martin-800.jpg',
               alt: 'Bosque con colores de otoño en el Hayedo de Montejo, en la Sierra Norte de Madrid',
               credito: 'Foto: Pablo Cabezos · CC BY 2.0' },
-    enlace: null,
+    enlace: { texto: 'Leer más', url: null },
+    cronica: '11 de noviembre · San Martín de Tours\n\n' +
+      'San Martín de Tours fue un soldado romano del siglo IV que, según la tradición, partió su capa en dos para compartirla con un mendigo a las puertas de la ciudad francesa de Amiens. Más tarde fue obispo de Tours y es uno de los santos más populares de Europa.\n\n' +
+      'Cuenta la leyenda que, tras aquel gesto, el frío dio paso a unos días de sol. De ahí viene el «veranillo de San Martín», el nombre que se da en España a los días templados que suelen llegar a mediados de noviembre, ya en pleno otoño.\n\n' +
+      'En el mundo rural, San Martín marcaba el comienzo de la matanza del cerdo, una tarea en la que participaba toda la familia y que llenaba la despensa para el invierno. De esa costumbre nace el refrán «A cada cerdo le llega su San Martín».\n\n' +
+      'Por las mismas fechas, en Galicia, Asturias y El Bierzo se celebra el magosto, una fiesta en torno a las castañas asadas al fuego, con música y reuniones al aire libre.',
     desde: '2026-10-28', hasta: '2026-11-15', prioridad: 4, orden: 22 },
 
   { id: 'n04', categoria: 'MÚSICA', fecha: '22 NOV',
@@ -5537,7 +5532,12 @@ var PORTADA_FALLBACK = [
     imagen: { url: 'images/portada/santa-cecilia-800.webp', urlJpg: 'images/portada/santa-cecilia-800.jpg',
               alt: 'Santa Cecilia tocando el órgano, pintura de Antiveduto Gramatica',
               credito: 'Antiveduto Gramatica · Dominio público' },
-    enlace: null,
+    enlace: { texto: 'Leer más', url: null },
+    cronica: '22 de noviembre · Santa Cecilia\n\n' +
+      'Santa Cecilia fue una joven romana de los primeros siglos del cristianismo, venerada como mártir. La tradición la une a la música y desde hace siglos es la patrona de músicos, coros y bandas.\n\n' +
+      'En España, el 22 de noviembre es una fecha señalada para las bandas de música, sobre todo en la Comunidad Valenciana, donde casi cada pueblo tiene su sociedad musical. Hay conciertos, pasacalles y misas cantadas, y en muchos lugares se da la bienvenida a los músicos jóvenes que ese año se incorporan a la banda.\n\n' +
+      'Conservatorios, escuelas de música y coros se suman con audiciones y homenajes, en una de las celebraciones que mejor reflejan la vida cultural de pueblos y ciudades.\n\n' +
+      'La imagen de la tarjeta es «Santa Cecilia tocando el órgano», del pintor italiano Antiveduto Gramatica, de principios del siglo XVII.',
     desde: '2026-10-28', hasta: '2026-11-23', prioridad: 4, orden: 23 },
 
   { id: 'n05', categoria: 'FIESTA', fecha: '25 NOV',
@@ -5562,7 +5562,12 @@ var PORTADA_FALLBACK = [
     imagen: { url: 'images/portada/calasanz-800.webp', urlJpg: 'images/portada/calasanz-800.jpg',
               alt: 'La última comunión de san José de Calasanz, pintura de Francisco de Goya',
               credito: 'Francisco de Goya · Dominio público' },
-    enlace: null,
+    enlace: { texto: 'Leer más', url: null },
+    cronica: '27 de noviembre · Día del Maestro\n\n' +
+      'En España, el Día del Maestro se celebra el 27 de noviembre, festividad de San José de Calasanz, patrón de los maestros y de las escuelas.\n\n' +
+      'José de Calasanz nació en Peralta de la Sal (Huesca) en 1557. Ya sacerdote, se trasladó a Roma, donde en 1597 abrió en el barrio del Trastévere una escuela gratuita para niños sin recursos, considerada una de las primeras escuelas públicas y gratuitas de Europa. De aquella iniciativa nació la Orden de las Escuelas Pías, cuyos religiosos son conocidos como escolapios.\n\n' +
+      'Murió en Roma en 1648. En 1948 el papa Pío XII lo declaró patrono universal de las escuelas populares cristianas.\n\n' +
+      'La fecha es una ocasión para reconocer el trabajo de los docentes, con actos en los colegios y homenajes a maestros en toda España. La imagen de la tarjeta es «La última comunión de san José de Calasanz» (1819), de Francisco de Goya.',
     desde: '2026-10-28', hasta: '2026-11-30', prioridad: 4, orden: 26 }
 ];
 
@@ -6032,24 +6037,18 @@ var PORTADA_FALLBACK = [
       .map(limpiarTarjeta)
       .filter(Boolean)
       .sort(function (a, b) { return (a.prioridad - b.prioridad) || (a.orden - b.orden) || (a._i - b._i); });
-    return intercalar(orden);
+    return agrupar(orden);
   }
 
-  // La primera tarjeta es la de mayor prioridad; el resto alterna tarjetas con
-  // foto y tarjetas institucionales (sin foto), cada grupo en su orden, para que
-  // no salgan varias rojas seguidas.
-  function intercalar(lista) {
-    if (lista.length < 3) return lista;
-    var primera = lista[0], resto = lista.slice(1);
-    var conFoto = resto.filter(function (t) { return !!t.img; });
-    var sinFoto = resto.filter(function (t) { return !t.img; });
-    var out = [primera], turnoFoto = !primera.img;
-    while (conFoto.length || sinFoto.length) {
-      if ((turnoFoto && conFoto.length) || !sinFoto.length) out.push(conFoto.shift());
-      else out.push(sinFoto.shift());
-      turnoFoto = !turnoFoto;
-    }
-    return out;
+  // Primero las tarjetas del consulado (CONSULAR/EMBAJADA) por prioridad; después
+  // el resto (fechas, cultura, comunidad) seguidas y por su orden, que es el
+  // cronológico. Antes se intercalaban y las fechas quedaban sueltas.
+  var INSTITUCIONAL = { 'CONSULAR': 1, 'EMBAJADA': 1 };
+  function agrupar(lista) {
+    var inst = lista.filter(function (t) { return INSTITUCIONAL[String(t.categoria).toUpperCase()]; });
+    var resto = lista.filter(function (t) { return !INSTITUCIONAL[String(t.categoria).toUpperCase()]; })
+      .sort(function (a, b) { return (a.orden - b.orden) || (a._i - b._i); });
+    return inst.concat(resto);
   }
 
   // srcset 400/800 solo para assets del repo con el patrón <slug>-800.webp.
